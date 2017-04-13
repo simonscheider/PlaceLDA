@@ -24,6 +24,16 @@ from googleplaces import GooglePlaces, types, lang
 #from geopy.geocoders import Nominatim
 
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.preprocessing import Normalizer
+from sklearn import metrics
+from sklearn.cluster import KMeans, MiniBatchKMeans
+#import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+
+
 
 YOUR_API_KEY = 'AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8'
 
@@ -170,7 +180,7 @@ def extractLDATopics():
     model = lda.LDA(n_topics=20, n_iter=1500, random_state=1)
     model.fit(X_train)
     topic_word = model.topic_word_
-    #print("type(topic_word): {}".format(type(topic_word)))
+    print("type(topic_word): {}".format(type(topic_word)))
     print("shape: {}".format(topic_word.shape))
 
     # get the top 5 words for each topic (by probablity)
@@ -186,29 +196,109 @@ def extractLDATopics():
 
 
 def enrichOSM(osmid,elementtype):
+    import re
+    print('enrich: '+elementtype+' '+str(osmid))
     enriched = {}
     osm = getOSMInfo(osmid, elementtype)
     #print(osm)
+    enriched['name']= osm['name']
+    print(osm['name'])
     enriched['osmtype']='|'.join(sorted(osm['keys']))
     place = matchtoGoogleP(osm['name'],osm['lat'],osm['lon'])
+    enriched['GoogleId'] = place.place_id
     #print(place.details)
-    enriched['website']=place.website
-    enriched['Gtype'] ='|'.join(sorted(place.types))
+    if place.website != None:
+        wt = placewebscraper.scrape(place.website)
+        if wt !=None:
+            enriched['webtext']= wt['text']
+            enriched['webtitle'] = wt['title']
+        enriched['website']=place.website
+    enriched['googletype'] ='|'.join(sorted(place.types))
     #print place.details['opening_hours']
     #print place.details['reviews']
     if 'reviews' in place.details.keys():
-        enriched['reviews']= '. '.join([r['text']+' ' for r in place.details['reviews']])
-    wt = placewebscraper.scrape(place.website)
-    enriched['webtext']= wt['text']
-    enriched['title'] = wt['title']
-    print(enriched)
+        text= ' '.join([r['text']+' ' for r in place.details['reviews']])
+        text = text.replace('\n', ' ').replace('\r', '')
+        text = re.sub(r'[?|$|.|!]',r'',text)
+        text = re.sub(r'[^a-zA-Z]',r' ',text)
+        enriched['reviewtext'] = text
+    return enriched
+
+def constructTrainingData(filename):
+    from pprint import pprint
+    td = {}
+    with open(filename,'r') as file:
+        for line in file:
+            line = line.rstrip('\r\n')
+            osmid = int(os.path.basename(line))
+            elementtype = (os.path.basename(os.path.dirname(line)))
+            td[line] = enrichOSM(osmid,elementtype)
+    file.close
+    #pprint(td)
+    import json
+    out = (os.path.splitext(os.path.basename(filename))[0][:9])+'_train.json'
+    with open(out, 'w') as fp:
+        json.dump(td, fp)
 
 
+def trainLDA(jsonfile, textkey, language='dutch'):
+    texts = []
+    titles = []
+    import json
+    with open(jsonfile) as json_data:
+        d = json.load(json_data)
+        #print(d)
+        for k in d:
+            texts.append(d[k][textkey])
+            titles.append(d[k]['name'])
+    #texts = [NLPclean(t) for t in texts]
+    print(zip(titles,texts))
+    vectorizer = CountVectorizer(min_df = 1, stop_words = stopwords.words(language), analyzer = 'word', tokenizer=tokenize)
+    X = vectorizer.fit_transform(texts)
+    print(X)
+    vocab = vectorizer.get_feature_names()
+    print(vocab)
+    model = lda.LDA(n_topics=10, n_iter=1500, random_state=1)
+    model.fit(X)
+    topic_word = model.topic_word_
+    #print("type(topic_word): {}".format(type(topic_word)))
+    print("shape: {}".format(topic_word.shape))
+
+    # get the top 5 words for each topic (by probablity)
+    n = 5
+    for i, topic_dist in enumerate(topic_word):
+        topic_words = np.array(vocab)[np.argsort(topic_dist)][:-(n+1):-1]
+        print('*Topic {}\n- {}'.format(i, ' '.join(topic_words)))
+    #return model
+    # apply topic model to new test data set
+    doc_topic_test = model.transform(X)
+    print(doc_topic_test)
+    for title, topics in zip(titles, doc_topic_test):
+        print("{} (top topic: {})".format(title, topics.argmax()))
+
+
+def tokenize(text):
+    #from nltk.stem.porter import PorterStemmer
+    from nltk.stem.snowball import DutchStemmer
+    # Create p_stemmer of class PorterStemmer
+    p_stemmer = DutchStemmer()
+    text = text.lower()
+    from nltk.corpus import stopwords
+    stop = set(stopwords.words('dutch'))
+    tokens = nltk.word_tokenize(text)
+    tokens = [i for i in tokens if i not in string.punctuation and len(i)>=3]
+    tokens = [i for i in tokens if i not in stop]
+    tokens = [i for i in tokens if i.isalpha()]
+    tokens = [p_stemmer.stem(i) for i in tokens]
+    #stems = stem_tokens(tokens, stemmer)
+    return tokens
 
 if __name__ == '__main__':
 ##    osmid= 60018172
 ##    osm = getOSMInfo(osmid)
-    osmid = 266614887
-    enrichOSM(osmid,'way')
+##    osmid = 266614887
+##    enrichOSM(osmid,'way')
+    constructTrainingData('training.csv')
+    trainLDA('training_train.json', 'webtext')
 
 

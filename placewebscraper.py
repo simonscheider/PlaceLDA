@@ -24,11 +24,20 @@ from bs4 import BeautifulSoup
 def scrape(url):
     resultobject = {}
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-    page = requests.get(url, headers=headers)
+    try:
+        page = requests.get(url, headers=headers)
+    except requests.exceptions.ConnectionError, e:
+        print("retry")
+        try:
+            page = requests.get(url, headers=headers)
+        except:
+            return None
+
+
     #print page.content
     #tree = html.fromstring(page.content)
 
-    soup = BeautifulSoup(page.content)
+    soup = BeautifulSoup(page.content, 'lxml')
 
     resultobject['title'] = soup.title.string #soup.prettify()
 
@@ -57,25 +66,30 @@ def scrape(url):
     return resultobject
 
 def clean(soup):
+    import re
     # kill all script and style elements and all links
     for script in soup(["script", "style", "a"]):
         script.extract()    # rip it out
 
     text = soup.get_text()
+    text = text.replace('\n', ' ').replace('\r', '')
+    text = re.sub(r'[?|$|.|!]',r'',text)
+    text = re.sub(r'[^a-zA-Z]',r' ',text)
 
     # break into lines and remove leading and trailing space on each
     lines = (line for line in text.splitlines())
     # break multi-headlines into a line each
     chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
     # drop blank lines
-    text = '\n'.join(chunk for chunk in chunks if chunk)
+    text = ' '.join(chunk for chunk in chunks if chunk)
 
     #print(text)
     return text
 
 
 if __name__ == '__main__':
-    print scrape('http://www.hoogcatharijne.nl/')
+    #print scrape('http://www.hoogcatharijne.nl/')
+    print scrape('https://www.hu.nl/')
 
 
 ##buyers = tree.xpath('//div[@title="buyer-name"]/text()')
