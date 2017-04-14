@@ -31,6 +31,7 @@ def scrape(url):
         try:
             page = requests.get(url, headers=headers)
         except:
+            print("request of website "+url+' not successful! Skip.')
             return None
 
 

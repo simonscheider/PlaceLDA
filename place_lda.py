@@ -22,6 +22,7 @@ import os
 import placewebscraper
 from googleplaces import GooglePlaces, types, lang
 #from geopy.geocoders import Nominatim
+import json
 
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -229,10 +230,13 @@ def constructTrainingData(filename):
     td = {}
     with open(filename,'r') as file:
         for line in file:
-            line = line.rstrip('\r\n')
-            osmid = int(os.path.basename(line))
-            elementtype = (os.path.basename(os.path.dirname(line)))
-            td[line] = enrichOSM(osmid,elementtype)
+            line = line.rstrip('\r\n').split("\t")
+            osmid = int(os.path.basename(line[0]))
+            elementtype = (os.path.basename(os.path.dirname(line[0])))
+            en = enrichOSM(osmid,elementtype)
+            en['class']=line[1]
+            td[line[0]] = en
+
     file.close
     #pprint(td)
     import json
@@ -244,18 +248,25 @@ def constructTrainingData(filename):
 def trainLDA(jsonfile, textkey, language='dutch'):
     texts = []
     titles = []
-    import json
+    classes = []
+    features = []
+
     with open(jsonfile) as json_data:
         d = json.load(json_data)
         #print(d)
         for k in d:
-            texts.append(d[k][textkey])
-            titles.append(d[k]['name'])
+            if textkey in (d[k]).keys():
+                texts.append(d[k][textkey])
+                titles.append(d[k]['name'])
+                classes.append(d[k]['class'])
+                array = [d[k]['osmtype'],d[k]['googletype']]
+                features.append(array)
+    json_data.close
     #texts = [NLPclean(t) for t in texts]
-    print(zip(titles,texts))
+    #print(zip(titles,texts))
     vectorizer = CountVectorizer(min_df = 1, stop_words = stopwords.words(language), analyzer = 'word', tokenizer=tokenize)
     X = vectorizer.fit_transform(texts)
-    print(X)
+    #print(X)
     vocab = vectorizer.get_feature_names()
     print(vocab)
     model = lda.LDA(n_topics=10, n_iter=1500, random_state=1)
@@ -266,15 +277,74 @@ def trainLDA(jsonfile, textkey, language='dutch'):
 
     # get the top 5 words for each topic (by probablity)
     n = 5
+    c = 0
     for i, topic_dist in enumerate(topic_word):
         topic_words = np.array(vocab)[np.argsort(topic_dist)][:-(n+1):-1]
         print('*Topic {}\n- {}'.format(i, ' '.join(topic_words)))
+        c += 1
     #return model
     # apply topic model to new test data set
     doc_topic_test = model.transform(X)
-    print(doc_topic_test)
+    #print(doc_topic_test)
+    i = 0
     for title, topics in zip(titles, doc_topic_test):
         print("{} (top topic: {})".format(title, topics.argmax()))
+        features[i].extend(topics)
+        i+=1
+    print(features)
+    return (titles, doc_topic_test, classes,features)
+
+def classify(topicmodel):
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.neural_network import MLPClassifier
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.svm import SVC
+    from sklearn.gaussian_process import GaussianProcessClassifier
+    from sklearn.gaussian_process.kernels import RBF
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+    from sklearn.naive_bayes import GaussianNB
+    from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+
+    h = .02  # step size in the mesh
+
+    names = ["Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
+             "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
+             "Naive Bayes", "QDA"]
+
+    classifiers = [
+        KNeighborsClassifier(3),
+        SVC(kernel="linear", C=0.025),
+        SVC(gamma=2, C=1),
+        GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True),
+        DecisionTreeClassifier(max_depth=5),
+        RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1),
+        MLPClassifier(alpha=1),
+        AdaBoostClassifier(),
+        GaussianNB(),
+        QuadraticDiscriminantAnalysis()]
+
+    X = topicmodel[3]
+    y = topicmodel[2]
+    print(X)
+    print(y)
+    #X = StandardScaler().fit_transform(X)
+    X_train, X_test, y_train, y_test = \
+        train_test_split(X, y, test_size=.2, random_state=42)
+
+     # iterate over classifiers
+    for name, clf in zip(names, classifiers):
+        #ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
+        clf.fit(X_train, y_train)
+        score = clf.score(X_test, y_test)
+        print('classifier: '+name+' score: '+score)
+
+
+
+
+
+
 
 
 def tokenize(text):
@@ -299,6 +369,10 @@ if __name__ == '__main__':
 ##    osmid = 266614887
 ##    enrichOSM(osmid,'way')
     constructTrainingData('training.csv')
-    trainLDA('training_train.json', 'webtext')
+    topicmodel = trainLDA('training_train.json', 'webtext')
+    classify('training_train.json')
+
+
+
 
 
