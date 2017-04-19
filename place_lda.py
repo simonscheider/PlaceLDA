@@ -12,6 +12,8 @@
 from __future__ import division, print_function
 
 import numpy as np
+import matplotlib.pyplot as plt
+import itertools
 import overpy
 import string
 import lda
@@ -44,17 +46,24 @@ def matchtoGoogleP(placename,lat, lng):
     lat_lng['lat']=lat
     lat_lng['lng']=lng
     google_places = GooglePlaces(YOUR_API_KEY)
-    query_result = google_places.text_search(placename,lat_lng,radius=300)
+    place = None
+    try:
+        query_result = google_places.text_search(placename,lat_lng,radius=300)
     #if query_result.has_attributions:
-    #    print query_result.html_attributions
-
-    place = query_result.places[0]
+        #    print query_result.html_attributions
+        if len(query_result.places)>0:
+            place = query_result.places[0]
+            place.get_details()
     ##    print place.name
     ##    print place.geo_location
     ##    print place.place_id
+    except GooglePlacesError as error_detail:
+    # You've passed in parameter values that the Places API doesn't like..
+        print(error_detail)
+        return place
 
     # The following method has to make a further API call.
-    place.get_details()
+
     # Referencing any of the attributes below, prior to making a call to
     # get_details() will raise a googleplaces.GooglePlacesAttributeError.
     ##    print place.details # A dict matching the JSON response from Google.
@@ -66,6 +75,7 @@ def matchtoGoogleP(placename,lat, lng):
 ##        for r in place.details['reviews']:
 ##            print r['text']
 ##    print place.rating
+
     return place
 
 def getCentroid(nodes):
@@ -85,6 +95,9 @@ def getOSMInfo(osmid, elementtype='node'):
     # We can also see a node's metadata:
     osm = {}
     result = api.query((elementtype+"({}); out;").format(osmid))
+
+
+
     if elementtype == 'node':
         res = result.get_node(osmid)
         osm['lat'] = res.lat
@@ -115,89 +128,7 @@ def getOSMInfo(osmid, elementtype='node'):
 
 
 
-def extractLDATopics():
-    # document-term matrix
-    X = lda.datasets.load_reuters()
-    ##print("type(X): {}".format(type(X)))
-    ##print("shape: {}\n".format(X.shape))
-    for i in range(10):
-        print(format(X[i]))
 
-
-    # the vocab
-    vocab = lda.datasets.load_reuters_vocab()
-    ##print("type(vocab): {}".format(type(vocab)))
-    ##print("len(vocab): {}\n".format(len(vocab)))
-
-    # titles for each story
-    titles = lda.datasets.load_reuters_titles()
-    ##print("type(titles): {}".format(type(titles)))
-    ##print("len(titles): {}\n".format(len(titles)))
-
-    doc_id = 0
-    word_id = 3117
-
-    print("doc id: {} word id: {}".format(doc_id, word_id))
-    print("-- count: {}".format(X[doc_id, word_id]))
-    print("-- word : {}".format(vocab[word_id]))
-    print("-- doc  : {}".format(titles[doc_id]))
-
-    #Fit the model
-    ##model = lda.LDA(n_topics=20, n_iter=500, random_state=1)
-    ##model.fit(X)
-
-    # topic-word probabilities
-    ##topic_word = model.topic_word_
-    ###print("type(topic_word): {}".format(type(topic_word)))
-    ##print("shape: {}".format(topic_word.shape))
-
-    #check the first 5 normalized sums of probabilities
-    ##for n in range(5):
-    ##    sum_pr = sum(topic_word[n,:])
-    ##    print("topic: {} sum: {}".format(n, sum_pr))
-
-    # get the top 5 words for each topic (by probablity)
-    n = 5
-    ##for i, topic_dist in enumerate(topic_word):
-    ##    topic_words = np.array(vocab)[np.argsort(topic_dist)][:-(n+1):-1]
-    ##    print('*Topic {}\n- {}'.format(i, ' '.join(topic_words)))
-
-    #Document topic probabilities
-    ##doc_topic = model.doc_topic_
-    ##print("type(doc_topic): {}".format(type(doc_topic)))
-    ##print("shape: {}".format(doc_topic.shape))
-
-
-    # Get the most probable topic for each document:
-    ##for n in range(10):
-    ##    topic_most_pr = doc_topic[n].argmax()
-    ##    print("doc: {} topic: {}\n{}...".format(n,
-    ##                                            topic_most_pr,
-    ##                                            titles[n][:50]))
-
-    #Most important: apply a given model to a new test dataset
-
-    #X = lda.datasets.load_reuters()
-    #titles = lda.datasets.load_reuters_titles()
-    X_train = X[10:]
-    X_test = X[:10]
-    titles_test = titles[:10]
-    model = lda.LDA(n_topics=20, n_iter=1500, random_state=1)
-    model.fit(X_train)
-    topic_word = model.topic_word_
-    print("type(topic_word): {}".format(type(topic_word)))
-    print("shape: {}".format(topic_word.shape))
-
-    # get the top 5 words for each topic (by probablity)
-    n = 5
-    for i, topic_dist in enumerate(topic_word):
-        topic_words = np.array(vocab)[np.argsort(topic_dist)][:-(n+1):-1]
-        print('*Topic {}\n- {}'.format(i, ' '.join(topic_words)))
-
-    # apply topic model to new test data set
-    doc_topic_test = model.transform(X_test)
-    for title, topics in zip(titles_test, doc_topic_test):
-        print("{} (top topic: {})".format(title, topics.argmax()))
 
 
 def enrichOSM(osmid,elementtype):
@@ -206,12 +137,14 @@ def enrichOSM(osmid,elementtype):
     enriched = {}
     osm = getOSMInfo(osmid, elementtype)
     if osm == None:
-        return
+        return None
     #print(osm)
     enriched['name']= osm['name']
     print(osm['name'])
     enriched['osmtype']='|'.join(sorted(osm['keys']))
     place = matchtoGoogleP(osm['name'],osm['lat'],osm['lon'])
+    if place == None:
+        return None
     enriched['GoogleId'] = place.place_id
     #print(place.details)
     if place.website != None:
@@ -236,21 +169,23 @@ def constructTrainingData(filename):
     td = {}
     with open(filename, 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-        for line in reader:
-            #line = line.rstrip('\r\n').split("\t")
-            osmid = int(os.path.basename(line[0]))
-            elementtype = (os.path.basename(os.path.dirname(line[0])))
-            en = enrichOSM(osmid,elementtype)
-            if en != None:
-                en['class']=line[1]
-                td[line[0]] = en
+        import json
+        out = (os.path.splitext(os.path.basename(filename))[0][:9])+'_train.json'
+        with open(out, 'w') as fp:
+            for line in reader:
+                #line = line.rstrip('\r\n').split("\t")
+                osmid = int(os.path.basename(line[0]))
+                elementtype = (os.path.basename(os.path.dirname(line[0])))
+                en = enrichOSM(osmid,elementtype)
+                if en != None:
+                    en['class']=line[1]
+                    td[line[0]] = en
+                    print("number of successul enrichments: "+str(len(td)))
+                    fp.seek(0)
+                    json.dump(td, fp)
 
-    csvfile.close
+
     #pprint(td)
-    import json
-    out = (os.path.splitext(os.path.basename(filename))[0][:9])+'_train.json'
-    with open(out, 'w') as fp:
-        json.dump(td, fp)
 
 
 def trainLDA(jsonfile, textkey, language='dutch'):
@@ -268,7 +203,8 @@ def trainLDA(jsonfile, textkey, language='dutch'):
                 titles.append(d[k]['name'])
                 classes.append(d[k]['class'])
                 array = [d[k]['osmtype'],d[k]['googletype']]
-                features.append(array)
+                features.append([])
+                #features.append(array)
     json_data.close
     #texts = [NLPclean(t) for t in texts]
     #print(zip(titles,texts))
@@ -315,12 +251,14 @@ def classify(topicmodel):
     from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
     from sklearn.naive_bayes import GaussianNB
     from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+    from sklearn.model_selection import cross_val_score
+    from sklearn.metrics import confusion_matrix
 
     h = .02  # step size in the mesh
 
     names = ["Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
              "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
-             "Naive Bayes", "QDA"]
+             "Naive Bayes"]
 
     classifiers = [
         KNeighborsClassifier(3),
@@ -331,23 +269,71 @@ def classify(topicmodel):
         RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1),
         MLPClassifier(alpha=1),
         AdaBoostClassifier(),
-        GaussianNB(),
-        QuadraticDiscriminantAnalysis()]
+        GaussianNB()]
 
     X = topicmodel[3]
     y = topicmodel[2]
-    print(X)
-    print(y)
+    #print(X)
+    #print(y)
     #X = StandardScaler().fit_transform(X)
     X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=.2, random_state=42)
+        train_test_split(X, y, test_size=.15, random_state=42)
 
+    #Naive model
      # iterate over classifiers
     for name, clf in zip(names, classifiers):
         #ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
-        clf.fit(X_train, y_train)
-        score = clf.score(X_test, y_test)
-        print('classifier: '+name+' score: '+score)
+        #clf.fit(X_train, y_train)
+        scores = cross_val_score(clf,X,y,cv=5)
+
+        #score = clf.score(X_test, y_test)
+        #print('classifier: '+name+' score: '+str(score))
+        print("CV accuracy {}: {} (+/- {})".format(name,scores.mean(), scores.std()))
+        #scoretr = clf.score(X_train, y_train)
+        #print('classifier: '+name+' score no train: '+str(scoretr))
+        y_pred = clf.fit(X, y).predict(X)
+        # Compute confusion matrix
+        cnf_matrix = confusion_matrix(y, y_pred)
+        np.set_printoptions(precision=2)
+
+        # Plot non-normalized confusion matrix
+        plt.figure()
+        plot_confusion_matrix(cnf_matrix, classes=y,
+                      title='Confusion matrix, without normalization')
+
+
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    This function prints and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Normalized confusion matrix")
+    else:
+        print('Confusion matrix, without normalization')
+
+    print(cm)
+
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, cm[i, j],
+                 horizontalalignment="center",
+                 color="white" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
 
 def tokenize(text):
     #from nltk.stem.porter import PorterStemmer
@@ -398,7 +384,10 @@ def getOSMfeatures(cat):
         else:
             OSMelem ="node"
 
-        bbox ="50.600, 7.100, 50.748, 7.157"
+        #bbox ="50.600, 7.100, 50.748, 7.157"
+        bbox = "52.06000, 5.122661, 52.3, 5.1847" #Lombok
+
+
         #bbox = ", ".join(self.listtoString(self.getCurrentBBinWGS84()))#"50.600, 7.100, 50.748, 7.157"
 
         #Using Overpass API: http://wiki.openstreetmap.org/wiki/Overpass_API
@@ -431,9 +420,10 @@ if __name__ == '__main__':
 ##    osmid = 266614887
 ##    enrichOSM(osmid,'way')
     #getOSMfeatures('leisure')
-    constructTrainingData('training.csv')
-    #topicmodel = trainLDA('training_train.json', 'webtext')
-    #classify(topicmodel)
+    #constructTrainingData('training.csv')
+    #topicmodel = trainLDA('training_train.json', 'reviewtext')
+    topicmodel = trainLDA('training_train.json', 'webtext')
+    classify(topicmodel)
 
 
 
