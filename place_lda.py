@@ -17,6 +17,7 @@ import string
 import lda
 import lda.datasets
 import sys
+import csv
 import os
 #sys.path.append(os.getcwd())
 import placewebscraper
@@ -95,19 +96,22 @@ def getOSMInfo(osmid, elementtype='node'):
         osm['lon']=c[0]
 
     #print(res.attributes)
-    osm['name'] = res.tags['name']
-    osm['keys'] = []
-    #location = geolocator.reverse(osmid)
-    #print(location.address)
-    for k in keysofinterest:
-        if k in res.tags.keys():
-            osm['keys'].append(k +':'+res.tags[k])
-    if 'website' in res.tags.keys():
-            osm['website'] = res.tags[k]
-    if 'opening_hours' in res.tags.keys():
-            osm['opening_hours'] = res.tags[k]
-    #print(osm)
-    return osm
+    if 'name' in res.tags:
+        osm['name'] = res.tags['name']
+        osm['keys'] = []
+        #location = geolocator.reverse(osmid)
+        #print(location.address)
+        for k in keysofinterest:
+            if k in res.tags.keys():
+                osm['keys'].append(k +':'+res.tags[k])
+        if 'website' in res.tags.keys():
+                osm['website'] = res.tags['website']
+        if 'opening_hours' in res.tags.keys():
+                osm['opening_hours'] = res.tags['opening_hours']
+        #print(osm)
+        return osm
+    else:
+        return None
 
 
 
@@ -201,6 +205,8 @@ def enrichOSM(osmid,elementtype):
     print('enrich: '+elementtype+' '+str(osmid))
     enriched = {}
     osm = getOSMInfo(osmid, elementtype)
+    if osm == None:
+        return
     #print(osm)
     enriched['name']= osm['name']
     print(osm['name'])
@@ -228,16 +234,18 @@ def enrichOSM(osmid,elementtype):
 def constructTrainingData(filename):
     from pprint import pprint
     td = {}
-    with open(filename,'r') as file:
-        for line in file:
-            line = line.rstrip('\r\n').split("\t")
+    with open(filename, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        for line in reader:
+            #line = line.rstrip('\r\n').split("\t")
             osmid = int(os.path.basename(line[0]))
             elementtype = (os.path.basename(os.path.dirname(line[0])))
             en = enrichOSM(osmid,elementtype)
-            en['class']=line[1]
-            td[line[0]] = en
+            if en != None:
+                en['class']=line[1]
+                td[line[0]] = en
 
-    file.close
+    csvfile.close
     #pprint(td)
     import json
     out = (os.path.splitext(os.path.basename(filename))[0][:9])+'_train.json'
@@ -292,6 +300,7 @@ def trainLDA(jsonfile, textkey, language='dutch'):
         features[i].extend(topics)
         i+=1
     print(features)
+    print(classes)
     return (titles, doc_topic_test, classes,features)
 
 def classify(topicmodel):
@@ -340,13 +349,6 @@ def classify(topicmodel):
         score = clf.score(X_test, y_test)
         print('classifier: '+name+' score: '+score)
 
-
-
-
-
-
-
-
 def tokenize(text):
     #from nltk.stem.porter import PorterStemmer
     from nltk.stem.snowball import DutchStemmer
@@ -363,14 +365,75 @@ def tokenize(text):
     #stems = stem_tokens(tokens, stemmer)
     return tokens
 
+def getOSMfeatures(cat):
+        placeCategories = {#this is a dictionary of place categories in OSM based on they key value pairs.
+        #Possible categories can be retrieved at:
+        "amenity": 	{"key" : "amenity","value" : "", "element" : "node"},
+        "shop": 	{"key" : "shop","value" : "", "element" : "node"},
+        "bar": {"key" : "amenity", "value" : "bar", "element" : "node"},
+        "police": {"key" : "amenity", "value" : "police", "element" : "node"},
+        "optician": {"key" : "shop", "value" : "optician", "element" : "node"},
+        "station": {"key" : "railway", "value" : "station", "element" : "node"},
+        "public transport station": {"key" : "public_transport", "value" : "platform", "element" : "node"},
+        "office": {"key" : "office", "value" : "", "element" : "node"},
+        "leisure": {"key" : "leisure", "value" : "", "element" : "node"},
+        "historic": {"key" : "historic", "value" : "", "element" : "node"},
+        "civic building":  {"key" : "building", "value" : "civic", "element" : "area"},
+        "school building":  {"key" : "building", "value" : "school", "element" : "area"},
+        "building":  {"key" : "building", "value" : "", "element" : "area"},
+        }
+        api = overpy.Overpass()
+        #print cat
+        #placeCategory = "amenity=police"
+
+        pc = placeCategories[cat]
+        if (pc["value"] == ""): #If querying only by key
+            kv = pc["key"]
+        else:
+            kv = pc["key"]+"="+pc["value"]
+        elem = pc["element"]
+
+        if (elem =="area" or elem == "line"):
+            OSMelem ="way"
+        else:
+            OSMelem ="node"
+
+        bbox ="50.600, 7.100, 50.748, 7.157"
+        #bbox = ", ".join(self.listtoString(self.getCurrentBBinWGS84()))#"50.600, 7.100, 50.748, 7.157"
+
+        #Using Overpass API: http://wiki.openstreetmap.org/wiki/Overpass_API
+        result = api.query(OSMelem+"""("""+bbox+""") ["""+kv+"""];out body;
+            """)
+        results = []
+        if (elem == "node"):
+            results = result.nodes
+        elif (elem == "area" or elem == "line"):
+            results = result.ways
+
+        print("Number of results:" + str(len(results)))
+
+        out = 'training.csv'
+        with open(out, 'wb') as fp:
+            writer = csv.writer(fp,delimiter=' ')
+            for element in results:
+                url = "https://www.openstreetmap.org/"+str(elem) +'/'+ str(element.id)
+                tag = element.tags['leisure'].strip()
+                writer.writerow([url, tag])
+                #print(tag)
+                #print(element.tags.get(tag, "n/a"))
+        fp.close
+
+
+
 if __name__ == '__main__':
 ##    osmid= 60018172
 ##    osm = getOSMInfo(osmid)
 ##    osmid = 266614887
 ##    enrichOSM(osmid,'way')
+    #getOSMfeatures('leisure')
     constructTrainingData('training.csv')
-    topicmodel = trainLDA('training_train.json', 'webtext')
-    classify('training_train.json')
+    #topicmodel = trainLDA('training_train.json', 'webtext')
+    #classify(topicmodel)
 
 
 
