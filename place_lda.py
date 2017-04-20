@@ -253,14 +253,16 @@ def classify(topicmodel):
     from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
     from sklearn.model_selection import cross_val_score
     from sklearn.metrics import confusion_matrix
+    from sklearn.linear_model import LogisticRegression
 
     h = .02  # step size in the mesh
 
-    names = ["Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
+    names = ["Logistic Regression","Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
              "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
              "Naive Bayes"]
 
     classifiers = [
+        LogisticRegression(C=1e5),
         KNeighborsClassifier(3),
         SVC(kernel="linear", C=0.025),
         SVC(gamma=2, C=1),
@@ -277,29 +279,39 @@ def classify(topicmodel):
     #print(y)
     #X = StandardScaler().fit_transform(X)
     X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=.15, random_state=42)
+        train_test_split(X, y, test_size=.2, random_state=42)
 
-    #Naive model
+    #Naive model (majority vote)
+    from collections import Counter
+    bc = Counter(y).most_common(1)[0]
+    print(bc)
+    naiveaccuracy = bc[1]/len(y)
+    print('naiveaccuracy; '+str(naiveaccuracy))
+    classes = list(set(y))
+    print(classes)
      # iterate over classifiers
     for name, clf in zip(names, classifiers):
         #ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
         #clf.fit(X_train, y_train)
-        scores = cross_val_score(clf,X,y,cv=5)
+        scores = cross_val_score(clf,X,y,cv=5)#,scoring='f1_macro')
 
         #score = clf.score(X_test, y_test)
         #print('classifier: '+name+' score: '+str(score))
         print("CV accuracy {}: {} (+/- {})".format(name,scores.mean(), scores.std()))
+
+
         #scoretr = clf.score(X_train, y_train)
         #print('classifier: '+name+' score no train: '+str(scoretr))
-        y_pred = clf.fit(X, y).predict(X)
+        y_pred = clf.fit(X_train, y_train).predict(X)
         # Compute confusion matrix
-        cnf_matrix = confusion_matrix(y, y_pred)
+        cnf_matrix = confusion_matrix(y, y_pred,labels=classes)
         np.set_printoptions(precision=2)
 
         # Plot non-normalized confusion matrix
         plt.figure()
-        plot_confusion_matrix(cnf_matrix, classes=y,
-                      title='Confusion matrix, without normalization')
+
+        plot_confusion_matrix(cnf_matrix, classes=classes,
+                      title='Confusion matrix for '+name)
 
 
 def plot_confusion_matrix(cm, classes,
@@ -310,6 +322,7 @@ def plot_confusion_matrix(cm, classes,
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
     """
+
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
     plt.colorbar()
@@ -334,6 +347,7 @@ def plot_confusion_matrix(cm, classes,
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
+    #plt.show()
 
 def tokenize(text):
     #from nltk.stem.porter import PorterStemmer
