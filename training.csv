@@ -1,88 +1,154 @@
-https://www.openstreetmap.org/node/34047978 pitch
-https://www.openstreetmap.org/node/34047981 pitch
-https://www.openstreetmap.org/node/34047982 pitch
-https://www.openstreetmap.org/node/34048139 sports_centre
-https://www.openstreetmap.org/node/34050014 sports_centre
-https://www.openstreetmap.org/node/101438229 playground
-https://www.openstreetmap.org/node/366860943 sports_centre
-https://www.openstreetmap.org/node/437970393 playground
-https://www.openstreetmap.org/node/717021612 sports_centre
-https://www.openstreetmap.org/node/759374509 playground
-https://www.openstreetmap.org/node/764621399 picnic_table
-https://www.openstreetmap.org/node/860698337 picnic_table
-https://www.openstreetmap.org/node/861573666 picnic_table
-https://www.openstreetmap.org/node/885572967 picnic_table
-https://www.openstreetmap.org/node/885572972 picnic_table
-https://www.openstreetmap.org/node/1247534683 picnic_table
-https://www.openstreetmap.org/node/1290228140 playground
-https://www.openstreetmap.org/node/1415524799 picnic_table
-https://www.openstreetmap.org/node/1415524818 picnic_table
-https://www.openstreetmap.org/node/1428009990 sports_centre
-https://www.openstreetmap.org/node/1445144618 picnic_table
-https://www.openstreetmap.org/node/1445675591 playground
-https://www.openstreetmap.org/node/1450137660 picnic_table
-https://www.openstreetmap.org/node/1450137665 picnic_table
-https://www.openstreetmap.org/node/1458721315 picnic_table
-https://www.openstreetmap.org/node/1458721392 picnic_table
-https://www.openstreetmap.org/node/1469278277 picnic_table
-https://www.openstreetmap.org/node/1469332269 picnic_table
-https://www.openstreetmap.org/node/1469649822 playground
-https://www.openstreetmap.org/node/1469649847 playground
-https://www.openstreetmap.org/node/1640330096 sports_centre
-https://www.openstreetmap.org/node/1684230477 playground
-https://www.openstreetmap.org/node/1832672397 picnic_table
-https://www.openstreetmap.org/node/1920335448 picnic_table
-https://www.openstreetmap.org/node/1935086584 sports_centre
-https://www.openstreetmap.org/node/2142326422 playground
-https://www.openstreetmap.org/node/2142326427 playground
-https://www.openstreetmap.org/node/2142326431 playground
-https://www.openstreetmap.org/node/2142326438 playground
-https://www.openstreetmap.org/node/2159748300 sports_centre
-https://www.openstreetmap.org/node/2182059488 playground
-https://www.openstreetmap.org/node/2182059492 picnic_table
-https://www.openstreetmap.org/node/2183352245 playground
-https://www.openstreetmap.org/node/2183352246 fitness_centre
-https://www.openstreetmap.org/node/2183395556 playground
-https://www.openstreetmap.org/node/2183395559 playground
-https://www.openstreetmap.org/node/2293686987 picnic_table
-https://www.openstreetmap.org/node/2337420371 picnic_table
-https://www.openstreetmap.org/node/2348236773 picnic_table
-https://www.openstreetmap.org/node/2649556784 fitness_centre
-https://www.openstreetmap.org/node/2654144590 fitness_centre
-https://www.openstreetmap.org/node/2672285791 Hackerspace
-https://www.openstreetmap.org/node/2889131924 playground
-https://www.openstreetmap.org/node/2935179226 playground
-https://www.openstreetmap.org/node/3008418620 picnic_table
-https://www.openstreetmap.org/node/3043051949 sports_centre
-https://www.openstreetmap.org/node/3043051950 sports_centre
-https://www.openstreetmap.org/node/3043051951 sports_centre
-https://www.openstreetmap.org/node/3086924761 fitness_centre
-https://www.openstreetmap.org/node/3091265307 garden
-https://www.openstreetmap.org/node/3117335409 playground
-https://www.openstreetmap.org/node/3117462820 pitch
-https://www.openstreetmap.org/node/3149644468 picnic_table
-https://www.openstreetmap.org/node/3212144203 picnic_table
-https://www.openstreetmap.org/node/3265367975 playground
-https://www.openstreetmap.org/node/3313124156 picnic_table
-https://www.openstreetmap.org/node/3805661281 picnic_table
-https://www.openstreetmap.org/node/3828644743 bowling_alley
-https://www.openstreetmap.org/node/3838638400 playground
-https://www.openstreetmap.org/node/3938099177 picnic_table
-https://www.openstreetmap.org/node/3938099178 picnic_table
-https://www.openstreetmap.org/node/3938099179 picnic_table
-https://www.openstreetmap.org/node/3938398292 playground
-https://www.openstreetmap.org/node/3940362212 playground
-https://www.openstreetmap.org/node/3962149657 playground
-https://www.openstreetmap.org/node/4130848005 picnic_table
-https://www.openstreetmap.org/node/4130848006 picnic_table
-https://www.openstreetmap.org/node/4151770161 pitch
-https://www.openstreetmap.org/node/4180555184 playground
-https://www.openstreetmap.org/node/4182732732 playground
-https://www.openstreetmap.org/node/4189263820 picnic_table
-https://www.openstreetmap.org/node/4189263821 picnic_table
-https://www.openstreetmap.org/node/4189263822 picnic_table
-https://www.openstreetmap.org/node/4189263823 picnic_table
-https://www.openstreetmap.org/node/4293123308 playground
-https://www.openstreetmap.org/node/4685052584 playground
-https://www.openstreetmap.org/node/4685110309 playground
-https://www.openstreetmap.org/node/4718460904 playground
+OSM Identifier,Place name,ulo Activity,ulo Referent,ulo Place,Website,Type of data
+osm:2388543661,Sassenpoort,ulo:Climbing,ulo:Architecture,ulo:Historic_Building,http://www.sassenpoortzwolle.nl/neem-een-kijkje-in-de-poort/,Static
+osm:2388543661,Sassenpoort,ulo:Watching,ulo:Exhibition,ulo:Historic_Building,http://www.sassenpoortzwolle.nl/neem-een-kijkje-in-de-poort/,Static
+osm:2388543661,Sassenpoort,ulo:Watching,ulo:Architecture,ulo:Historic_Building,http://www.sassenpoortzwolle.nl/neem-een-kijkje-in-de-poort/,Static
+osm:1618523998,Peperbus,ulo:Climbing,ulo:Architecture,ulo:Historic_Tower,http://www.peperbus-zwolle.nl/,Static
+osm:1618523998,Peperbus,ulo:Listening,ulo:Carrilon,ulo:Historic_Tower,http://www.peperbus-zwolle.nl/,Static
+osm:1618523998,Peperbus,ulo:Watching,ulo:Architecture,ulo:Historic_Tower,http://www.peperbus-zwolle.nl,Static
+osm:2422467852,Museum de Fundatie,ulo:Watching,ulo:Exhibition,ulo:Museum,http://www.museumdefundatie.nl/nl/museum-de-fundatie-2/,Static
+osm:2422467852,Museum de Fundatie,ulo:Watching,ulo:Architecture,ulo:Museum,http://www.museumdefundatie.nl/nl/museum-de-fundatie-2/,Static
+osm:2422467852,Museum de Fundatie,ulo:Eating,ulo:Food,ulo:Museum,http://www.museumdefundatie.nl/nl/museum-de-fundatie-2/,Static
+osm:2422467852,Museum de Fundatie,ulo:Drinking,ulo:Drinks,ulo:Museum,http://www.museumdefundatie.nl/nl/museum-de-fundatie-2/,Static
+osm:2498671422,Stedelijk Museum Zwolle,ulo:Watching,ulo:Exhibition,ulo:Museum,https://www.stedelijkmuseumzwolle.nl/zien-en-doen/tentoonstellingen,Static
+osm:2498671422,Stedelijk Museum Zwolle,ulo:Eating,ulo:Food,ulo:Museum,https://www.stedelijkmuseumzwolle.nl/plan-je-bezoek/cafe-winkel-en-tuin,Static
+osm:2498671422,Stedelijk Museum Zwolle,ulo:Drinking,ulo:Drinks,ulo:Museum,https://www.stedelijkmuseumzwolle.nl/plan-je-bezoek/cafe-winkel-en-tuin,Static
+osm:2498671422,Stedelijk Museum Zwolle,ulo:Listening,ulo:Live_Music,ulo:Museum,https://www.stedelijkmuseumzwolle.nl/plan-je-bezoek/cafe-winkel-en-tuin,Static
+osm:2498671422,Stedelijk Museum Zwolle,ulo:Shopping,ulo:Gift_Items,ulo:Museum,https://www.stedelijkmuseumzwolle.nl/plan-je-bezoek/cafe-winkel-en-tuin,Static
+osm:3996415257,Waanders in de Broeren,ulo:Shopping,ulo:Books,ulo:Bookstore,https://www.waandersindebroeren.nl/,Static
+osm:3996415257,Waanders in de Broeren,ulo:Sightseeing,ulo:Architecture,ulo:Bookstore,https://www.waandersindebroeren.nl/,Static
+osm:3996415257,Waanders in de Broeren,ulo:Shopping,ulo:Gift_Items,ulo:Bookstore,https://www.waandersindebroeren.nl/,Static
+osm:3996415257,Waanders in de Broeren,ulo:Watching,ulo:Exhibition,ulo:Bookstore,https://www.waandersindebroeren.nl,Static
+osm:3996415257,Waanders in de Broeren,ulo:Listening,ulo:Concert,ulo:Bookstore,https://www.waandersindebroeren.nl,Static
+osm:3996415258,Waanders in de Broeren Brasserie,ulo:Eating,ulo:Food,ulo:Café,https://www.waandersindebroeren.nl/eten-en-drinken/,Static
+osm:3996415258,Waanders in de Broeren Brasserie,ulo:Drinking,ulo:Drinks,ulo:Café,https://www.waandersindebroeren.nl/eten-en-drinken/,Static
+osm:2498664240,Zwolse Balletjeshuis,ulo:Shopping,ulo:Candy,ulo:Candy_Store,http://www.zwolseballetjes.nl/,Static
+osm:2498664240,Zwolse Balletjeshuis,ulo:Shopping,ulo:Gift_Items,ulo:Candy_Store,http://www.zwolseballetjes.nl/,Static
+osm:2498664240,Zwolse Balletjeshuis,ulo:Shopping,ulo:Regional_Product,ulo:Candy_Store,http://www.zwolseballetjes.nl,Static
+osm:2498664240,Zwolse Balletjeshuis,ulo:Shopping,ulo:Souvenirs,ulo:Candy_Store,http://www.zwolseballetjes.nl,Static
+osm:1333931642,De Librije,ulo:Eating,ulo:Fine_Dining,ulo:Restaurant,https://www.librije.com/eten/,Static
+osm:1333931642,De Librije,ulo:Drinking,ulo:Wine,ulo:Restaurant,https://www.librije.com/eten/,Static
+osm:1333931642,Librije's Atelier,ulo:Cooking,ulo:Cooking_Class,ulo:Restaurant,http://www.librijesatelier.nl/,Static
+osm:1333931642,Librije's Atelier,ulo:Drinking,ulo:Wine_Tasting,ulo:Restaurant,http://www.librijesatelier.nl/,Static
+osm:2763447571,Librije's Winkel,ulo:Shopping,ulo:Food,ulo:Restaurant_Store,https://www.librijeswinkel.nl/,Static
+osm:2763447571,Librije's Winkel,ulo:Shopping,ulo:Drinks,ulo:Restaurant_Store,https://www.librijeswinkel.nl,Static
+osm:2763447571,Librije's Winkel,ulo:Shopping,ulo:Books,ulo:Restaurant_Store,https://www.librijeswinkel.nl,Static
+osm:2763447571,Librije's Winkel,ulo:Shopping,ulo:Cooking_Accessoires,ulo:Restaurant_Store,https://www.librijeswinkel.nl,Static
+osmw:271001260,Grote Kerk,ulo:Sightseeing,ulo:Architecture,ulo:Church,http://www.grotekerkzwolle.nl/bezoeken/,Static
+osmw:271001260,Grote Kerk,ulo:Watching,ulo:Exhibition,ulo:Church,http://www.grotekerkzwolle.nl/bezoeken/,Static
+osmw:271001260,Grote Kerk,ulo:Shopping,ulo:Books,ulo:Book_Fair,http://www.grotekerkzwolle.nl/bezoeken/,Static
+osmw:271001260,Grote Kerk,ulo:Sitting,ulo:Worship,ulo:Church,http://www.grotekerkzwolle.nl/bezoeken/,Static
+osm:772995428,Theater de Spiegel,ulo:Watching,ulo:Show,ulo:Theatre,https://zwolsetheaters.nl/twee-theaters,Static
+osm:663044459,Schouwburg Odeon,ulo:Watching,ulo:Show,ulo:Theatre,https://zwolsetheaters.nl/twee-theaters,Static
+osm:2500428169,Hedon,ulo:Watching,ulo:Concert,ulo:Theatre,https://www.hedon-zwolle.nl/4/info,Static
+osm:2498670303,Hof van Ittersum,ulo:Sightseeing,ulo:Architecture,ulo:Historic_Building,https://www.hendrickdekeyser.nl/panddetail/372/hof_van_ittersum.html,Static
+osm:2498675279,Statenzaal,ulo:Listening,ulo:Concert,ulo:Historic_Building,https://www.hedon-zwolle.nl/statenzaal,Static
+osm:4159699609,Pathé De Kroon,ulo:Watching,ulo:Movie,ulo:Cinema,https://www.pathe.nl/artikel/2317,Static
+osmw:271002857,Plantagekerk,ulo:Sightseeing,ulo:Architecture,ulo:Church,http://plantagekerkzwolle.nl/kennismaken/plantagekerk-als-monument/,Static
+osmw:271002857,Plantagekerk,ulo:Sitting,ulo:Worship,ulo:Church,http://plantagekerkzwolle.nl/kennismaken/kom-kennismaken/,Static
+osm:2498672650,Vrouwenhuis,ulo:Watching,ulo:Exhibition,ulo:Historic_Museum,http://www.vrouwenhuiszwolle.nl,Static
+osmw:271001269,Onze Lieve Vrouw Basiliek,ulo:Watching,ulo:Architecture,ulo:Church,http://basiliek.thomasakempisparochie.nl/?page_id=515,Static
+osmw:271001269,Onze Lieve Vrouw Basiliek,ulo:Sitting,ulo:Worship,ulo:Church,http://basiliek.thomasakempisparochie.nl/?page_id=515,Static
+osm:2498664705,Stadhuis,ulo:Sightseeing,ulo:Architecture,ulo:Historic_Building,https://nl.wikipedia.org/wiki/Stadhuis_van_Zwolle,Static
+osm:2498671422,Drostenhuis,ulo:Sightseeing,ulo:Architecture,ulo:Historic_Building,https://www.stedelijkmuseumzwolle.nl/het-drostenhuis,Static
+osm:2498672709,De Witte Leeuw,ulo:Watching,ulo:Architecture,ulo:Monument_Building,https://nl.wikipedia.org/wiki/De_Witte_Leeuw,Static
+osm:2498672709,ICI PARIS XL,ulo:Shopping,ulo:Beauty_Goods,ulo:Store,https://nl.wikipedia.org/wiki/De_Witte_Leeuw,Static
+osm:1695337112,Het Witte Kruis,ulo:Watching,ulo:Architecture,ulo:Monument_Building,https://nl.wikipedia.org/wiki/Het_Witte_Kruis_(Diezerstraat),Static
+osm:1695337112,Purdey Zwolle,ulo:Shopping,ulo:Fashion,ulo:Store,https://nl.wikipedia.org/wiki/Het_Witte_Kruis_(Diezerstraat),Static
+osm:2498675108,Pelsertoren,ulo:Watching,ulo:Architecture,ulo:Monument_Building,https://www.depelsertoren.nl/,Static
+osm:2498663042,Pestengasthuis,ulo:Watching,ulo:Architecture,ulo:Monument_Building,http://www.pestengasthuys.nl/historie-2/,Static
+osm:2498663042,Pestengasthuis,ulo:Drinking,ulo:Food,ulo:Restaurant,http://www.pestengasthuys.nl/over-ons/,Static
+osmw:271003039,Synagoge van Zwolle,ulo:Watching,ulo:Architecture,ulo:Monument_Building,http://www.synagoge-zwolle.nl/index.php?pageID=17,Static
+osmw:271003039,Synagoge van Zwolle,ulo:Sitting,ulo:Worship,ulo:Church,http://www.synagoge-zwolle.nl/index.php?pageID=2,Static
+osm:2498671351,Waalse Kerk,ulo:Watching,ulo:Architecture,ulo:Monument_Building,http://www.waalsekerkzwolle.nl/,Static
+osm:2498671351,Waalse Kerk,ulo:Sitting,ulo:Worship,ulo:Church,http://www.waalsekerkzwolle.nl/,Static
+osm:2498673730,Wijndragerstoren,ulo:Watching,ulo:Architecture,ulo:Monument_Tower,https://nl.wikipedia.org/wiki/Wijndragerstoren,Static
+osm:2498673730,Café 't Beugeltje (Wijndragerstoren),ulo:Drinking,ulo:Alcoholic_Beverages,ulo:Café,https://www.leuketip.nl/steden/zwolle/horeca/cafe-t-beugeltje/558c1a1ee4b0756d6168ffb2,Static
+osm:2498670281,Witte Klavervier,ulo:Watching,ulo:Architecture,ulo:Monument_Building,https://nl.wikipedia.org/wiki/Witte_Klavervier,Static
+osm:4490868691,Het Fraterhuis,ulo:Watching,ulo:Movie,ulo:Cinema,https://www.filmtheaterfraterhuis.nl/kassa/organisatie,Static
+osmw:271001261,Cultuurschip Thor,ulo:Listening,ulo:Concert,ulo:Culture_Boat,http://www.cultuurschipthor.nl/over/,Static
+osmw:6501420,Diezerstraat,ulo:Shopping,ulo:Goods,ulo:Shopping_Street,https://nl.wikipedia.org/wiki/Diezerstraat_(Zwolle),Static
+osmw:6501547,Sassenstraat,ulo:Shopping,ulo:Goods,ulo:Shopping_Street,https://indebuurt.nl/zwolle/winkelen/shoppen-dan-ga-naar-sassenstraat-zwolle~1395/,Static
+osmw:6503906,Melkmarkt,ulo:Shopping,ulo:Goods,ulo:Market,https://www.zwolle.nl/vrije-tijd/winkelen/markten/markttijden-en-marktplaatsen,Static
+osmw:59406503,Grote Kerkplein,ulo:Shopping,ulo:Goods,ulo:Market,https://www.zwolle.nl/vrije-tijd/winkelen/markten/markttijden-en-marktplaatsen,Static
+osmw:390490289,Grote Markt,ulo:Shopping,ulo:Goods,ulo:Market,https://www.zwolle.nl/vrije-tijd/winkelen/markten/markttijden-en-marktplaatsen,Static
+osm:1695337062,Stadkamer,ulo:Reading,ulo:Books,ulo:Library,http://www.stadkamer.nl/,Static
+osm:1695337062,Stadkamer,ulo:Watching,ulo:Cultural_Events,ulo:Library,http://www.stadkamer.nl/,Static
+osmw:493762852,Passantenhaven Maagjesbolwerk,ulo:Sailing,ulo:Boat,ulo:Harbour,https://www.zwolle.nl/vrije-tijd/sport-en-recreatie/watersport/passantenhavens-en-brugbediening,Static
+osmw:51931431,Park de Wezenlanden,ulo:Dancing,ulo:Festival,ulo:Park,https://nl.wikipedia.org/wiki/Park_de_Wezenlanden,Static
+osmw:51931431,Park de Wezenlanden,ulo:Strolling,ulo:Footpath,ulo:Park,https://nl.wikipedia.org/wiki/Park_de_Wezenlanden,Static
+osmw:51931431,Park de Wezenlanden,ulo:Sporting,ulo:Sport_Field,ulo:Park,https://nl.wikipedia.org/wiki/Park_de_Wezenlanden,Static
+osmw:51931431,Park de Wezenlanden,ulo:Relaxing,ulo:Grass,ulo:Park,https://nl.wikipedia.org/wiki/Park_de_Wezenlanden,Static
+osm:2882074165,Kinderboerderij Wezenlandenpark,ulo:Watching,ulo:Animals,ulo:Childrens_Farm,http://www.kinderboerderijenzwolle.nl/kinderboerderij-wezenlanden/,Static
+osmw:59411661,Broerenkerkplein,ulo:Watching,ulo:Festival,ulo:Square,http://www.zwolleunlimited.nl/info/over-ons/,Static
+osmw:353398382,De Verhalenboot,ulo:Watch,ulo:Cultural_Events,ulo:Culture_Boat,http://www.deverhalenboot.nl/festival/,Static
+osmw:148781759,Ter Pelkwijkpark,ulo:Eating,ulo:Food_Trucks,ulo:Park,http://lepeltje-lepeltje.com/zwolle/,Static
+osmw:148781759,Ter Pelkwijkpark,ulo:Relaxing,ulo:Grass,ulo:Park,https://nl.wikipedia.org/wiki/Ter_Pelkwijkpark,Static
+osmw:148781759,Ter Pelkwijkpark,ulo:Strolling,ulo:Footpath,ulo:Park,https://nl.wikipedia.org/wiki/Ter_Pelkwijkpark,Static
+osm:1618524031,Monument voor de gevallenen 1940-1945,ulo:Sightseeing,ulo:Monument,ulo:Park,https://nl.wikipedia.org/wiki/Oorlogsmonument_Zwolle,Static
+osmw:59406503,Grote Kerkplein,ulo:Drinking,ulo:Wine_Tasting,ulo:Festival,http://www.zwolletouristinfo.nl/Evenement/13915/Zwolle/wijnfestival-zwolle/grote-kerkplein-zwolle/04-06-17,Static
+osm:2498664463,Brasserie Jansen,ulo:Eating,ulo:Food,ulo:Restaurant,http://www.brasseriejansen.com/over-ons,Static
+osm:2498664463,Brasserie Jansen,ulo:Sitting,ulo:Terrace,ulo:Restaurant,http://www.brasseriejansen.com/over-ons,Static
+osm:2498667805,Grand Café Public,ulo:Eating,ulo:Food,ulo:Restaurant,http://www.zwolletouristinfo.nl/Evenement/4321/Zwolle/grand-cafe-public/location/29-08-13,Static
+osm:2498667805,Grand Café Public,ulo:Listening,ulo:Live_Music,ulo:Restaurant,http://www.zwolletouristinfo.nl/Evenement/4321/Zwolle/grand-cafe-public/location/29-08-13,Static
+osm:2498676443,Bapas Zwolle,ulo:Eating,ulo:Food,ulo:Restaurant,http://www.bapaszwolle.nl/over-bapas/,Static
+osm:2498676443,Bapas,ulo:Drinking,ulo:Speciality_Beer,ulo:Restaurant,http://www.bapaszwolle.nl/over-bapas/,Static
+osm:2498676382,Le Perron,ulo:Eating,ulo:Bread,ulo:Bakery,http://www.zwolletouristinfo.nl/Evenement/6864/Zwolle/le-perron/location/01-01-01,Static
+osm:1715144093,De Belgische Keizer,ulo:Eating,ulo:Belgian_Cuisine,ulo:Restaurant,https://www.belgischekeizer.nl/,Static
+osm:1715144093,De Belgische Keizer,ulo:Drinking,ulo:Belgian_Beer,ulo:Restaurant,https://www.belgischekeizer.nl/,Static
+osm:2498663800,La Meridiana,ulo:Eating,ulo:Italian_Cuisine,ulo:Restaurant,http://www.lameridiana.nl/bedrijf/,Static
+osm:2498671335,De Mandarijn,ulo:Eating,ulo:Biological_Food,ulo:Restaurant,https://demandarijn.nl/,Static
+osm:1715140558,Da Nini,ulo:Eating,ulo:Italian_Cuisine,ulo:Restaurant,http://www.danini.nl/?page_id=23,Static
+osm:2498672458,Kota Radja,ulo:Eating,ulo:Asian_Cuisine,ulo:Restaurant,http://www.kotaradjazwolle.nl/,Static
+osm:2498664723,Vidiveni Bistronomie,ulo:Eating,ulo:Food,ulo:Restaurant,https://www.vidiveni.nl/,Static
+osm:2498674516,Het Wijnhuis,ulo:Drinking,ulo:Wine,ulo:Bar,http://www.wijnhuiszwolle.nl/over.html,Static
+osm:2498664723,Mizu,ulo:Eating,ulo:Food,ulo:Restaurant,http://www.mizuzwolle.nl/welkom/,Static
+osm:2498664723,Mizu,ulo:Sitting,ulo:Terrace,ulo:Restaurant,http://www.mizuzwolle.nl/welkom/,Static
+osm:2498663652,Las Rosas,ulo:Eating,ulo:Tapas,ulo:Restaurant,http://www.lasrosas.nl/,Static
+osm:2498663537,Vito's,ulo:Eating,ulo:Sandwich,ulo:Restaurant,http://www.vitos.nl/kees-carine/,Static
+osm:2498674475,Bonbonnerie Borrel,ulo:Cooking,ulo:Chocolate,ulo:Chocolate_Shop,http://bonbonnerieborrel.nl/workshops/,Static
+osm:2498669860,Bay Yok,ulo:Eating,ulo:Thai_Cuisine,ulo:Restaurant,http://www.baiyok.nl/,Static
+osm:2498665435,De Beurs,ulo:Sitting,ulo:Terrace,ulo:Café,http://debeurszwolle.nl/,Static
+osm:2498665435,De Beurs,ulo:Eating,ulo:Lunch,ulo:Café,http://debeurszwolle.nl/,Static
+osm:3245736933,Stadscafé Blij,ulo:Eating,ulo:Food,ulo:Restaurant,http://www.blijzwolle.nl/,Static
+osm:3245736933,Stadscafé Blij,ulo:Dancing,ulo:Party,ulo:Restaurant,http://www.blijzwolle.nl/,Static
+osm:2498667242,Bistro De Zoete Inval,ulo:Eating,ulo:Food,ulo:Restaurant,http://www.bistrodezoeteinval.nl/,Static
+osm:2498676432,Pistache,ulo:Shopping,ulo:Fashion,ulo:Mix_Store,http://www.pistache-zwolle.nl/winkel-new/,Static
+osm:4249345810,Pistache,ulo:Shopping,ulo:Lifestyle,ulo:Mix_Store,http://www.pistache-zwolle.nl/winkel-new/,Static
+osm:4249345810,Pistache,ulo:Shopping,ulo:Gadgets,ulo:Mix_Store,http://www.pistache-zwolle.nl/winkel-new/,Static
+osm:4249345810,Pistache,ulo:Drinking,ulo:Coffee,ulo:Coffee_Bar,http://www.pistache-zwolle.nl/koffie-lunch-new/,Static
+osm:4249345810,Pistache,ulo:Eating,ulo:Sandwich,ulo:Coffee_Bar,http://www.pistache-zwolle.nl/koffie-lunch-new/,Static
+osm:2498672620,Kletsen en Proeven Bar & Bistro,ulo:Eating,ulo:Food,ulo:Restaurant,https://www.kletsenenproeven.nl/,Static
+osm:2498672620,Kletsen en Proeven Bar & Bistro,ulo:Drinking,ulo:Speciality_Beer,ulo:Restaurant,https://www.kletsenenproeven.nl/,Static
+osm:2498672620,Kletsen en Proeven Bar & Bistro,ulo:Playing,ulo:Escape_Game,ulo:Restaurant,https://www.kletsenenproeven.nl/arrangementen/escape-room/,Static
+osm:2498670356,Blue Sakura,ulo:Eating,ulo:Sushi,ulo:Restaurant,https://www.bluesakura.nl/over-ons/,Static
+osm:2498663853,McDonald's,ulo:Eating,ulo:Fast_Food,ulo:Restaurant,http://mcdonaldsrestaurant.nl/heerde-kampen-zwolle/restaurants/mcdonalds-zwolle-centrum,Static
+osm:1750866698,Taiwan,ulo:Eating,ulo:Chinese_Cuisine,ulo:Restaurant,http://www.restauranttaiwan.nl/index.htm,Static
+osm:2498673192,In De Buurt,ulo:Drinking,ulo:Beer,ulo:Bar,http://www.jebentindebuurt.nl/,Static
+osm:2498673192,In De Buurt,ulo:Relaxing,ulo:Terrace,ulo:Bar,http://www.jebentindebuurt.nl/,Static
+osm:2498673983,Restaurant Poppe,ulo:Eating,ulo:French_Cuisine,ulo:Restaurant,http://www.poppezwolle.nl/,Static
+osm:2498665298,Villa Suikerberg,ulo:Drinking,ulo:Coffee,ulo:Restaurant,http://www.villasuikerberg.nl/,Static
+osm:2498665298,Villa Suikerberg,ulo:Eating,ulo:Lunch,ulo:Restaurant,http://www.villasuikerberg.nl/,Static
+osm:2498665298,Villa Suikerberg,ulo:Sitting,ulo:Terrace,ulo:Restaurant,http://www.villasuikerberg.nl/,Static
+osm:2498672431,Bistro Bonne Femme,ulo:Eating,ulo:Food,ulo:Restaurant,http://bistrobonnefemme.nl/overons,Static
+osm:2498672431,Bistro Bonne Femme,ulo:Drinking,ulo:Speciality_Beer,ulo:Restaurant,http://bistrobonnefemme.nl/overons,Static
+osm:2498674627,Restaurant Os en Peper,ulo:Eating,ulo:French_Cuisine,ulo:Restaurant,http://www.osenpeper.nl/,Static
+osm:2498667834,Cafe the Livingroom,ulo:Listening,ulo:Live_Music,ulo:Pub,http://thelivingroomzwolle.nl/,Static
+osm:2498667834,Cafe the Livingroom,ulo:Eating,ulo:Food,ulo:Pub,http://thelivingroomzwolle.nl/,Static
+osm:2498673001,Van Orsouw,ulo:Eating,ulo:Pastry,ulo:Pastry_Store,http://banketbakkervanorsouw.nl/about_us,Static
+osm:2498673001,Van Orsouw,ulo:Drinking,ulo:Coffee,ulo:Pastry_Store,http://banketbakkervanorsouw.nl/about_us,Static
+osm:2498673001,Van Orsouw,ulo:Sitting,ulo:Terrace,ulo:Pastry_Store,http://banketbakkervanorsouw.nl/about_us,Static
+osm:2498663504,Café De Gezelligheid,ulo:Drinking,ulo:Speciality_Beer,ulo:Pub,http://www.cafedegezelligheid.nl/info,Static
+osm:3139858784,Restaurant Michelangelo,ulo:Eating,ulo:Italian_Cuisine,ulo:Restaurant,http://www.ristorantemichelangelo.nl/het-restaurant/,Static
+osm:2498667922,Bar & Brood,ulo:Eating,ulo:Sandwich,ulo:Restaurant,http://www.barenbrood.nl/,Static
+osm:2343818526,Tosti World,ulo:Eating,ulo:Tosti,ulo:Fast_Food_Restaurant,http://www.zwolletouristinfo.nl/Evenement/4442/Zwolle/tosti-world/location/29-08-13,Static
+osm:2498672671,La Cucaracha,ulo:Eating,ulo:Mexican_Cuisine,ulo:Restaurant,https://cucaracha.nl/,Static
+osm:2498669791,Het Proeflokaal,ulo:Drinking,ulo:Alcholic_Beverages,ulo:Pub,http://pfk.nl/,Static
+osm:2498662986,Soort van Winkel,ulo:Shopping,ulo:Art,ulo:Art_Store,http://www.soortvanwinkel.nl/p-217541/wie-zijn-wij,Static
+osm:3328804473,t Konkeltje,ulo:Shopping,ulo:Coffee,ulo:Café,http://www.konkeltje.nl/konkeltje,Static
+osm:3328804473,t Konkeltje,ulo:Shopping,ulo:Tea,ulo:Café,http://www.konkeltje.nl/konkeltje,Static
+osm:3328804473,t Konkeltje,ulo:Drinking,ulo:Coffee,ulo:Café,http://www.konkeltje.nl/konkeltje,Static
+osm:3328804473,t Konkeltje,ulo:Shopping,ulo:Chocolate,ulo:Café,http://www.konkeltje.nl/konkeltje,Static
+osm:3328804473,t Konkeltje,ulo:Shopping,ulo:Gift_Items,ulo:Café,http://www.konkeltje.nl/konkeltje,Static
+osm:2498671343,Atelierwinkel Bijzonder-Heden,ulo:Shopping,ulo:Art,ulo:Atelier_Store,http://www.bijzonder-heden.nl/,Static
+osm:2498671343,Atelierwinkel Bijzonder-Heden,ulo:Shopping,ulo:Accessoires,ulo:Atelier_Store,http://www.bijzonder-heden.nl/,Static
+osm:2498674909,Renaissance Giclées,ulo:Shopping,ulo:Art,ulo:Art_Store,https://letableau-zwolle.nl/,Static

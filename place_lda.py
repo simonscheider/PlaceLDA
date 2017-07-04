@@ -23,7 +23,7 @@ import csv
 import os
 #sys.path.append(os.getcwd())
 import placewebscraper
-from googleplaces import GooglePlaces, types, lang
+from googleplaces import GooglePlaces, types, lang, GooglePlacesError
 #from geopy.geocoders import Nominatim
 import json
 
@@ -94,19 +94,25 @@ def getOSMInfo(osmid, elementtype='node'):
 
     # We can also see a node's metadata:
     osm = {}
-    result = api.query((elementtype+"({}); out;").format(osmid))
+    try:
+        result = api.query((elementtype+"({}); out;").format(osmid))
 
 
 
-    if elementtype == 'node':
-        res = result.get_node(osmid)
-        osm['lat'] = res.lat
-        osm['lon'] = res.lon
-    elif elementtype == 'way':
-        res = result.get_way(osmid)
-        c = getCentroid(res.get_nodes(resolve_missing=True))
-        osm['lat']=c[0]
-        osm['lon']=c[0]
+        if elementtype == 'node':
+            res = result.get_node(osmid,resolve_missing=True)
+            osm['lat'] = res.lat
+            osm['lon'] = res.lon
+        elif elementtype == 'way':
+            res = result.get_way(osmid,resolve_missing=True)
+            c = getCentroid(res.get_nodes(resolve_missing=True))
+            osm['lat']=c[0]
+            osm['lon']=c[0]
+
+    except overpy.exception.DataIncomplete as error_detail:
+    # You've passed in parameter values that the Places API doesn't like..
+        print(error_detail)
+        return None
 
     #print(res.attributes)
     if 'name' in res.tags:
@@ -131,28 +137,52 @@ def getOSMInfo(osmid, elementtype='node'):
 
 
 
-def enrichOSM(osmid,elementtype):
+def enrichOSM(osmid,elementtype,website=None):
+    osmid = int(osmid)
     import re
     print('enrich: '+elementtype+' '+str(osmid))
     enriched = {}
-    osm = getOSMInfo(osmid, elementtype)
+    #Print(Putting computer to sleep for 10 to 40 seconds after each request:
+    from random import randint
+    from time import sleep
+    sleep(randint(10,30))
+
+    #First get the text from the website
+    if (website!=None):
+        wt = placewebscraper.scrape(website)
+        if wt !=None:
+            enriched['webtext']= wt['text']
+            enriched['webtitle'] = wt['title']
+        enriched['website']=website
+    #Get additonal OSM info
+    osm = getOSMInfo(osmid, os.path.basename(elementtype))
     if osm == None:
-        return None
+        return enriched
     #print(osm)
     enriched['name']= osm['name']
     print(osm['name'])
     enriched['osmtype']='|'.join(sorted(osm['keys']))
     place = matchtoGoogleP(osm['name'],osm['lat'],osm['lon'])
     if place == None:
-        return None
+        return enriched
+    try:
+        place.get_details()
+    except GooglePlacesError as error_detail:
+    # You've passed in parameter values that the Places API doesn't like..
+        #print(error_detail)
+        return enriched
+
     enriched['GoogleId'] = place.place_id
     #print(place.details)
+    #This is the webiste delivered as input to the funtion
+
+    #This is the google website
     if place.website != None:
         wt = placewebscraper.scrape(place.website)
         if wt !=None:
-            enriched['webtext']= wt['text']
-            enriched['webtitle'] = wt['title']
-        enriched['website']=place.website
+            enriched['gwebtext']= wt['text']
+            enriched['gwebtitle'] = wt['title']
+        enriched['gwebsite']=place.website
     enriched['googletype'] ='|'.join(sorted(place.types))
     #print place.details['opening_hours']
     #print place.details['reviews']
@@ -168,23 +198,50 @@ def constructTrainingData(filename):
     from pprint import pprint
     td = {}
     with open(filename, 'rb') as csvfile:
-        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
         import json
         out = (os.path.splitext(os.path.basename(filename))[0][:9])+'_train.json'
-        with open(out, 'w') as fp:
-            for line in reader:
+        rr = {}
+        for line in reader:
                 #line = line.rstrip('\r\n').split("\t")
-                osmid = int(os.path.basename(line[0]))
-                elementtype = (os.path.basename(os.path.dirname(line[0])))
-                en = enrichOSM(osmid,elementtype)
-                if en != None:
-                    en['class']=line[1]
-                    td[line[0]] = en
-                    print("number of successul enrichments: "+str(len(td)))
-                    fp.seek(0)
-                    json.dump(td, fp)
+                if line[0]!='OSM Identifier':
+                    osmid = line[0].split(':')[1]
+                    #osmid = int(os.path.basename(line[0]))
+                    #elementtype = (os.path.basename(os.path.dirname(line[0])))
+                    if (line[0].split(':')[0]== 'osm'):
+                        elementtype = 'https://www.openstreetmap.org/node'
+                    elif (line[0].split(':')[0]== 'osmw'):
+                        elementtype = 'https://www.openstreetmap.org/way'
+                    else:
+                        print("Error: not node or way!")
+                        break
+                    #Fishes out activity and referent and combines them
+                    classstr = '|'.join([line[2],line[3]])
+                    d = {'osmid': osmid, 'class': classstr,'elementtype':elementtype,  'website':line[5]}
+                    if line[0] in rr.keys():
+                        rr[line[0]].append(d)
+                    else:
+                        rr[line[0]] = [d]
 
 
+        with open(out, 'w') as fp:
+            for k,v in rr.items():
+                    osmid = v[0]['osmid']
+                    website = v[0]['website']
+                    elementtype = v[0]['elementtype']
+                    en = enrichOSM(osmid,elementtype,website)
+                    if en != None:
+                       for i in v:
+                        enn = en.copy()
+                        enn['class']=i['class']
+                        print(i['class'])
+                        enn['website'] = i['website']
+                        td[k+'|'+i['class']] = enn
+                        print("number of successul enrichments: "+str(len(td)))
+                        fp.seek(0)
+                        json.dump(td, fp)
+        fp.close()
+    csvfile.close()
     #pprint(td)
 
 
@@ -202,8 +259,11 @@ def trainLDA(jsonfile, textkey, language='dutch'):
                 texts.append(d[k][textkey])
                 titles.append(d[k]['name'])
                 classes.append(d[k]['class'])
-                array = [d[k]['osmtype'],d[k]['googletype']]
-                features.append([])
+                #array = [,]
+                dic = {}
+                #dic['osmtype'] =d[k]['osmtype']
+                dic['googletype'] = d[k]['googletype']
+                features.append(dic)
                 #features.append(array)
     json_data.close
     #texts = [NLPclean(t) for t in texts]
@@ -232,12 +292,17 @@ def trainLDA(jsonfile, textkey, language='dutch'):
     #print(doc_topic_test)
     i = 0
     for title, topics in zip(titles, doc_topic_test):
+        title =title.encode('utf-8')
         print("{} (top topic: {})".format(title, topics.argmax()))
-        features[i].extend(topics)
+        f = features[i]
+        j = 0
+        for t in topics:
+            f['topic '+str(j)]= t
+            j +=1
         i+=1
     print(features)
-    print(classes)
-    return (titles, doc_topic_test, classes,features)
+    #print(classes)
+    return (titles, classes,features)
 
 def classify(topicmodel):
     from sklearn.model_selection import train_test_split
@@ -254,6 +319,9 @@ def classify(topicmodel):
     from sklearn.model_selection import cross_val_score
     from sklearn.metrics import confusion_matrix
     from sklearn.linear_model import LogisticRegression
+     #This is used to deal with categorial input
+    from sklearn.feature_extraction import DictVectorizer
+
 
     h = .02  # step size in the mesh
 
@@ -273,8 +341,12 @@ def classify(topicmodel):
         AdaBoostClassifier(),
         GaussianNB()]
 
-    X = topicmodel[3]
-    y = topicmodel[2]
+    measurements = topicmodel[2]
+    vec = DictVectorizer()
+    X = vec.fit_transform(measurements).toarray()
+    print(vec.get_feature_names())
+    #print(X)
+    y = topicmodel[1]
     #print(X)
     #print(y)
     #X = StandardScaler().fit_transform(X)
@@ -398,8 +470,8 @@ def getOSMfeatures(cat):
         else:
             OSMelem ="node"
 
-        #bbox ="50.600, 7.100, 50.748, 7.157"
-        bbox = "52.06000, 5.122661, 52.3, 5.1847" #Lombok
+        bbox ="50.600, 7.100, 50.848, 7.197"
+        #bbox = "52.06000, 5.122661, 52.3, 5.1847" #Lombok
 
 
         #bbox = ", ".join(self.listtoString(self.getCurrentBBinWGS84()))#"50.600, 7.100, 50.748, 7.157"
@@ -434,10 +506,10 @@ if __name__ == '__main__':
 ##    osmid = 266614887
 ##    enrichOSM(osmid,'way')
     #getOSMfeatures('leisure')
-    #constructTrainingData('training.csv')
+    constructTrainingData('training.csv')
     #topicmodel = trainLDA('training_train.json', 'reviewtext')
-    topicmodel = trainLDA('training_train.json', 'webtext')
-    classify(topicmodel)
+    #topicmodel = trainLDA('training_train.json', 'webtext')
+    #classify(topicmodel)
 
 
 
