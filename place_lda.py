@@ -27,6 +27,9 @@ from googleplaces import GooglePlaces, types, lang, GooglePlacesError
 #from geopy.geocoders import Nominatim
 import json
 
+from random import randint
+from time import sleep
+
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -87,17 +90,22 @@ def getCentroid(nodes):
     centroid_y = sum(y_coords)/_len
     return (centroid_x, centroid_y)
 
+keysofinterest = ['shop', 'amenity', 'leisure', 'tourism', 'historic', 'man_made', 'tower', 'cuisine', 'clothes', 'tower', 'beer', 'highway', 'surface', 'place', 'building']
+
 def getOSMInfo(osmid, elementtype='node'):
-    keysofinterest = ['shop', 'amenity', 'leisure', 'tourism', 'historic', 'man_made']
+
     api = overpy.Overpass()
     #geolocator = Nominatim()
 
     # We can also see a node's metadata:
     osm = {}
     try:
-        result = api.query((elementtype+"({}); out;").format(osmid))
-
-
+        try:
+            result = api.query((elementtype+"({}); out;").format(osmid))
+        except overpy.exception.OverpassGatewayTimeout as error_detail:
+            print(error_detail)
+            sleep(20)
+            result = api.query((elementtype+"({}); out;").format(osmid))
 
         if elementtype == 'node':
             res = result.get_node(osmid,resolve_missing=True)
@@ -113,6 +121,10 @@ def getOSMInfo(osmid, elementtype='node'):
     # You've passed in parameter values that the Places API doesn't like..
         print(error_detail)
         return None
+    except overpy.exception.OverpassGatewayTimeout as error_detail:
+        print(error_detail)
+        return None
+
 
     #print(res.attributes)
     if 'name' in res.tags:
@@ -120,9 +132,10 @@ def getOSMInfo(osmid, elementtype='node'):
         osm['keys'] = []
         #location = geolocator.reverse(osmid)
         #print(location.address)
-        for k in keysofinterest:
-            if k in res.tags.keys():
-                osm['keys'].append(k +':'+res.tags[k])
+        #for k in keysofinterest:
+        for k,v in res.tags.items():
+                if k in keysofinterest:
+                    osm[k]= v
         if 'website' in res.tags.keys():
                 osm['website'] = res.tags['website']
         if 'opening_hours' in res.tags.keys():
@@ -143,9 +156,8 @@ def enrichOSM(osmid,elementtype,website=None):
     print('enrich: '+elementtype+' '+str(osmid))
     enriched = {}
     #Print(Putting computer to sleep for 10 to 40 seconds after each request:
-    from random import randint
-    from time import sleep
-    sleep(randint(10,30))
+
+    sleep(randint(3,6))
 
     #First get the text from the website
     if (website!=None):
@@ -161,7 +173,14 @@ def enrichOSM(osmid,elementtype,website=None):
     #print(osm)
     enriched['name']= osm['name']
     print(osm['name'])
-    enriched['osmtype']='|'.join(sorted(osm['keys']))
+    for k in keysofinterest:
+        if k in osm.keys():
+            enriched[k]=osm[k]
+        else:
+            enriched[k] = 'No'
+    #enriched['osmtype']='|'.join(sorted(osm['keys']))
+    enriched['lat']=str(osm['lat'])
+    enriched['lon']=str(osm['lon'])
     place = matchtoGoogleP(osm['name'],osm['lat'],osm['lon'])
     if place == None:
         return enriched
@@ -217,7 +236,8 @@ def constructTrainingData(filename):
                         break
                     #Fishes out activity and referent and combines them
                     classstr = '|'.join([line[2],line[3]])
-                    d = {'osmid': osmid, 'class': classstr,'elementtype':elementtype,  'website':line[5]}
+                    name = line[1].decode('unicode_escape').encode('utf-8')
+                    d = {'osmid': osmid, 'class': classstr,'elementtype':elementtype,  'website':line[5], 'name':name}
                     if line[0] in rr.keys():
                         rr[line[0]].append(d)
                     else:
@@ -233,6 +253,8 @@ def constructTrainingData(filename):
                     if en != None:
                        for i in v:
                         enn = en.copy()
+                        enn['osmid'] = k
+                        enn['name'] = i['name']
                         enn['class']=i['class']
                         print(i['class'])
                         enn['website'] = i['website']
@@ -245,26 +267,53 @@ def constructTrainingData(filename):
     #pprint(td)
 
 
-def trainLDA(jsonfile, textkey, language='dutch'):
+def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True, singleclass=False):
     texts = []
     titles = []
     classes = []
     features = []
 
+    #testclasses = ['ulo:Eating|ulo:Food']
     with open(jsonfile) as json_data:
         d = json.load(json_data)
+        listofosmids = []
         #print(d)
         for k in d:
-            if textkey in (d[k]).keys():
-                texts.append(d[k][textkey])
+          #take only a single class fo reach osm id
+          if singleclass == False or not ( d[k]['osmid'] in listofosmids):
+            gtext = ''
+            wtext = ''
+            if textkey2 in (d[k]).keys():
+                gtext =d[k][textkey2]
+            if textkey in (d[k]).keys():# and 'googletype' in (d[k]).keys():
+                wtext =d[k][textkey]
+            if 'reviewtext' in (d[k]).keys():
+                rtext =d[k]['reviewtext']
+            text = (wtext if wtext !='' else ( gtext if gtext != '' else ''))
+            if text != '':
+                listofosmids.append(d[k]['osmid'])
+                texts.append(text)
                 titles.append(d[k]['name'])
-                classes.append(d[k]['class'])
+                #if d[k]['class'] in testclasses:
+                cl = d[k]['class'].split('|')[0]
+                #cl = d[k]['class']
+                classes.append(cl)
+                #else:
+                #    classes.append('No')
                 #array = [,]
                 dic = {}
                 #dic['osmtype'] =d[k]['osmtype']
-                dic['googletype'] = d[k]['googletype']
+                if usetypes == True:
+                    dic['googletype'] =d[k]['googletype']
+##                    for typekey in keysofinterest:
+##                        if typekey in (d[k]).keys():
+##                            dic[typekey] = d[k][typekey]
+##                        else:
+##                            dic[typekey] = 'No'
                 features.append(dic)
                 #features.append(array)
+
+
     json_data.close
     #texts = [NLPclean(t) for t in texts]
     #print(zip(titles,texts))
@@ -273,7 +322,7 @@ def trainLDA(jsonfile, textkey, language='dutch'):
     #print(X)
     vocab = vectorizer.get_feature_names()
     print(vocab)
-    model = lda.LDA(n_topics=10, n_iter=1500, random_state=1)
+    model = lda.LDA(n_topics=18, n_iter=500, random_state=300)
     model.fit(X)
     topic_word = model.topic_word_
     #print("type(topic_word): {}".format(type(topic_word)))
@@ -296,11 +345,14 @@ def trainLDA(jsonfile, textkey, language='dutch'):
         print("{} (top topic: {})".format(title, topics.argmax()))
         f = features[i]
         j = 0
-        for t in topics:
-            f['topic '+str(j)]= t
-            j +=1
+        if usetopics ==True:
+            for t in topics:
+                f['topic '+str(j)]= t
+                j +=1
         i+=1
-    print(features)
+    print("Number of instances (features): "+str(len(features)))
+    print("Number of instances (classes): "+str(len(classes)))
+    #print(features)
     #print(classes)
     return (titles, classes,features)
 
@@ -331,9 +383,9 @@ def classify(topicmodel):
 
     classifiers = [
         LogisticRegression(C=1e5),
-        KNeighborsClassifier(3),
+        KNeighborsClassifier(5),
         SVC(kernel="linear", C=0.025),
-        SVC(gamma=2, C=1),
+        SVC(kernel='rbf',gamma=2, C=1),
         GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True),
         DecisionTreeClassifier(max_depth=5),
         RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1),
@@ -351,25 +403,33 @@ def classify(topicmodel):
     #print(y)
     #X = StandardScaler().fit_transform(X)
     X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=.2, random_state=42)
+        train_test_split(X, y, test_size=.1, random_state=42)
 
     #Naive model (majority vote)
-    from collections import Counter
-    bc = Counter(y).most_common(1)[0]
-    print(bc)
-    naiveaccuracy = bc[1]/len(y)
-    print('naiveaccuracy; '+str(naiveaccuracy))
+    from sklearn.dummy import DummyClassifier
+    clf = DummyClassifier(strategy='most_frequent',random_state=10)
+    clf.fit(X_train, y_train)
+    dummyscores = cross_val_score(clf,X,y,cv=10, scoring='accuracy')
+    dummyprescores = cross_val_score(clf,X,y,cv=10, scoring='precision_weighted')
+
+    print('naive classifier (most frequent class): accuracy : '+str(dummyscores.mean())+ ' weighted precision : ' +str(dummyprescores.mean()))
+
     classes = list(set(y))
     print(classes)
+
      # iterate over classifiers
     for name, clf in zip(names, classifiers):
         #ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
         #clf.fit(X_train, y_train)
-        scores = cross_val_score(clf,X,y,cv=5)#,scoring='f1_macro')
+        #f1scores = cross_val_score(clf,X,y,cv=10, scoring='f1_weighted')
+        accscores = cross_val_score(clf,X,y,cv=10, scoring='accuracy')
+        pscores = cross_val_score(clf,X,y,cv=10, scoring='precision_weighted')
 
         #score = clf.score(X_test, y_test)
         #print('classifier: '+name+' score: '+str(score))
-        print("CV accuracy {}: {} (+/- {})".format(name,scores.mean(), scores.std()))
+        print("CV {} accuracy: {} (+/- {}) weighted precision {}".format(name,accscores.mean(), accscores.std(),pscores.mean()))
+        #print("CV F1 weighted {}: {} (+/- {})".format(name,f1scores.mean(), f1scores.std()))
+
 
 
         #scoretr = clf.score(X_train, y_train)
@@ -378,12 +438,13 @@ def classify(topicmodel):
         # Compute confusion matrix
         cnf_matrix = confusion_matrix(y, y_pred,labels=classes)
         np.set_printoptions(precision=2)
+        #print(cnf_matrix)
 
         # Plot non-normalized confusion matrix
-        plt.figure()
+        #plt.figure()
 
-        plot_confusion_matrix(cnf_matrix, classes=classes,
-                      title='Confusion matrix for '+name)
+        #plot_confusion_matrix(cnf_matrix, classes=classes,
+        #              title='Confusion matrix for '+name)
 
 
 def plot_confusion_matrix(cm, classes,
@@ -506,10 +567,11 @@ if __name__ == '__main__':
 ##    osmid = 266614887
 ##    enrichOSM(osmid,'way')
     #getOSMfeatures('leisure')
-    constructTrainingData('training.csv')
-    #topicmodel = trainLDA('training_train.json', 'reviewtext')
-    #topicmodel = trainLDA('training_train.json', 'webtext')
-    #classify(topicmodel)
+    #constructTrainingData('training.csv')
+    #topicmodel = trainLDA('training_train.json', 'reviewtext', language='english', usetypes=False, singleclass = True)
+    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=False, singleclass = False)
+    #topicmodel = trainLDA('training_train.json', 'gwebtext', language='dutch', usetypes=False, singleclass = True)
+    classify(topicmodel)
 
 
 
