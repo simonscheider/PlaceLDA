@@ -1,50 +1,94 @@
 #-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
+# Name:        Place Topic Modeller
+# Purpose:     This program can be used to:
+#               - (constructTrainingData()): extract, for a list of places (identified by OSM ids) given in a csv file,
+#                the webtexts from corresponding websites (given as input) and social media posts (Google places, automatically linked)
+#               - (trainLDA()): Build a topic model (with Latent Dirichlet Allocation) from these webtexts and put topics together with
+#               place tags (OSM, Google) into feature vectors for data mining
+#               - (classify()): Run and test different classifiers on these features to predict a given class label that stands for explicit predefined
+#               topics (e.g. place types or activities at places).
 #
-# Author:      simon scheider
+# Author:      Simon Scheider
 #
 # Created:     19/01/2017
 # Copyright:   (c) simon 2017
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
-
 from __future__ import division, print_function
+#Libraries:
 
+#Numpy and matplotlib:
 import numpy as np
 import matplotlib.pyplot as plt
-import itertools
+
+#This connects to the Open Street Map API Overpass
 import overpy
-import string
-import lda
-import lda.datasets
-import sys
-import csv
-import os
-#sys.path.append(os.getcwd())
-import placewebscraper
+#This is the Google places API
 from googleplaces import GooglePlaces, types, lang, GooglePlacesError
-#from geopy.geocoders import Nominatim
-import json
 
-from random import randint
-from time import sleep
+#This is a webscraper I use as an external tool (loaded as file in the same folder)
+#import placewebscraper
 
+#This is the LDA Python library for topic modeling
+import lda
 
+#Use NLTK for preprocessing webtexts
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+from nltk.stem.snowball import DutchStemmer
+
+#Machine Learning classifiers (scikit learn)
+#Scikit learn preprocessing
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import Normalizer
 from sklearn import metrics
-from sklearn.cluster import KMeans, MiniBatchKMeans
-#import pandas as pd
-import nltk
-from nltk.corpus import stopwords
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import confusion_matrix
+from sklearn.dummy import DummyClassifier
+#This is used to deal with categorial input instead of numerical
+from sklearn.feature_extraction import DictVectorizer
+#These are the classifiers used
+from sklearn.neural_network import MLPClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.gaussian_process import GaussianProcessClassifier
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.naive_bayes import GaussianNB
+#from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+from sklearn.linear_model import LogisticRegression
+
+
+#Non-essential libraries:
+
+import string
+import itertools
+import sys
+import csv
+import os
+import json
+from random import randint
+from time import sleep
+
+import re
 
 
 
+
+
+
+
+
+
+#This the Google key that I use
 YOUR_API_KEY = 'AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8'
 
 def matchtoGoogleP(placename,lat, lng):
+    """ Method matches a placename and its coordinates (WGS84) to a corresponding place from Google API """
     lat_lng = {}
     lat_lng['lat']=lat
     lat_lng['lng']=lng
@@ -90,20 +134,19 @@ def getCentroid(nodes):
     centroid_y = sum(y_coords)/_len
     return (centroid_x, centroid_y)
 
+#The keys of interest are OSM keys (tags) that are of interest to describe a place type. These keys will be fetched from OSM
 keysofinterest = ['shop', 'amenity', 'leisure', 'tourism', 'historic', 'man_made', 'tower', 'cuisine', 'clothes', 'tower', 'beer', 'highway', 'surface', 'place', 'building']
 
 def getOSMInfo(osmid, elementtype='node'):
-
+    """ Method fetches additional information (tags) of a given OSM object from the Overpass API """
     api = overpy.Overpass()
-    #geolocator = Nominatim()
-
-    # We can also see a node's metadata:
     osm = {}
     try:
         try:
             result = api.query((elementtype+"({}); out;").format(osmid))
         except overpy.exception.OverpassGatewayTimeout as error_detail:
             print(error_detail)
+            #This prevents gateway timeouts
             sleep(20)
             result = api.query((elementtype+"({}); out;").format(osmid))
 
@@ -123,16 +166,14 @@ def getOSMInfo(osmid, elementtype='node'):
         return None
     except overpy.exception.OverpassGatewayTimeout as error_detail:
         print(error_detail)
+        sleep(10)
         return None
-
 
     #print(res.attributes)
     if 'name' in res.tags:
         osm['name'] = res.tags['name']
         osm['keys'] = []
-        #location = geolocator.reverse(osmid)
-        #print(location.address)
-        #for k in keysofinterest:
+        #Get the relevant tags if they exist
         for k,v in res.tags.items():
                 if k in keysofinterest:
                     osm[k]= v
@@ -147,19 +188,17 @@ def getOSMInfo(osmid, elementtype='node'):
 
 
 
-
-
-
 def enrichOSM(osmid,elementtype,website=None):
+    """ Method enriches a given OSM object with information from webtexts from some given webiste, with OSM tags, Google place tags, Google reviewtexts and webtexts based on the Google weblink"""
     osmid = int(osmid)
-    import re
+
     print('enrich: '+elementtype+' '+str(osmid))
     enriched = {}
-    #Print(Putting computer to sleep for 10 to 40 seconds after each request:
 
+    #Print(Putting computer to sleep for 3 seconds after each request to prevent OSM server overload:
     sleep(randint(3,6))
 
-    #First get the text from the website
+    #First get the text from the website if it exists
     if (website!=None):
         wt = placewebscraper.scrape(website)
         if wt !=None:
@@ -213,12 +252,16 @@ def enrichOSM(osmid,elementtype,website=None):
         enriched['reviewtext'] = text
     return enriched
 
+
+
 def constructTrainingData(filename):
-    from pprint import pprint
+    """ Method constructs training data by first reading a list of labeled OSM ids, then enriching them with web information.
+        Result is stored in a json file at the same place as the input file."""
+    #from pprint import pprint
     td = {}
+    #Reads in the csv file of class labeled place ids
     with open(filename, 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='|')
-        import json
         out = (os.path.splitext(os.path.basename(filename))[0][:9])+'_train.json'
         rr = {}
         for line in reader:
@@ -234,7 +277,7 @@ def constructTrainingData(filename):
                     else:
                         print("Error: not node or way!")
                         break
-                    #Fishes out activity and referent and combines them
+                    #Fishes out place activity and referent and combines them
                     classstr = '|'.join([line[2],line[3]])
                     name = line[1].decode('unicode_escape').encode('utf-8')
                     d = {'osmid': osmid, 'class': classstr,'elementtype':elementtype,  'website':line[5], 'name':name}
@@ -243,7 +286,7 @@ def constructTrainingData(filename):
                     else:
                         rr[line[0]] = [d]
 
-
+        #Writes out the json file and does the enrichment in a manner that each OSM id is queried only once
         with open(out, 'w') as fp:
             for k,v in rr.items():
                     osmid = v[0]['osmid']
@@ -267,7 +310,25 @@ def constructTrainingData(filename):
     #pprint(td)
 
 
+def tokenize(text, language = 'dutch'):
+    """ Method turns a text into tokens removing stopwords and stemming them."""
+    if language == 'dutch':
+        p_stemmer = DutchStemmer()
+    else:
+        p_stemmer = PorterStemmer()
+
+    text = text.lower()
+    stop = set(stopwords.words(language))
+    tokens = nltk.word_tokenize(text)
+    tokens = [i for i in tokens if i not in string.punctuation and len(i)>=3]
+    tokens = [i for i in tokens if i not in stop]
+    tokens = [i for i in tokens if i.isalpha()]
+    tokens = [p_stemmer.stem(i) for i in tokens]
+    return tokens
+
 def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True, singleclass=False):
+    """ Method takes the enriched json file (training data), extracts webtexts, other features and the class labels from it.
+        Then it trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as simple arryas"""
     texts = []
     titles = []
     classes = []
@@ -317,11 +378,14 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
     json_data.close
     #texts = [NLPclean(t) for t in texts]
     #print(zip(titles,texts))
+    #This is where the texts get turned into a document-term matrix
     vectorizer = CountVectorizer(min_df = 1, stop_words = stopwords.words(language), analyzer = 'word', tokenizer=tokenize)
     X = vectorizer.fit_transform(texts)
     #print(X)
+    #Gets the vocabulary of stemmed words (terms)
     vocab = vectorizer.get_feature_names()
     print(vocab)
+    #This computes the LDA model
     model = lda.LDA(n_topics=18, n_iter=500, random_state=300)
     model.fit(X)
     topic_word = model.topic_word_
@@ -356,24 +420,10 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
     #print(classes)
     return (titles, classes,features)
 
-def classify(topicmodel):
-    from sklearn.model_selection import train_test_split
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.neural_network import MLPClassifier
-    from sklearn.neighbors import KNeighborsClassifier
-    from sklearn.svm import SVC
-    from sklearn.gaussian_process import GaussianProcessClassifier
-    from sklearn.gaussian_process.kernels import RBF
-    from sklearn.tree import DecisionTreeClassifier
-    from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-    from sklearn.naive_bayes import GaussianNB
-    from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-    from sklearn.model_selection import cross_val_score
-    from sklearn.metrics import confusion_matrix
-    from sklearn.linear_model import LogisticRegression
-     #This is used to deal with categorial input
-    from sklearn.feature_extraction import DictVectorizer
 
+
+def classify(topicmodel, plotconfusionmatrix=False):
+    """ Method takes feature vectors (including topic model) and class labels as arrays, and trains and tests a number of classifiers on them. Outputs classifier scores and confusion matrices."""
 
     h = .02  # step size in the mesh
 
@@ -401,12 +451,11 @@ def classify(topicmodel):
     y = topicmodel[1]
     #print(X)
     #print(y)
-    #X = StandardScaler().fit_transform(X)
+
     X_train, X_test, y_train, y_test = \
         train_test_split(X, y, test_size=.1, random_state=42)
 
     #Naive model (majority vote)
-    from sklearn.dummy import DummyClassifier
     clf = DummyClassifier(strategy='most_frequent',random_state=10)
     clf.fit(X_train, y_train)
     dummyscores = cross_val_score(clf,X,y,cv=10, scoring='accuracy')
@@ -419,9 +468,6 @@ def classify(topicmodel):
 
      # iterate over classifiers
     for name, clf in zip(names, classifiers):
-        #ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
-        #clf.fit(X_train, y_train)
-        #f1scores = cross_val_score(clf,X,y,cv=10, scoring='f1_weighted')
         accscores = cross_val_score(clf,X,y,cv=10, scoring='accuracy')
         pscores = cross_val_score(clf,X,y,cv=10, scoring='precision_weighted')
 
@@ -443,8 +489,8 @@ def classify(topicmodel):
         # Plot non-normalized confusion matrix
         #plt.figure()
 
-        #plot_confusion_matrix(cnf_matrix, classes=classes,
-        #              title='Confusion matrix for '+name)
+        if plotconfusionmatrix:
+            plot_confusion_matrix(cnf_matrix, classes=classes, title='Confusion matrix for '+name)
 
 
 def plot_confusion_matrix(cm, classes,
@@ -480,23 +526,9 @@ def plot_confusion_matrix(cm, classes,
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-    #plt.show()
+    plt.show()
 
-def tokenize(text):
-    #from nltk.stem.porter import PorterStemmer
-    from nltk.stem.snowball import DutchStemmer
-    # Create p_stemmer of class PorterStemmer
-    p_stemmer = DutchStemmer()
-    text = text.lower()
-    from nltk.corpus import stopwords
-    stop = set(stopwords.words('dutch'))
-    tokens = nltk.word_tokenize(text)
-    tokens = [i for i in tokens if i not in string.punctuation and len(i)>=3]
-    tokens = [i for i in tokens if i not in stop]
-    tokens = [i for i in tokens if i.isalpha()]
-    tokens = [p_stemmer.stem(i) for i in tokens]
-    #stems = stem_tokens(tokens, stemmer)
-    return tokens
+
 
 def getOSMfeatures(cat):
         placeCategories = {#this is a dictionary of place categories in OSM based on they key value pairs.
@@ -569,7 +601,7 @@ if __name__ == '__main__':
     #getOSMfeatures('leisure')
     #constructTrainingData('training.csv')
     #topicmodel = trainLDA('training_train.json', 'reviewtext', language='english', usetypes=False, singleclass = True)
-    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=False, singleclass = False)
+    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=False, singleclass = True)
     #topicmodel = trainLDA('training_train.json', 'gwebtext', language='dutch', usetypes=False, singleclass = True)
     classify(topicmodel)
 
