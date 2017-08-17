@@ -237,7 +237,7 @@ def enrichOSM(osmid,elementtype,website=None):
         place.get_details()
     except GooglePlacesError as error_detail:
     # You've passed in parameter values that the Places API doesn't like..
-        #print(error_detail)
+        print(error_detail)
         return enriched
 
     enriched['GoogleId'] = place.place_id
@@ -245,12 +245,12 @@ def enrichOSM(osmid,elementtype,website=None):
     #This is the webiste delivered as input to the funtion
 
     #This is the google website
-    if place.website != None:
-        wt = placewebscraper.scrape(place.website)
-        if wt !=None:
-            enriched['gwebtext']= wt['text']
-            enriched['gwebtitle'] = wt['title']
-        enriched['gwebsite']=place.website
+##    if place.website != None:
+##        wt = placewebscraper.scrape(place.website)
+##        if wt !=None:
+##            enriched['gwebtext']= wt['text']
+##            enriched['gwebtitle'] = wt['title']
+##        enriched['gwebsite']=place.website
     enriched['googletype'] ='|'.join(sorted(place.types))
     #print place.details['opening_hours']
     #print place.details['reviews']
@@ -277,12 +277,11 @@ def constructTrainingData(filename):
         reader = csv.reader(csvfile, delimiter=',', quotechar='|')
         out = (os.path.splitext(os.path.basename(filename))[0][:9])+'_train.json'
         rr = {}
-        for line in reader:
+        for i,line in enumerate(reader):
                 #line = line.rstrip('\r\n').split("\t")
-                if line[0]!='OSM Identifier':
+                if i >0:
+                    #print(line)
                     osmid = line[0].split(':')[1]
-                    #osmid = int(os.path.basename(line[0]))
-                    #elementtype = (os.path.basename(os.path.dirname(line[0])))
                     if (line[0].split(':')[0]== 'osm'):
                         elementtype = 'https://www.openstreetmap.org/node'
                     elif (line[0].split(':')[0]== 'osmw'):
@@ -291,14 +290,17 @@ def constructTrainingData(filename):
                         print("Error: not node or way!")
                         break
                     #Fishes out place activity and referent and combines them
-                    classstr = '|'.join([line[2],line[3]])
+                    classstr = '|'.join([line[2].decode('unicode_escape').encode('utf-8'),line[3].decode('unicode_escape').encode('utf-8')])
                     name = line[1].decode('unicode_escape').encode('utf-8')
                     d = {'osmid': osmid, 'class': [classstr],'elementtype':elementtype, 'uloplace': line[4].decode('unicode_escape').encode('utf-8'), 'website':line[5], 'name':name}
+                    #collect different classes of the same osm object into an array
                     if line[0] in rr.keys():
                         rr[line[0]]['class'].append(classstr)
                     else:
                         rr[line[0]] = d
-        print('Length of the array read : '+len(rr))
+
+        print('Length of the array read : '+str(len(rr))+' number of rows read '+str(i))
+
         #Writes out the json file and does the enrichment in a manner that each OSM id is queried only once
         with open(out, 'w') as fp:
             for k,v in rr.items():
@@ -306,18 +308,19 @@ def constructTrainingData(filename):
                     website = v['website']
                     elementtype = v['elementtype']
                     en = enrichOSM(osmid,elementtype,website)
-                    if en != None:
-                        enn = en.copy()
-                        enn['osmid'] = osmid
-                        enn['name'] = v['name']
-                        enn['place'] = v['place']
-                        enn['class']= v['class']
-                        print(v['class'])
-                        enn['website'] = v['website']
-                        td[k] = enn
-                        print("number of successul enrichments: "+str(len(td)))
-                        fp.seek(0)
-                        json.dump(td, fp)
+                    print(osmid)
+                    print('enriched properties: '+str(en.keys()))
+                    enn = en.copy()
+                    enn['osmid'] = osmid
+                    enn['name'] = v['name']
+                    enn['uloplace'] = v['uloplace']
+                    enn['class']= v['class']
+                    print(v['class'])
+                    enn['website'] = v['website']
+                    td[k] = enn
+                    print("number of successul enrichments: "+str(len(td)))
+                    fp.seek(0)
+                    json.dump(td, fp)
         fp.close()
     csvfile.close()
     #pprint(td)
@@ -339,7 +342,7 @@ def tokenize(text, language = 'dutch'):
     tokens = [p_stemmer.stem(i) for i in tokens]
     return tokens
 
-def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True, singleclass=False, actlevel = True, minclasssize = 0):
+def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
     """ Method takes the enriched json file (training data), extracts webtexts, other features and the class labels from it. actlevel restricts classes to be on the activity level.
         Then it trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as simple arrays"""
     texts = []
@@ -369,7 +372,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
         #print(d)
         for k,v in d.items():
           #take only a single class fo reach osm id
-          if singleclass == False or not ( v['osmid'] in listofosmids):
+          if not ( v['osmid'] in listofosmids):
             gtext = ''
             wtext = ''
             if textkey2 in v.keys():
@@ -669,9 +672,9 @@ if __name__ == '__main__':
 ##    enrichOSM(osmid,'way')
     #getOSMfeatures('leisure')
     #constructTrainingData('training.csv')
-    #topicmodel = trainLDA('training_train.json', 'reviewtext', language='english', usetypes=False, singleclass = True)
-    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=True, singleclass = True, actlevel=True)
-    #topicmodel = trainLDA('training_train.json', 'gwebtext', language='dutch', usetypes=False, singleclass = True)
+    ##topicmodel = trainLDA('training_train.json', 'reviewtext', language='english', usetypes=False, singleclass = True)
+    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=True, actlevel=False, minclasssize=5)
+    ##topicmodel = trainLDA('training_train.json', 'gwebtext', language='dutch', usetypes=False, singleclass = True)
     classify(topicmodel)
 
 
