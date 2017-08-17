@@ -1,0 +1,545 @@
+Error: not node or way!
+enrich: https://www.openstreetmap.org/node 2498671776
+La Cubanita
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJV7Fa2t3NwogRN-SpI-G_Y6g&language=%7B%27lat%27%3A+Decimal%28%2752.5131084%27%29%2C+%27lng%27%3A+Decimal%28%276.0902030%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Tapas']
+number of successul enrichments: 1
+enrich: https://www.openstreetmap.org/node 2497588013
+Het weeshuys
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Het+weeshuys&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5084364%27%29%2C+%27lng%27%3A+Decimal%28%276.0978125%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 2
+enrich: https://www.openstreetmap.org/node 1618523998
+Peperbus
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Peperbus&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5121828%27%29%2C+%27lng%27%3A+Decimal%28%276.0897359%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Listening|ulo:Carrilon']
+number of successul enrichments: 3
+enrich: https://www.openstreetmap.org/node 2498676382
+Le Perron
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Le+Perron&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5144884%27%29%2C+%27lng%27%3A+Decimal%28%276.0993901%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Bread']
+number of successul enrichments: 4
+enrich: https://www.openstreetmap.org/node 2498670356
+retry
+request of website https://www.bluesakura.nl/over-ons/ not successful! Skip.
+BlueSakura Sushi & Grill
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=BlueSakura+Sushi+%26+Grill&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5111644%27%29%2C+%27lng%27%3A+Decimal%28%276.0942720%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Sushi']
+number of successul enrichments: 5
+enrich: https://www.openstreetmap.org/way 271001263
+'t Pannenkoekschip
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJyROOUlbNyUcRk17HO_bdCXE&language=%7B%27lat%27%3A+Decimal%28%2752.51410041666666666666666667%27%29%2C+%27lng%27%3A+Decimal%28%2752.51410041666666666666666667%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:PanPastrys']
+number of successul enrichments: 6
+enrich: https://www.openstreetmap.org/way 271001261
+['ulo:Listening|ulo:Concert']
+number of successul enrichments: 7
+enrich: https://www.openstreetmap.org/way 271001260
+Grote St. Michaëlskerk
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJqZQ6pC_fx0cRQUcrDmBkiho&language=%7B%27lat%27%3A+Decimal%28%2752.51183635211267605633802817%27%29%2C+%27lng%27%3A+Decimal%28%2752.51183635211267605633802817%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Watching|ulo:Exhibition', 'ulo:Sitting|ulo:Worship', 'ulo:Shopping|ulo:Book_Fair']
+number of successul enrichments: 8
+enrich: https://www.openstreetmap.org/node 2498669898
+['ulo:Eating|ulo:Lunch']
+number of successul enrichments: 9
+enrich: https://www.openstreetmap.org/way 6501461
+Bethlehemkerkplein
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Bethlehemkerkplein&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.51107273333333333333333333%27%29%2C+%27lng%27%3A+Decimal%28%2752.51107273333333333333333333%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Speciality_Beer', 'ulo:Drinking|ulo:Wine']
+number of successul enrichments: 10
+enrich: https://www.openstreetmap.org/node 2498667922
+Bar & Brood
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJ52EVdiXfx0cRwfAMITrJtcY&language=%7B%27lat%27%3A+Decimal%28%2752.5113585%27%29%2C+%27lng%27%3A+Decimal%28%276.0955460%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Sandwich']
+number of successul enrichments: 11
+enrich: https://www.openstreetmap.org/node 2498672671
+retry
+request of website https://cucaracha.nl/ not successful! Skip.
+['ulo:Eating|ulo:Mexican_Cuisine']
+number of successul enrichments: 12
+enrich: https://www.openstreetmap.org/node 2343818526
+Tosti World
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Tosti+World&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5121959%27%29%2C+%27lng%27%3A+Decimal%28%276.0921914%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Tosti']
+number of successul enrichments: 13
+enrich: https://www.openstreetmap.org/node 2498665435
+retry
+request of website http://debeurszwolle.nl/ not successful! Skip.
+De Beurs
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Beurs&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5115400%27%29%2C+%27lng%27%3A+Decimal%28%276.0915562%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Sitting|ulo:Terrace', 'ulo:Eating|ulo:Lunch']
+number of successul enrichments: 14
+enrich: https://www.openstreetmap.org/node 2498674627
+['ulo:Eating|ulo:French_Cuisine']
+number of successul enrichments: 15
+enrich: https://www.openstreetmap.org/node 3188199468
+retry
+request of website https://www.swolschfriethuys.nl/ not successful! Skip.
+Swolsch Friethuys
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Swolsch+Friethuys&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5112586%27%29%2C+%27lng%27%3A+Decimal%28%276.0920496%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Fast_Food']
+number of successul enrichments: 16
+enrich: https://www.openstreetmap.org/node 2498676443
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 17
+enrich: https://www.openstreetmap.org/node 2498665188
+Vaca Negra
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Vaca+Negra&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5128515%27%29%2C+%27lng%27%3A+Decimal%28%276.0918119%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Argentinian_Cuisine']
+number of successul enrichments: 18
+enrich: https://www.openstreetmap.org/node 2498666143
+['ulo:Drinking|ulo:Wine', 'ulo:Eating|ulo:Food']
+number of successul enrichments: 19
+enrich: https://www.openstreetmap.org/node 3245736933
+retry
+request of website http://www.blijzwolle.nl/ not successful! Skip.
+Stadscafé Blij
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Stadscaf%C3%A9+Blij&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5122657%27%29%2C+%27lng%27%3A+Decimal%28%276.0922329%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 20
+enrich: https://www.openstreetmap.org/node 4246035971
+Ingeburgerd
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Ingeburgerd&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5114466%27%29%2C+%27lng%27%3A+Decimal%28%276.0953715%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Burger']
+number of successul enrichments: 21
+enrich: https://www.openstreetmap.org/node 2498673308
+['ulo:Eating|ulo:Sushi']
+number of successul enrichments: 22
+enrich: https://www.openstreetmap.org/node 2498670079
+['ulo:Eating|ulo:Glutenfree_Food']
+number of successul enrichments: 23
+enrich: https://www.openstreetmap.org/node 2498668118
+['ulo:Relaxing|ulo:Wellness']
+number of successul enrichments: 24
+enrich: https://www.openstreetmap.org/node 2498671176
+['ulo:Eating|ulo:Bread']
+number of successul enrichments: 25
+enrich: https://www.openstreetmap.org/node 59411663
+('Data incomplete try to improve the query to resolve the missing data', 'Unable to resolve all nodes')
+['ulo:Climbing|ulo:Heritage']
+number of successul enrichments: 26
+enrich: https://www.openstreetmap.org/node 2498675067
+De Vier Jaargetijden
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Vier+Jaargetijden&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5126552%27%29%2C+%27lng%27%3A+Decimal%28%276.0921461%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Lunch', 'ulo:Drinking|ulo:Alcoholic_Beverages']
+number of successul enrichments: 27
+enrich: https://www.openstreetmap.org/node 2498675279
+retry
+request of website https://www.hedon-zwolle.nl/statenzaal not successful! Skip.
+['ulo:Listening|ulo:Concert']
+number of successul enrichments: 28
+enrich: https://www.openstreetmap.org/node 4249345810
+Pistache
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJM0jmBYnW2IgRrUfOpNHuqkI&language=%7B%27lat%27%3A+Decimal%28%2752.5139939%27%29%2C+%27lng%27%3A+Decimal%28%276.0971012%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Sandwich']
+number of successul enrichments: 29
+enrich: https://www.openstreetmap.org/node 2498674516
+Het Wijnhuis
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Het+Wijnhuis&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5113353%27%29%2C+%27lng%27%3A+Decimal%28%276.0917704%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Wine']
+number of successul enrichments: 30
+enrich: https://www.openstreetmap.org/node 2498663081
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 31
+enrich: https://www.openstreetmap.org/node 2498663082
+['ulo:Drinking|ulo:Wine', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 32
+enrich: https://www.openstreetmap.org/node 2498674611
+['ulo:Eating|ulo:Lunch']
+number of successul enrichments: 33
+enrich: https://www.openstreetmap.org/node 2498667436
+De Kleine
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Kleine&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5117623%27%29%2C+%27lng%27%3A+Decimal%28%276.0911137%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 34
+enrich: https://www.openstreetmap.org/node 2498676739
+['ulo:Eating|ulo:Pizza']
+number of successul enrichments: 35
+enrich: https://www.openstreetmap.org/node 3328804473
+'t Konkeltje
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=%27t+Konkeltje&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5148238%27%29%2C+%27lng%27%3A+Decimal%28%276.0932861%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Coffee', 'ulo:Shopping|ulo:Coffee', 'ulo:Shopping|ulo:Gifts', 'ulo:Shopping|ulo:Tea', 'ulo:Shopping|ulo:Chocolate']
+number of successul enrichments: 36
+enrich: https://www.openstreetmap.org/node 2498667242
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 37
+enrich: https://www.openstreetmap.org/node 2498670560
+['ulo:Eating|ulo:Ice_Cream']
+number of successul enrichments: 38
+enrich: https://www.openstreetmap.org/node 2498673001
+Van Orsouw
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Van+Orsouw&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5120398%27%29%2C+%27lng%27%3A+Decimal%28%276.0929799%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Pastry']
+number of successul enrichments: 39
+enrich: https://www.openstreetmap.org/node 2498665418
+retry
+request of website https://www.curlycoffee.nl/winkel not successful! Skip.
+Curly Coffee
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Curly+Coffee&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5139729%27%29%2C+%27lng%27%3A+Decimal%28%276.0994566%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Coffee', 'ulo:Shopping|ulo:Coffee']
+number of successul enrichments: 40
+enrich: https://www.openstreetmap.org/node 2498671417
+retry
+request of website https://blockszwolle.nl/lunchroom/ not successful! Skip.
+Lunchroom Blocks
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Lunchroom+Blocks&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5125560%27%29%2C+%27lng%27%3A+Decimal%28%276.0951069%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Lunch']
+number of successul enrichments: 41
+enrich: https://www.openstreetmap.org/node 2763447573
+['ulo:Drinking|ulo:Alcoholic_Beverage']
+number of successul enrichments: 42
+enrich: https://www.openstreetmap.org/node 2498668848
+['ulo:Drinking|ulo:Beer']
+number of successul enrichments: 43
+enrich: https://www.openstreetmap.org/node 2422467852
+Museum de Fundatie / Paleis aan de Blijmarkt
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Museum+de+Fundatie+%2F+Paleis+aan+de+Blijmarkt&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5101745%27%29%2C+%27lng%27%3A+Decimal%28%276.0914730%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Drinks']
+number of successul enrichments: 44
+enrich: https://www.openstreetmap.org/node 2498669570
+La Bamba
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=La+Bamba&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5128386%27%29%2C+%27lng%27%3A+Decimal%28%276.0956846%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Fast_Food']
+number of successul enrichments: 45
+enrich: https://www.openstreetmap.org/node 2498664037
+Brownies & downieS
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Brownies+%26+downieS&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5134871%27%29%2C+%27lng%27%3A+Decimal%28%276.0987347%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Lunch', 'ulo:Eating|ulo:Pastry']
+number of successul enrichments: 46
+enrich: https://www.openstreetmap.org/node 2498663783
+Doppio Espresso
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Doppio+Espresso&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5136253%27%29%2C+%27lng%27%3A+Decimal%28%276.0984208%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 47
+enrich: https://www.openstreetmap.org/node 2498674475
+Bonbonnerie Borrel
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Bonbonnerie+Borrel&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5144124%27%29%2C+%27lng%27%3A+Decimal%28%276.0993545%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Cooking|ulo:Chocolate', 'ulo:Shopping|ulo:Chocolate']
+number of successul enrichments: 48
+enrich: https://www.openstreetmap.org/node 2498665933
+['ulo:Meditating|ulo:Wellness']
+number of successul enrichments: 49
+enrich: https://www.openstreetmap.org/node 2498664871
+['ulo:Drinking|ulo:Shots']
+number of successul enrichments: 50
+enrich: https://www.openstreetmap.org/node 2498671427
+Holland
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Holland&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5148494%27%29%2C+%27lng%27%3A+Decimal%28%276.0960144%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Lunch']
+number of successul enrichments: 51
+enrich: https://www.openstreetmap.org/node 2498664723
+['ulo:Eating|ulo:Food', 'ulo:Eating|ulo:Food']
+number of successul enrichments: 52
+enrich: https://www.openstreetmap.org/node 5002015916
+retry
+request of website https://www.spelcomputermuseum.nl/?page=museum&subpage=home not successful! Skip.
+Bonami SpelComputer Museum
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Bonami+SpelComputer+Museum&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5073056%27%29%2C+%27lng%27%3A+Decimal%28%276.0861884%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Playing|ulo:Games']
+number of successul enrichments: 53
+enrich: https://www.openstreetmap.org/node 2498669860
+BaiYok
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=BaiYok&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5142015%27%29%2C+%27lng%27%3A+Decimal%28%276.0993902%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Thai_Cuisine']
+number of successul enrichments: 54
+enrich: https://www.openstreetmap.org/node 2498663652
+retry
+request of website http://www.lasrosas.nl/ not successful! Skip.
+Las Rosas
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Las+Rosas&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5134683%27%29%2C+%27lng%27%3A+Decimal%28%276.0897172%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Tapas']
+number of successul enrichments: 55
+enrich: https://www.openstreetmap.org/node 2498672620
+retry
+request of website https://www.kletsenenproeven.nl/arrangementen/escape-room/ not successful! Skip.
+Kletsen & Proeven
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Kletsen+%26+Proeven&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5134344%27%29%2C+%27lng%27%3A+Decimal%28%276.0902677%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Playing|ulo:Escape_Game']
+number of successul enrichments: 56
+enrich: https://www.openstreetmap.org/node 2498672458
+Kota Radja
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Kota+Radja&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5133981%27%29%2C+%27lng%27%3A+Decimal%28%276.0903633%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Asian_Cuisine']
+number of successul enrichments: 57
+enrich: https://www.openstreetmap.org/node 2498664239
+['ulo:Drinking|ulo:Cocktail', 'ulo:Eating|ulo:Hotdog']
+number of successul enrichments: 58
+enrich: https://www.openstreetmap.org/node 2498671867
+['ulo:Dancing|ulo:Party', 'ulo:Playing|ulo:Quiz']
+number of successul enrichments: 59
+enrich: https://www.openstreetmap.org/node 2498670382
+['ulo:Relaxing|ulo:Wellness']
+number of successul enrichments: 60
+enrich: https://www.openstreetmap.org/node 2498669215
+Espressobar Maling
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Espressobar+Maling&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5116657%27%29%2C+%27lng%27%3A+Decimal%28%276.0910592%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Pastry', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 61
+enrich: https://www.openstreetmap.org/node 2498675019
+['ulo:Drinking|ulo:Alcoholic_Beverages']
+number of successul enrichments: 62
+enrich: https://www.openstreetmap.org/node 2498671632
+Sirtaki
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Sirtaki&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5132990%27%29%2C+%27lng%27%3A+Decimal%28%276.0906655%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Greek_Cuisine']
+number of successul enrichments: 63
+enrich: https://www.openstreetmap.org/node 2498673192
+In de Buurt
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=In+de+Buurt&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5120654%27%29%2C+%27lng%27%3A+Decimal%28%276.0914997%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Beer', 'ulo:Relaxing|ulo:Terrace']
+number of successul enrichments: 64
+enrich: https://www.openstreetmap.org/node 2498663057
+retry
+request of website https://www.cosmonde.nl/service/about/ not successful! Skip.
+['ulo:Relaxing|ulo:Wellness']
+number of successul enrichments: 65
+enrich: https://www.openstreetmap.org/node 2498671335
+retry
+request of website https://demandarijn.nl/ not successful! Skip.
+['ulo:Eating|ulo:Biological_Food']
+number of successul enrichments: 66
+enrich: https://www.openstreetmap.org/node 2498676769
+['ulo:Drinking|ulo:Beer']
+number of successul enrichments: 67
+enrich: https://www.openstreetmap.org/node 2498670395
+['ulo:Eating|ulo:Tapas']
+number of successul enrichments: 68
+enrich: https://www.openstreetmap.org/node 2498663800
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 69
+enrich: https://www.openstreetmap.org/node 2498664240
+['ulo:Shopping|ulo:Regional_Product', 'ulo:Shopping|ulo:Souvenirs']
+number of successul enrichments: 70
+enrich: https://www.openstreetmap.org/node 2498664241
+['ulo:Drinking|ulo:Beer', 'ulo:Dancing|ulo:Party']
+number of successul enrichments: 71
+enrich: https://www.openstreetmap.org/node 2498672681
+['ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 72
+enrich: https://www.openstreetmap.org/node 2499689428
+retry
+request of website https://bijhartjezwolle.nl/ not successful! Skip.
+Bij Hartje Zwolle
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJN8uxCDvfx0cR-cQuNJ_zzj4&language=%7B%27lat%27%3A+Decimal%28%2752.5157724%27%29%2C+%27lng%27%3A+Decimal%28%276.0999453%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 73
+enrich: https://www.openstreetmap.org/node 1750866698
+Taiwan
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Taiwan&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5120272%27%29%2C+%27lng%27%3A+Decimal%28%276.0914418%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Chinese_Cuisine']
+number of successul enrichments: 74
+enrich: https://www.openstreetmap.org/node 2498666480
+Sofra
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Sofra&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5118443%27%29%2C+%27lng%27%3A+Decimal%28%276.0968419%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Turkish_Cuisine']
+number of successul enrichments: 75
+enrich: https://www.openstreetmap.org/node 2498669927
+['ulo:Eating|ulo:Bitterballen']
+number of successul enrichments: 76
+enrich: https://www.openstreetmap.org/node 2498669453
+['ulo:Dancing|ulo:Party', 'ulo:Drinking|ulo:Whiskey', 'ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 77
+enrich: https://www.openstreetmap.org/node 2498664463
+Brasserie Jansen
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Brasserie+Jansen&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5111212%27%29%2C+%27lng%27%3A+Decimal%28%276.0955391%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 78
+enrich: https://www.openstreetmap.org/node 2498670125
+Server load to high
+Visgilde Hans Visscher
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Visgilde+Hans+Visscher&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5131507%27%29%2C+%27lng%27%3A+Decimal%28%276.0911882%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Fish']
+number of successul enrichments: 79
+enrich: https://www.openstreetmap.org/node 2498665269
+['ulo:Dancing|ulo:Party']
+number of successul enrichments: 80
+enrich: https://www.openstreetmap.org/node 2498663208
+Barista Cafe
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJ7SFBG1KxQYgREeX0KhEuY9g&language=%7B%27lat%27%3A+Decimal%28%2752.5134716%27%29%2C+%27lng%27%3A+Decimal%28%276.0981995%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Pastry', 'ulo:Drinking|ulo:Coffee', 'ulo:Eating|ulo:Breakfast', 'ulo:Eating|ulo:High_Tea', 'ulo:Eating|ulo:Lunch']
+number of successul enrichments: 81
+enrich: https://www.openstreetmap.org/node 2498670326
+Woodies Zwolle
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJWyaXMy7fx0cRVyT_lvvA3Oc&language=%7B%27lat%27%3A+Decimal%28%2752.5131863%27%29%2C+%27lng%27%3A+Decimal%28%276.0910683%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 82
+enrich: https://www.openstreetmap.org/way 6501244
+Broerenkerkplein
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Broerenkerkplein&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.51377505%27%29%2C+%27lng%27%3A+Decimal%28%2752.51377505%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 83
+enrich: https://www.openstreetmap.org/node 2498663537
+Vito's
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJEejpwxuBO4gRinCcAol812g&language=%7B%27lat%27%3A+Decimal%28%2752.5124639%27%29%2C+%27lng%27%3A+Decimal%28%276.0927065%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Sandwich']
+number of successul enrichments: 84
+enrich: https://www.openstreetmap.org/node 2498665296
+['ulo:Eating|ulo:Tapas']
+number of successul enrichments: 85
+enrich: https://www.openstreetmap.org/node 1333931642
+('Data incomplete try to improve the query to resolve the missing data', 'Unable to resolve all nodes')
+['ulo:Cooking|ulo:Cooking_Class', 'ulo:Eating|ulo:Fine_Dining']
+number of successul enrichments: 86
+enrich: https://www.openstreetmap.org/node 2498667805
+Grand Cafe Public
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Grand+Cafe+Public&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5105493%27%29%2C+%27lng%27%3A+Decimal%28%276.0916425%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 87
+enrich: https://www.openstreetmap.org/node 2497671928
+['ulo:Eating|ulo:French_Cuisine']
+number of successul enrichments: 88
+enrich: https://www.openstreetmap.org/node 3139858784
+Michelangelo
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Michelangelo&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5114502%27%29%2C+%27lng%27%3A+Decimal%28%276.0940151%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 89
+enrich: https://www.openstreetmap.org/node 2498665091
+Schuttelaer Wijnen
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Schuttelaer+Wijnen&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5107080%27%29%2C+%27lng%27%3A+Decimal%28%276.0912670%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Shopping|ulo:Wine']
+number of successul enrichments: 90
+enrich: https://www.openstreetmap.org/node 2498672431
+Bistro Bonne Femme
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Bistro+Bonne+Femme&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5112047%27%29%2C+%27lng%27%3A+Decimal%28%276.0958455%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 91
+enrich: https://www.openstreetmap.org/node 2498675088
+['ulo:Eating|ulo:Thai_Cuisine']
+number of successul enrichments: 92
+enrich: https://www.openstreetmap.org/node 1695337102
+IJssalon Salute
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=IJssalon+Salute&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5136945%27%29%2C+%27lng%27%3A+Decimal%28%276.0985320%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Ice_Cream']
+number of successul enrichments: 93
+enrich: https://www.openstreetmap.org/node 2498670470
+retry
+request of website https://www.swolschcafe.nl/info not successful! Skip.
+'t Swolsch Café
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=%27t+Swolsch+Caf%C3%A9&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5129217%27%29%2C+%27lng%27%3A+Decimal%28%276.0910038%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Dancing|ulo:Party', 'ulo:Drinking|ulo:Beer']
+number of successul enrichments: 94
+enrich: https://www.openstreetmap.org/node 2498669427
+De Stoof
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Stoof&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5119382%27%29%2C+%27lng%27%3A+Decimal%28%276.0950129%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Beer', 'ulo:Playing|ulo:Darts']
+number of successul enrichments: 95
+enrich: https://www.openstreetmap.org/way 80221871
+Rodetorenplein
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Rodetorenplein&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.51396319333333333333333333%27%29%2C+%27lng%27%3A+Decimal%28%2752.51396319333333333333333333%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Canoeing|ulo:SUP', 'ulo:Playing|ulo:Fun_Fair']
+number of successul enrichments: 96
+enrich: https://www.openstreetmap.org/node 2498673983
+Poppe
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Poppe&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5109028%27%29%2C+%27lng%27%3A+Decimal%28%276.0901405%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:French_Cuisine']
+number of successul enrichments: 97
+enrich: https://www.openstreetmap.org/node 2498668888
+['ulo:Drinking|ulo:High_Wine']
+number of successul enrichments: 98
+enrich: https://www.openstreetmap.org/node 2498663504
+De Gezelligheid
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Gezelligheid&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5122603%27%29%2C+%27lng%27%3A+Decimal%28%276.0957665%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 99
+enrich: https://www.openstreetmap.org/node 2498667132
+['ulo:Shopping|ulo:Lifestyle']
+number of successul enrichments: 100
+enrich: https://www.openstreetmap.org/node 2388543661
+Sassenpoort
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Sassenpoort&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5099549%27%29%2C+%27lng%27%3A+Decimal%28%276.0955240%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Watching|ulo:Exhibition']
+number of successul enrichments: 101
+enrich: https://www.openstreetmap.org/node 2498665298
+['ulo:Eating|ulo:Lunch']
+number of successul enrichments: 102
+enrich: https://www.openstreetmap.org/node 2498677412
+Fratelli D'Italia
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Fratelli+D%27Italia&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5130263%27%29%2C+%27lng%27%3A+Decimal%28%276.0958261%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 103
+enrich: https://www.openstreetmap.org/node 2498667834
+The Living Room
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJtfQnzpGqK4cRDL2cuFfY3CE&language=%7B%27lat%27%3A+Decimal%28%2752.5122179%27%29%2C+%27lng%27%3A+Decimal%28%276.0966730%27%29%7D failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food', 'ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 104
+enrich: https://www.openstreetmap.org/node 3996415258
+retry
+request of website https://www.waandersindebroeren.nl/eten-en-drinken/ not successful! Skip.
+Smaak in de Broeren
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Smaak+in+de+Broeren&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5138458%27%29%2C+%27lng%27%3A+Decimal%28%276.0957208%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 105
+enrich: https://www.openstreetmap.org/node 1470906020
+Het Vliegende Paard
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Het+Vliegende+Paard&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5124106%27%29%2C+%27lng%27%3A+Decimal%28%276.0909481%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 106
+enrich: https://www.openstreetmap.org/node 3996415257
+retry
+request of website https://www.waandersindebroeren.nl not successful! Skip.
+Waanders in de Broeren
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Waanders+in+de+Broeren&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5138409%27%29%2C+%27lng%27%3A+Decimal%28%276.0951476%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Listening|ulo:Concert', 'ulo:Watching|ulo:Exhibition', 'ulo:Shopping|ulo:Gifts']
+number of successul enrichments: 107
+enrich: https://www.openstreetmap.org/node 2498676639
+['ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 108
+enrich: https://www.openstreetmap.org/node 2498672390
+['ulo:Drinking|ulo:Cocktail']
+number of successul enrichments: 109
+enrich: https://www.openstreetmap.org/way 6501418
+Koningsplein
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Koningsplein&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.51216181666666666666666667%27%29%2C+%27lng%27%3A+Decimal%28%2752.51216181666666666666666667%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 110
+enrich: https://www.openstreetmap.org/node 2498669791
+['ulo:Drinking|ulo:Alcoholic_Beverages']
+number of successul enrichments: 111
+enrich: https://www.openstreetmap.org/node 2498663061
+Talamini
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Talamini&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5124275%27%29%2C+%27lng%27%3A+Decimal%28%276.0928292%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Ice_Cream']
+number of successul enrichments: 112
+enrich: https://www.openstreetmap.org/node 1715144093
+retry
+request of website https://www.belgischekeizer.nl/ not successful! Skip.
+De Belgische Keijzer
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Belgische+Keijzer&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5135281%27%29%2C+%27lng%27%3A+Decimal%28%276.0900763%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Belgian_Beer']
+number of successul enrichments: 113
+enrich: https://www.openstreetmap.org/node 2498671343
+['ulo:Shopping|ulo:Art']
+number of successul enrichments: 114
+enrich: https://www.openstreetmap.org/node 2498669943
+['ulo:Dancing|ulo:Party']
+number of successul enrichments: 115
+enrich: https://www.openstreetmap.org/node 2498673730
+Café 't Beugeltje
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Caf%C3%A9+%27t+Beugeltje&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5142469%27%29%2C+%27lng%27%3A+Decimal%28%276.0945337%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Drinking|ulo:Alcoholic_Beverages']
+number of successul enrichments: 116
+enrich: https://www.openstreetmap.org/node 2498670754
+retry
+request of website https://www.itoshii.nl/sushi-zwolle/ not successful! Skip.
+Itoshii
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Itoshii&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5132420%27%29%2C+%27lng%27%3A+Decimal%28%276.0908607%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Sushi']
+number of successul enrichments: 117
+enrich: https://www.openstreetmap.org/node 1715140558
+Da Nini
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Da+Nini&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5113148%27%29%2C+%27lng%27%3A+Decimal%28%276.0956675%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 118
+enrich: https://www.openstreetmap.org/node 2498674734
+['ulo:Dancing|ulo:Party']
+number of successul enrichments: 119
+enrich: https://www.openstreetmap.org/node 2498664274
+De Plataan
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Plataan&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5120248%27%29%2C+%27lng%27%3A+Decimal%28%276.0939399%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 120
+enrich: https://www.openstreetmap.org/node 2498663853
+Mc Donald's Zwolle-Centrum
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Mc+Donald%27s+Zwolle-Centrum&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5125022%27%29%2C+%27lng%27%3A+Decimal%28%276.0925683%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+['ulo:Eating|ulo:Fast_Food']
+number of successul enrichments: 121
