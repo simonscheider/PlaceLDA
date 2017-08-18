@@ -66,6 +66,10 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
 
 
+#Somegeo stuff
+from shapely.geometry import mapping, Point
+import fiona
+
 #Non-essential libraries:
 
 import string
@@ -343,12 +347,13 @@ def tokenize(text, language = 'dutch'):
     return tokens
 
 def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
-    """ Method takes the enriched json file (training data), extracts webtexts, other features and the class labels from it. actlevel restricts classes to be on the activity level.
-        Then it trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as simple arrays"""
-    texts = []
-    titles = []
-    classes = []
-    features = []
+    """ Method takes the enriched json file (training data), extracts webtexts, other features and the class labels from it. Usetypes = True puts OSMtags into the feature vector. actlevel restricts classes on the activity level (actlevel = True). Minclasssize filters out too small classes.
+        Then it trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as two simple arrays"""
+    texts = [] #array that holds the LDA text documents
+    titles = [] #array that holds the titles of documents (in this case place names)
+    classes = [] #array that holds the goal classes
+    features = [] #array the holds the feature vectors
+    geoinfo = [] #stuf needed to map results
 
     #testclasses = ['ulo:Eating|ulo:Food']
     with open(jsonfile) as json_data:
@@ -386,7 +391,12 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
                 listofosmids.append(v['osmid'])
                 texts.append(text)
                 titles.append(v['name'])
-                #if d[k]['class'] in testclasses:
+                dd = {'osmid':k,'name':v['name']}
+                if 'lat' in v.keys():
+                    dd['lat']=v['lat']
+                    dd['lon']=v['lon']
+                geoinfo.append(dd)
+
                 #select thye largest class of all occurring classes
                 classize = 0
                 cl = None
@@ -401,7 +411,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
 
                 classes.append(cl)
                 dic = {}
-
+                #Add the tags from OSM or Google
                 if usetypes == True:
                     if 'googletype' in v.keys():
                         dic['googletype'] =v['googletype']
@@ -412,7 +422,6 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
                         else:
                             dic[typekey] = 'No'
                 features.append(dic)
-                #features.append(array)
 
 
     json_data.close
@@ -448,11 +457,9 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
         title =title.encode('utf-8')
         print("{} (top topic: {})".format(title, topics.argmax()))
         f = features[i]
-        j = 0
         if usetopics ==True:
-            for t in topics:
+            for j,t in enumerate(topics):
                 f['topic '+str(j)]= t
-                j +=1
         i+=1
 
     print("Number of instances (features): "+str(len(features)))
@@ -463,14 +470,18 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
     print('Remove classes below minimum frequency : '+str(min))
     featuresn = []
     classesn = []
+    titlesn = []
+    geoinfon =[]
     for i, f in enumerate(features):
         if counts[classes[i]] >=min:
             classesn.append(classes[i])
             featuresn.append(features[i])
+            titlesn.append(titles[i])
+            geoinfon.append(geoinfo[i])
 
     #print(features)
     #print(classes)
-    return (titles, classesn,featuresn)
+    return (titlesn, classesn,featuresn, geoinfon)
 
 
 
@@ -600,6 +611,60 @@ def plot_confusion_matrix(cm, classes,
     plt.xlabel('Predicted label')
     plt.show()
 
+#This method exports a shape file to map the result
+def exportSHP(topicmodel, shpfilename):
+    from types import *
+    from fiona.crs import from_epsg
+
+    geoinfo = topicmodel[3]
+    features = topicmodel[2]
+    # Here's an example Shapely geometry
+
+    # Define a polygon feature geometry with one attribute
+    properties = {'id': 'str', 'name': 'str'}
+    for k,v in features[0].items():
+        if type(v) is np.float64:
+            fieldname = k[:10].replace(" ", "_")
+            properties[fieldname]='float'
+        elif type(v) is float:
+            fieldname = k[:10].replace(" ", "_")
+            properties[fieldname]='float'
+        elif type(v) is int:
+            fieldname = k[:10].replace(" ", "_")
+            properties[fieldname]='int'
+        elif type(v) is str:
+            fieldname = k[:10].replace(" ", "_")
+            properties[fieldname]='str'
+
+    schema = {
+        'geometry': 'Point',
+        'properties': properties
+    }
+
+    with fiona.open(shpfilename, 'w', crs=from_epsg(4326),driver= 'ESRI Shapefile', schema=schema) as c:
+    ## If there are multiple geometries, put the "for" loop here
+        for i,g in enumerate(geoinfo):
+            if 'lon' in g.keys() and 'lat' in g.keys() and float(g['lon'])<40.0:
+                point = Point(float(g['lon']), float(g['lat']))
+                attributes ={'id': g['osmid'], 'name':g['name']}
+                for k,v in features[i].items():
+                    fieldname = k[:10].replace(" ", "_")
+                    attributes[fieldname]=v
+
+                c.write({
+                'geometry': mapping(point),
+                'properties': attributes
+                })
+                #jj
+
+        c.close
+
+
+    # Write a new Shapefile
+
+
+
+
 
 
 def getOSMfeatures(cat):
@@ -673,9 +738,10 @@ if __name__ == '__main__':
     #getOSMfeatures('leisure')
     #constructTrainingData('training.csv')
     ##topicmodel = trainLDA('training_train.json', 'reviewtext', language='english', usetypes=False, singleclass = True)
-    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=True, actlevel=False, minclasssize=5)
+    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=False, actlevel=False, minclasssize=5)
     ##topicmodel = trainLDA('training_train.json', 'gwebtext', language='dutch', usetypes=False, singleclass = True)
-    classify(topicmodel)
+    #exportSHP(topicmodel,'placetopics.shp')
+    #classify(topicmodel)
 
 
 
