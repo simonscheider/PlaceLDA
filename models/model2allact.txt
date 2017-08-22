@@ -1,0 +1,329 @@
+
+trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=False, minclasssize=5)
+
+
+Size of the json file: 189
+Counter({u'ulo:Eating|ulo:Food': 22, u'ulo:Eating|ulo:Lunch': 13, u'ulo:Sitting|ulo:Terrace': 12, u'ulo:Watching|ulo:Architecture': 12, u'ulo:Drinking|ulo:Coffee': 12, u'ulo:Shopping|ulo:Gifts': 11, u'ulo:Shopping|ulo:Fashion': 10, u'ulo:Watching|ulo:Exhibition': 10, u'ulo:Drinking|ulo:Beer': 9, u'ulo:Dancing|ulo:Party': 8, u'ulo:Drinking|ulo:Speciality_Beer': 7, u'ulo:Sightseeing|ulo:Architecture': 7, u'ulo:Listening|ulo:Live_Music': 7, u'ulo:Eating|ulo:Italian_Cuisine': 6, u'ulo:Drinking|ulo:Wine': 6, u'ulo:Eating|ulo:Pastry': 5, u'ulo:Shopping|ulo:Art': 5, u'ulo:Shopping|ulo:Goods': 5, u'ulo:Sitting|ulo:Worship': 5, u'ulo:Eating|ulo:Tapas': 4, u'ulo:Shopping|ulo:Chocolate': 4, u'ulo:Drinking|ulo:Alcoholic_Beverages': 4, u'ulo:Drinking|ulo:Drinks': 3, u'ulo:Relaxing|ulo:Wellness': 3, u'ulo:Eating|ulo:Ice_Cream': 3, u'ulo:Eating|ulo:Sandwich': 3, u'ulo:Shopping|ulo:Lifestyle': 3, u'ulo:Eating|ulo:Sushi': 3, u'ulo:Relaxing|ulo:Grass': 3, u'ulo:Drinking|ulo:Cocktail': 3, u'ulo:Watching|ulo:Cultural_Event': 3, u'ulo:Eating|ulo:French_Cuisine': 3, u'ulo:Listening|ulo:Concert': 3, u'ulo:Eating|ulo:Fast_Food': 3, u'ulo:Shopping|ulo:Coffee': 2, u'ulo:Eating|ulo:Bread': 2, u'ulo:Watching|ulo:Animals': 2, u'ulo:Watching|ulo:Movie': 2, u'ulo:Shopping|ulo:Books': 2, u'ulo:Sailing|ulo:Boat': 2, u'ulo:Eating|ulo:High_Tea': 2, u'ulo:Climbing|ulo:Architecture': 2, u'ulo:Eating|ulo:PanPastrys': 2, u'ulo:Watching|ulo:Show': 2, u'ulo:Shopping|ulo:Wine': 2, u'ulo:Shopping|ulo:Gadgets': 2, u'ulo:Shopping|ulo:Candy': 2, u'ulo:Eating|ulo:Food_Truck': 2, u'ulo:Shopping|ulo:Beauty_Goods': 2, u'ulo:Strolling|ulo:Footpath': 2, u'ulo:Eating|ulo:Thai_Cuisine': 2, u'ulo:Shopping|ulo:Food': 1, u'ulo:Cooking|ulo:Cooking_Class': 1, u'ulo:Shopping|ulo:Furniture': 1, u'ulo:Strolling|ulo:Foothpath': 1, u'ulo:Shopping|ulo:Tea': 1, u'ulo:Playing|ulo:Escape_Game': 1, u'ulo:Sporting|ulo:Sport_Field': 1, u'ulo:Meditating|ulo:Wellness': 1, u'ulo:Drinking|ulo:Tea': 1, u'ulo:Playing|ulo:Quiz': 1, u'ulo:Drinking|ulo:Whiskey': 1, u'ulo:Eating|ulo:Chinese_Cuisine': 1, u'ulo:Shopping|ulo:Childrens_Gift': 1, u'ulo:Watching|ulo:Concert': 1, u'ulo:Shopping|ulo:Regional_Product': 1, u'ulo:Drinking|ulo:Alcoholic_Beverage': 1, u'ulo:Playing|ulo:Games': 1, u'ulo:Shopping|ulo:Drinks': 1, u'ulo:Eating|ulo:Meat': 1, u'ulo:Shopping|ulo:Accessoires': 1, u'ulo:Shopping|ulo:Christmas_Fair': 1, u'ulo:Shopping|ulo:Italian_Cuisine': 1, u'ulo:Shopping|ulo:Pastry': 1, u'ulo:Eating|ulo:Fine_Dining': 1, u'ulo:Shopping|ulo:Book_Fair': 1, u'ulo:Drinking|ulo:Food': 1, u'ulo:Eating|ulo:Biological_Food': 1, u'ulo:Tasting|ulo:Local_Liquor': 1, u'ulo:Eating|ulo:Sat\xe9': 1, u'ulo:Eating|ulo:Asian_Cuisine': 1, u'ulo:Eating|ulo:Bitterballen': 1, u'ulo:Eating|ulo:Hotdog': 1, u'ulo:Eating|ulo:Pizza': 1, u'ulo:Eating|ulo:Greek_Cuisine': 1, u'ulo:Playing|ulo:Fun_Fair': 1, u'ulo:Watching|ulo:Festival': 1, u'ulo:Drinking|ulo:Shots': 1, u'ulo:Eating|ulo:Mexican_Cuisine': 1, u'ulo:Drinking|ulo:High_Wine': 1, u'ulo:Eating|ulo:Argentinian_Cuisine': 1, u'ulo:Canoeing|ulo:SUP': 1, u'ulo:Shopping|ulo:Flea_Market': 1, u'ulo:Climbing|ulo:Heritage': 1, u'ulo:Eating|ulo:Steak': 1, u'ulo:Dancing|ulo:Festival': 1, u'ulo:Eating|ulo:Belgian_Cuisine': 1, u'ulo:Strolling|ulo:Fair': 1, u'ulo:Listening|ulo:Carrilon': 1, u'ulo:Eating|ulo:Fish': 1, u'ulo:Shopping|ulo:Interior_Goods': 1, u'ulo:Cooking|ulo:Chocolate': 1, u'ulo:Eating|ulo:Glutenfree_Food': 1, u'ulo:Eating|ulo:Tosti': 1, u'ulo:Tasting|ulo:Wine': 1, u'ulo:Relaxing|ulo:Terrace': 1, u'ulo:Playing|ulo:Darts': 1, u'ulo:Relaxing|ulo:Sand': 1, u'ulo:Eating|ulo:Buffet': 1, u'ulo:Sightseeing|ulo:Monument': 1, u'ulo:Watching|ulo:Gadgets': 1, u'ulo:Eating|ulo:Focaccia': 1, u'ulo:Shopping|ulo:Secondhand_Goods': 1, u'ulo:Shopping|ulo:Flowers': 1, u'ulo:Eating|ulo:Breakfast': 1, u'ulo:Drinking|ulo:Belgian_Beer': 1, u'ulo:Shopping|ulo:Cooking_Accessoires': 1, u'ulo:Reading|ulo:Books': 1, u'ulo:Sailing|ulo:Tourist_Vessel': 1, u'ulo:Eating|ulo:Turkish_Cuisine': 1, u'ulo:Shopping|ulo:Souvenirs': 1, u'ulo:Watching|ulo:Monument': 1, u'ulo:Eating|ulo:Burger': 1})
+[u'aanbod', u'aandoet', u'aangenam', u'aankled', u'aanrader', u'aardbei', u'abbastanza', u'abl', u'abov', u'abroad', u'absolutely', u'accept', u'accessoires', u'accommodat', u'accompagnati', u'accueil', u'accumulated', u'achterin', u'acogedor', u'acondicionado', u'acoustic', u'acros', u'actually', u'add', u'addition', u'additional', u'adecuada', u'adorabl', u'adres', u'adult', u'advanced', u'advies', u'affaires', u'affordabl', u'afgelop', u'afraid', u'afstand', u'afwerk', u'ages', u'ainsi', u'air', u'airfryer', u'airport', u'alcohol', u'alert', u'algo', u'alla', u'allen', u'allerg', u'allow', u'alon', u'along', u'also', u'although', u'alway', u'amaro', u'amaz', u'amazingly', u'ambianc', u'ambient', u'amsterdam', u'anch', u'andarci', u'annoy', u'another', u'answer', u'antipasti', u'anyon', u'anyth', u'anyway', u'anywher', u'aplicaci', u'app', u'apparently', u'appearanc', u'appelbol', u'appl', u'arcad', u'area', u'argentinian', u'arguing', u'argwan', u'around', u'arriv', u'arrived', u'art', u'artifact', u'artisan', u'artist', u'asian', u'asid', u'ask', u'asked', u'asparagus', u'assend', u'assigned', u'assortiment', u'assortoment', u'ate', u'atelier', u'atenci', u'atmos', u'atmospher', u'attended', u'attent', u'attentiv', u'attitud', u'attraction', u'attuned', u'australia', u'authentic', u'authentically', u'authentiek', u'availabl', u'avec', u'avenue', u'averag', u'away', u'awesom', u'bab', u'back', u'background', u'bad', u'bados', u'bai', u'bak', u'bakkerij', u'balcony', u'bamba', u'banketbakker', u'bar', u'barg', u'bartel', u'bartender', u'bas', u'basic', u'basil', u'basta', u'batch', u'bathrom', u'bavk', u'beach', u'bean', u'beautiful', u'beautyful', u'becaus', u'becom', u'bed', u'bedankt', u'bedien', u'bedrijf', u'bee', u'beetj', u'bef', u'befor', u'behalv', u'behulpvaard', u'bekijk', u'beklimm', u'belgian', u'bellman', u'ben', u'benauwd', u'bened', u'bent', u'ber', u'bereid', u'besid', u'best', u'bestel', u'besteld', u'bestell', u'bestemm', u'betaald', u'beter', u'beth', u'better', u'betwen', u'beverag', u'beveraggio', u'bezoek', u'bezorgd', u'bieb', u'bien', u'bier', u'biertj', u'big', u'bijna', u'bijv', u'bijzonder', u'bik', u'bikes', u'bilding', u'bill', u'binn', u'binnenstad', u'bio', u'bioscop', u'birthday', u'bistro', u'bit', u'bland', u'blend', u'blij', u'blijf', u'blijv', u'block', u'blog', u'blown', u'boar', u'bob', u'body', u'boer', u'bog', u'bok', u'bomb', u'bon', u'bonbon', u'bonus', u'booked', u'bord', u'borito', u'born', u'bos', u'bottles', u'bought', u'bov', u'bovenop', u'bowl', u'brainer', u'bram', u'bread', u'break', u'breakfast', u'breakout', u'breath', u'bright', u'brilliant', u'bring', u'brok', u'broodj', u'broodjes', u'broodjeszak', u'brought', u'brul', u'brunch', u'bubbel', u'budget', u'build', u'building', u'built', u'bull', u'buonissimi', u'buono', u'burger', u'burnt', u'busines', u'bygon', u'cab', u'cabinet', u'cadeaus', u'caf', u'cakes', u'calamaro', u'called', u'calm', u'calma', u'calmly', u'cam', u'cambie', u'camerier', u'canada', u'canal', u'candles', u'canned', u'capital', u'cappuccino', u'car', u'caratteristici', u'card', u'careful', u'caring', u'carn', u'cartel', u'cash', u'caus', u'ceasar', u'center', u'centr', u'central', u'centrum', u'century', u'chai', u'chain', u'chair', u'challang', u'changed', u'changing', u'charg', u'chat', u'che', u'cheap', u'cheapest', u'check', u'checked', u'checking', u'cheeses', u'chef', u'cher', u'ches', u'chickpea', u'child', u'childr', u'chines', u'chocola', u'chocolad', u'choic', u'choices', u'chos', u'christmas', u'chunk', u'church', u'cibo', u'cinema', u'cisk', u'city', u'classic', u'classical', u'classy', u'clean', u'cleaning', u'cleanlines', u'cleanther', u'clematis', u'clos', u'closest', u'clothing', u'club', u'clumsily', u'coffee', u'col', u'cola', u'cold', u'collect', u'collectie', u'collecties', u'collection', u'colton', u'com', u'combination', u'combined', u'combiner', u'comes', u'comfortabel', u'comfortabl', u'coming', u'comm', u'comment', u'company', u'compared', u'competition', u'complet', u'comprehensiv', u'computer', u'con', u'concept', u'concerned', u'confettura', u'confirmation', u'confront', u'considerat', u'consigliato', u'consoles', u'contactles', u'continu', u'conto', u'convenient', u'converted', u'cooking', u'corporat', u'correct', u'cortes', u'cosy', u'could', u'counter', u'country', u'coupled', u'coupon', u'cour', u'court', u'courteous', u'courtesy', u'cover', u'cozy', u'crammed', u'crap', u'cream', u'creatively', u'crem', u'crew', u'crib', u'critical', u'criticism', u'crostat', u'crudos', u'crunch', u'crust', u'cuban', u'cuenta', u'cuisin', u'culinary', u'cultur', u'cup', u'curry', u'customer', u'daardor', u'daarna', u'daarnaast', u'daarom', u'dag', u'dagj', u'dainty', u'dames', u'dancing', u'dankjewel', u'dapp', u'dat', u'dated', u'dates', u'davidson', u'day', u'deal', u'dealership', u'decent', u'decided', u'decor', u'decorated', u'dedicatd', u'defen', u'definitely', u'deli', u'delicatessenwinkel', u'deliciosas', u'delicioso', u'delicious', u'delizioso', u'department', u'departur', u'deplorabl', u'derks', u'design', u'deskund', u'despit', u'dessertwijn', u'deur', u'dezelfd', u'dicht', u'dichter', u'diego', u'diepvries', u'dietary', u'different', u'diner', u'dining', u'dinner', u'dinning', u'dip', u'dipsauz', u'directly', u'disabled', u'disappoint', u'disappointed', u'discount', u'discrepancy', u'discriminat', u'discuss', u'disgust', u'dish', u'dishes', u'display', u'distanc', u'diver', u'doe', u'doet', u'dolby', u'dolci', u'dollar', u'domenica', u'donker', u'doorbreng', u'doorgaand', u'doosj', u'dopo', u'doppio', u'dos', u'doubl', u'downsid', u'downtown', u'drankj', u'draw', u'dressing', u'drink', u'driv', u'driver', u'dropped', u'drostehuis', u'drostenhuis', u'druk', u'drukt', u'dry', u'dubbel', u'duck', u'due', u'dumped', u'dur', u'dutch', u'duurd', u'duurder', u'duurt', u'dwar', u'east', u'easy', u'eat', u'eating', u'eccezionali', u'echt', u'eet', u'effect', u'efficient', u'egg', u'eig', u'eigen', u'eigenar', u'eigenares', u'eind', u'either', u'element', u'elkar', u'els', u'employes', u'empty', u'end', u'ended', u'english', u'enig', u'enjoy', u'enjoyabl', u'enjoyed', u'enorm', u'enough', u'ensalada', u'ensenada', u'entry', u'era', u'erbij', u'erg', u'ergen', u'ertuss', u'ervar', u'especial', u'especially', u'est', u'estuvo', u'etc', u'eten', u'etenleuk', u'euro', u'europ', u'eveeerrrr', u'even', u'event', u'eventually', u'ever', u'every', u'everyon', u'everyth', u'exact', u'examined', u'excelent', u'excellent', u'except', u'exclusiv', u'excus', u'executed', u'exhibition', u'exist', u'expect', u'expected', u'expensiv', u'experienc', u'experiences', u'expir', u'expiration', u'explain', u'exposed', u'exposition', u'expres', u'extended', u'extra', u'facility', u'fact', u'fair', u'faith', u'fajita', u'fajitas', u'family', u'familyproud', u'fantasic', u'fantastic', u'far', u'farci', u'fast', u'favolosa', u'favoriet', u'favorit', u'favourit', u'feast', u'feest', u'feestj', u'fel', u'fell', u'fet', u'fijn', u'film', u'filmhuis', u'fin', u'find', u'finding', u'finest', u'finish', u'first', u'firstly', u'fish', u'fitting', u'fiv', u'fixing', u'flat', u'flattie', u'flavor', u'flavour', u'flight', u'flor', u'flour', u'flow', u'fod', u'follow', u'fond', u'foodstand', u'fooled', u'foreigner', u'forgot', u'form', u'foto', u'fotografer', u'found', u'four', u'fraai', u'frambos', u'franc', u'franchis', u'fratelli', u'fraterhuis', u'free', u'french', u'fresh', u'freshly', u'friday', u'fried', u'friend', u'friendly', u'fries', u'friet', u'frietfiet', u'frietwinkel', u'frietzakjes', u'frites', u'front', u'frustrat', u'fue', u'full', u'fun', u'fundatie', u'fusion', u'gam', u'gamberi', u'gameboy', u'games', u'gan', u'gap', u'gar', u'gard', u'gas', u'gast', u'gat', u'gauw', u'gav', u'gebak', u'gebeld', u'gebouw', u'gebracht', u'gecombineerd', u'gedan', u'gedraaid', u'gedronk', u'geergerd', u'geget', u'gehad', u'geholp', u'gekom', u'geld', u'geled', u'geleg', u'geleid', u'gelijk', u'gelukk', u'gem', u'gemaakt', u'gen', u'generally', u'generous', u'geniet', u'genoeg', u'genom', u'genot', u'gentil', u'gentleman', u'genuin', u'gepast', u'geprat', u'geprobeerd', u'gerecht', u'gerechtjes', u'geriefelijkst', u'germany', u'geschenk', u'geserveerd', u'geslaagd', u'get', u'getting', u'gev', u'geval', u'gevarieerd', u'geweigerd', u'geweld', u'gewon', u'gezegd', u'gezell', u'gezelliger', u'gezet', u'gezien', u'gift', u'ging', u'girlfriend', u'giv', u'glad', u'glid', u'glitz', u'glorie', u'glutenvrij', u'god', u'goed', u'goes', u'going', u'googl', u'gos', u'got', u'grag', u'gran', u'grand', u'gratitud', u'great', u'greater', u'grecia', u'greco', u'greeted', u'gren', u'grew', u'griglia', u'grill', u'grocery', u'groei', u'groep', u'groning', u'groothandel', u'gros', u'grot', u'group', u'grreat', u'guality', u'guard', u'gues', u'guest', u'guidanc', u'gunk', u'gustosissimi', u'guy', u'gym', u'hair', u'half', u'halver', u'ham', u'hamburger', u'hampd', u'hand', u'hang', u'hapj', u'happier', u'happy', u'hard', u'harder', u'harley', u'hav', u'hay', u'head', u'heading', u'hear', u'heard', u'hedat', u'heerlijk', u'hel', u'helder', u'helemal', u'help', u'helped', u'helpful', u'hen', u'henc', u'herberg', u'herhal', u'heug', u'hey', u'hid', u'hierdor', u'high', u'higher', u'highly', u'highway', u'hired', u'hispanic', u'historical', u'historie', u'history', u'hit', u'hne', u'hod', u'hofleverancier', u'hog', u'hol', u'holland', u'hom', u'homemad', u'honestly', u'hoofdgerecht', u'hoofdkantor', u'horribl', u'hospitality', u'host', u'hot', u'hotel', u'hotspot', u'houd', u'houding', u'houdt', u'hour', u'hous', u'however', u'hug', u'huis', u'hulp', u'hung', u'hungry', u'husband', u'ice', u'icm', u'idaho', u'idea', u'ideaal', u'ideetjes', u'ieder', u'iederen', u'ignored', u'immen', u'impeccabil', u'impeccabl', u'importantly', u'impressedsom', u'impressiv', u'includ', u'inclusie', u'inclusief', u'incomplet', u'incredibl', u'incurred', u'inderdad', u'indrukwek', u'industrial', u'industry', u'inexpensiv', u'infant', u'infinit', u'info', u'informativ', u'informel', u'ingericht', u'ingredient', u'initiatief', u'inquired', u'inricht', u'insid', u'inspired', u'instead', u'insuranc', u'interes', u'interest', u'interieur', u'interior', u'internet', u'interrieur', u'inventiv', u'investment', u'invit', u'inwoner', u'issue', u'italian', u'italianas', u'italiani', u'italiano', u'italienn', u'item', u'ivm', u'jackson', u'jacuzzi', u'jammer', u'japanes', u'jar', u'jas', u'jasj', u'jeuner', u'job', u'joint', u'jonnie', u'juist', u'justo', u'kaart', u'karig', u'kast', u'kastanjebom', u'katholiek', u'kep', u'ker', u'kerk', u'ketchup', u'keuk', u'keurig', u'keus', u'keuz', u'keuzes', u'kid', u'kiez', u'kijk', u'kijkj', u'kind', u'kinda', u'kinder', u'kinderboerderij', u'king', u'kip', u'klant', u'klar', u'kleding', u'klein', u'kleinst', u'kler', u'klets', u'know', u'knowledg', u'knowledgabl', u'knowledgeabl', u'knus', u'knusheid', u'knusser', u'koek', u'koekjes', u'koffie', u'koffiebar', u'koffiezaakj', u'kogelbiefstuk', u'kok', u'kom', u'kop', u'kortom', u'koud', u'kreg', u'krijg', u'krijgt', u'kroket', u'kruisenboter', u'kruising', u'kudos', u'kun', u'kunt', u'kwaliteit', u'kwam', u'lafayet', u'lang', u'laptop', u'larg', u'las', u'lasagna', u'laser', u'last', u'lat', u'later', u'lauw', u'law', u'lawaai', u'least', u'leaving', u'leerbehoeft', u'left', u'legit', u'legrom', u'lekker', u'lekkerbek', u'lekkerder', u'lekkerst', u'lenferink', u'lengua', u'lentil', u'les', u'lesser', u'lessthis', u'lettuc', u'leuk', u'level', u'lez', u'librij', u'licht', u'liever', u'light', u'lighting', u'ligt', u'lik', u'liked', u'limited', u'limon', u'lin', u'lindebom', u'liqueur', u'list', u'literally', u'littl', u'liv', u'liz', u'lles', u'lobby', u'local', u'located', u'locatie', u'location', u'lock', u'lok', u'long', u'longer', u'looked', u'looking', u'loopt', u'lop', u'los', u'lost', u'lot', u'loud', u'lov', u'loved', u'lovely', u'lover', u'loves', u'low', u'lucky', u'lugar', u'luisterd', u'lunch', u'maaltijd', u'maaltijdsalades', u'maandag', u'maatschapp', u'maatschappij', u'machines', u'macy', u'mad', u'mag', u'main', u'mainly', u'maintained', u'mak', u'makes', u'making', u'mal', u'mam', u'man', u'management', u'manager', u'mancanza', u'mangia', u'mann', u'many', u'margarita', u'market', u'markt', u'marvellous', u'massiv', u'matig', u'max', u'may', u'mayonais', u'mcdonald', u'meal', u'mean', u'meat', u'mechanic', u'meda', u'medewerker', u'mee', u'meenem', u'meening', u'meeting', u'mejorar', u'mekar', u'meld', u'memorabl', u'memories', u'memory', u'men', u'mening', u'mens', u'mention', u'menu', u'menue', u'menukaart', u'menus', u'mes', u'met', u'meubelmakerij', u'mexican', u'mezzanin', u'mid', u'middel', u'middenbeuk', u'midnight', u'might', u'mil', u'mildew', u'milk', u'min', u'mind', u'mini', u'minor', u'minpunt', u'minut', u'minutes', u'minutiper', u'mislukt', u'misperception', u'missed', u'mist', u'mix', u'mixdrankj', u'mixed', u'mod', u'modelnam', u'modern', u'modesto', u'moeit', u'moet', u'mog', u'mogelijk', u'mojito', u'molta', u'molto', u'moment', u'money', u'month', u'monumental', u'mooi', u'mor', u'morning', u'mostly', u'motorclothes', u'motorcycl', u'mountain', u'moved', u'movie', u'movies', u'much', u'multipl', u'museum', u'mushrom', u'music', u'musical', u'must', u'muy', u'muziek', u'naast', u'nacho', u'nageaapt', u'nam', u'named', u'names', u'near', u'nearby', u'neat', u'necessary', u'ned', u'nee', u'needed', u'neighborhod', u'neither', u'nem', u'neogotisch', u'ner', u'nergen', u'net', u'neuz', u'never', u'new', u'newly', u'next', u'nic', u'nicely', u'nichtj', u'nieuw', u'nieuwbouw', u'night', u'nightmar', u'niveau', u'nmal', u'nobody', u'noch', u'nodig', u'noisy', u'nominal', u'non', u'normal', u'notch', u'nothing', u'notic', u'novelty', u'nowaday', u'nowher', u'nuff', u'nugget', u'number', u'nuttig', u'nutty', u'nyc', u'ober', u'obv', u'occasion', u'ocean', u'oester', u'offend', u'offer', u'offerto', u'offic', u'oft', u'oily', u'oke', u'old', u'omgev', u'onc', u'ondank', u'onderhoud', u'one', u'ongezell', u'onlang', u'onlin', u'ontvang', u'ontzet', u'onwijs', u'onz', u'oost', u'opdringer', u'open', u'opet', u'opgevolgd', u'opinion', u'opnam', u'option', u'opvall', u'order', u'ordered', u'organ', u'organiz', u'original', u'originel', u'orsolino', u'ottimament', u'ottimo', u'oud', u'outlet', u'outsid', u'outstand', u'overall', u'overnight', u'overpriced', u'owen', u'owner', u'packed', u'paid', u'pairing', u'pan', u'pancak', u'pancakes', u'pand', u'paprika', u'par', u'para', u'parajumper', u'paris', u'park', u'parking', u'parkj', u'part', u'particularly', u'party', u'pas', u'passie', u'passing', u'passport', u'past', u'pasta', u'path', u'patient', u'patio', u'patron', u'patty', u'pay', u'paying', u'payment', u'peaceful', u'pee', u'peeled', u'peopl', u'per', u'perch', u'perfect', u'perfection', u'perform', u'performances', u'perfumes', u'perk', u'person', u'personal', u'personally', u'personel', u'personell', u'pertornarci', u'pescado', u'pet', u'piatti', u'pick', u'picknick', u'pictur', u'pictures', u'piec', u'pieno', u'pip', u'piso', u'pistach', u'pizza', u'pizzas', u'pizzaspropiament', u'plac', u'places', u'plain', u'plantain', u'plat', u'play', u'playabl', u'played', u'playing', u'pleased', u'pleasur', u'plein', u'plek', u'plekj', u'plenty', u'plug', u'plus', u'podr', u'poi', u'point', u'pol', u'polpo', u'pong', u'popcorn', u'popular', u'por', u'porque', u'port', u'portefeuill', u'portion', u'portobello', u'portrait', u'positiv', u'positively', u'posto', u'potato', u'potatoes', u'poyo', u'prachtig', u'prachtpark', u'prais', u'pralines', u'pre', u'prearrang', u'premuroso', u'prepared', u'present', u'presentaci', u'presented', u'presentes', u'preserved', u'pretend', u'prettig', u'pretty', u'pric', u'priced', u'prices', u'pricey', u'prijs', u'prijz', u'prima', u'primitiev', u'prison', u'priv', u'prival', u'probably', u'problem', u'proces', u'product', u'productplaats', u'proef', u'proev', u'professional', u'professionalism', u'professionel', u'programma', u'projection', u'property', u'proprietario', u'proseguito', u'proud', u'provided', u'public', u'puerto', u'puffy', u'purchased', u'pushed', u'quality', u'qualm', u'que', u'quella', u'question', u'quick', u'quiet', u'quit', u'rac', u'rack', u'rafaela', u'rand', u'rar', u'rarity', u'rat', u'rated', u'rather', u'rating', u'raviolis', u'read', u'reading', u'ready', u'real', u'realised', u'reality', u'realiz', u'really', u'reason', u'reasonabl', u'reasonably', u'reccom', u'receiv', u'recently', u'recipes', u'reco', u'recomm', u'recommended', u'red', u'redelijk', u'redesigned', u'refried', u'refurbished', u'regelmat', u'regional', u'regular', u'regularly', u'reimbursement', u'rekax', u'rekend', u'relaci', u'relax', u'relaxed', u'remember', u'reminded', u'reorder', u'rep', u'replaced', u'request', u'resaltar', u'reservation', u'reserver', u'respect', u'respected', u'responsibl', u'rest', u'restaurant', u'resulted', u'retrouv', u'returned', u'rib', u'rico', u'ridiculously', u'riesgo', u'rijd', u'rip', u'ripping', u'risk', u'riusciti', u'river', u'rock', u'rockefeller', u'rollaway', u'rom', u'romantic', u'rond', u'rondes', u'roomy', u'rosas', u'roti', u'rotolini', u'roukost', u'round', u'rper', u'ruimt', u'ruimtelijk', u'rumoroso', u'run', u'rustig', u'rustpunt', u'sabor', u'saf', u'said', u'salad', u'salades', u'sales', u'salsa', u'salsas', u'sam', u'samengesteld', u'san', u'sandwich', u'sandwiches', u'sapori', u'saturday', u'sauces', u'sausag', u'saved', u'saveur', u'saw', u'say', u'saying', u'scenery', u'schat', u'schlager', u'schreeuw', u'screwed', u'searching', u'seating', u'secondly', u'secos', u'section', u'security', u'see', u'seeking', u'segundo', u'selection', u'semplici', u'sen', u'send', u'senses', u'sentir', u'serata', u'serieus', u'serv', u'served', u'server', u'serves', u'servic', u'services', u'serving', u'serviti', u'servito', u'servizio', u'ses', u'set', u'several', u'sfeervoll', u'sfer', u'shampos', u'sharing', u'sharkey', u'shelving', u'shet', u'ship', u'shipping', u'shop', u'shopping', u'short', u'shout', u'show', u'shower', u'siamo', u'sica', u'sid', u'siempr', u'sight', u'similar', u'simpel', u'simpl', u'simply', u'sinc', u'singl', u'sipping', u'sit', u'sitting', u'situated', u'siz', u'skill', u'slacht', u'sliced', u'sliding', u'slightly', u'slim', u'slow', u'smaakt', u'smak', u'small', u'smart', u'smell', u'smikkel', u'smoezel', u'smok', u'smoking', u'smoothie', u'snack', u'snapper', u'snd', u'snel', u'snell', u'soap', u'social', u'soda', u'soep', u'soft', u'solo', u'som', u'someon', u'someth', u'sometimes', u'sommelier', u'son', u'sono', u'soort', u'sorbet', u'sorbetto', u'sorry', u'sound', u'sour', u'spac', u'spacious', u'spada', u'spar', u'sparerib', u'spat', u'speak', u'speaking', u'speciaal', u'special', u'specialment', u'specialty', u'specific', u'specifically', u'spectacular', u'speelgeleg', u'speeltuin', u'spend', u'spent', u'spesso', u'spijt', u'splendidi', u'spoilt', u'spok', u'sportschol', u'spot', u'spull', u'spulletjes', u'squar', u'sta', u'staand', u'stadhuis', u'stadsbezoek', u'staff', u'stain', u'stal', u'stan', u'standard', u'star', u'starbuck', u'start', u'started', u'starter', u'stat', u'stati', u'station', u'stay', u'stayed', u'steak', u'steenwijk', u'sten', u'ster', u'sterk', u'sterr', u'stiekem', u'stijlkamer', u'still', u'stock', u'stod', u'stoel', u'stof', u'stol', u'stond', u'stop', u'stopped', u'stor', u'stret', u'strip', u'struggl', u'student', u'studer', u'studie', u'studying', u'stuff', u'stuffed', u'stuk', u'stumbled', u'stupendo', u'styl', u'substantial', u'substitutes', u'subway', u'suck', u'sugar', u'suggest', u'suit', u'summon', u'sunday', u'super', u'superb', u'supervriend', u'supply', u'supposed', u'sur', u'surpris', u'surprised', u'sushi', u'swet', u'sydney', u'system', u'taart', u'tabl', u'tables', u'tablet', u'taco', u'tacos', u'tact', u'tafel', u'tafelgenot', u'tak', u'takeout', u'takes', u'taking', u'talk', u'talked', u'tant', u'tap', u'taqueria', u'tartar', u'tast', u'tasted', u'tastes', u'tastiest', u'tasting', u'tasty', u'taxes', u'taxi', u'tea', u'team', u'technically', u'technique', u'tell', u'tennis', u'tent', u'tentjes', u'ter', u'terrac', u'terras', u'terrasjes', u'terribl', u'terug', u'terugkomt', u'terwijl', u'tetris', u'thank', u'theater', u'theatr', u'thee', u'theesoort', u'themed', u'ther', u'theres', u'thes', u'thievery', u'thin', u'thing', u'think', u'thinking', u'thos', u'thou', u'though', u'thought', u'three', u'thru', u'thuis', u'thursday', u'tight', u'tijd', u'tijden', u'tim', u'times', u'tiny', u'titolar', u'tjadat', u'tocht', u'today', u'toe', u'toerist', u'toes', u'toetj', u'toilet', u'tok', u'told', u'ton', u'top', u'tor', u'torr', u'tortias', u'tostado', u'tosti', u'total', u'totally', u'tour', u'toutes', u'toward', u'town', u'train', u'training', u'transport', u'transportation', u'trap', u'travel', u'treat', u'trendy', u'tres', u'tried', u'trinket', u'trip', u'trot', u'trouwen', u'truly', u'try', u'tub', u'tuesday', u'turkish', u'twee', u'twenty', u'twic', u'two', u'typical', u'uber', u'uiensoep', u'uitleg', u'uitmunt', u'uitsmijter', u'uitstek', u'uitzicht', u'una', u'unbeatabl', u'understand', u'uniquely', u'unpleasant', u'unprofessional', u'unrespectful', u'unusual', u'upbeat', u'updated', u'upstair', u'urk', u'usa', u'use', u'used', u'useful', u'using', u'usually', u'utrecht', u'uurtj', u'vacation', u'vak', u'vakman', u'valor', u'valt', u'vanaf', u'vanavond', u'vanmiddag', u'vanuit', u'vari', u'variety', u'various', u'vast', u'vastgoed', u'vatbar', u'veal', u'vega', u'vegan', u'vegetari', u'vegetarian', u'velocement', u'ver', u'veranda', u'verbaasd', u'verbouw', u'verder', u'verdiend', u'verduras', u'vergan', u'verheugd', u'verhuisd', u'veri', u'verkoel', u'verkoopster', u'vero', u'verontwaardigd', u'verouderd', u'verrass', u'verrast', u'verschrik', u'verses', u'verstan', u'verstopt', u'versus', u'vetos', u'via', u'vicinity', u'video', u'vierd', u'viering', u'vieringtor', u'viernes', u'view', u'viewamaz', u'vijand', u'vin', u'vincent', u'vind', u'vis', u'visit', u'visited', u'visj', u'visto', u'vito', u'vitrin', u'vivo', u'vlot', u'vol', u'volop', u'volt', u'volta', u'vooraf', u'vooral', u'voorbijlop', u'voordat', u'voorkant', u'voormal', u'voornam', u'voorstell', u'voortreff', u'vrag', u'vrai', u'vriend', u'vriendelijk', u'vriendinn', u'vrij', u'vrijwilleger', u'vroeg', u'vrolijk', u'vrolijker', u'vrouw', u'vull', u'waard', u'waardor', u'waarop', u'waarvan', u'wait', u'waiter', u'waitres', u'wakadoori', u'walk', u'walked', u'walking', u'wall', u'wan', u'wanner', u'wanted', u'war', u'warm', u'wash', u'wast', u'watch', u'watched', u'watered', u'way', u'wealth', u'webshop', u'websit', u'wedding', u'weekend', u'weg', u'weggegan', u'weggelop', u'weinig', u'wek', u'wel', u'welcom', u'welcomed', u'well', u'wens', u'went', u'wer', u'werd', u'werk', u'werknemer', u'wes', u'west', u'wet', u'wher', u'whether', u'whil', u'whilst', u'whin', u'whites', u'whol', u'wid', u'wif', u'wifi', u'wij', u'wijn', u'wijntj', u'wijnwinkel', u'wil', u'wilt', u'win', u'window', u'wineries', u'wing', u'winkel', u'winkeltj', u'wish', u'without', u'wom', u'wonder', u'wonderful', u'woning', u'woolrich', u'word', u'work', u'worker', u'working', u'workshop', u'workspac', u'world', u'worst', u'worth', u'wou', u'would', u'wow', u'wrap', u'writ', u'wrong', u'yard', u'yeah', u'year', u'yesterday', u'yet', u'yoghurt', u'yok', u'young', u'yummmmm', u'yummy', u'zag', u'zak', u'zal', u'zaterdag', u'zealand', u'zegg', u'zegt', u'zei', u'zeker', u'zelf', u'zelfgemaakt', u'zer', u'zien', u'zit', u'zitruimt', u'zittend', u'zoal', u'zoekt', u'zogenaamd', u'zoiet', u'zondag', u'zoooo', u'zorgd', u'zorgt', u'zuiver', u'zusj', u'zwar', u'zwoll', u'zwollekerspel']
+INFO:lda:n_documents: 66
+INFO:lda:vocab_size: 2155
+INFO:lda:n_words: 5124
+INFO:lda:n_topics: 18
+INFO:lda:n_iter: 600
+WARNING:lda:all zero row in document-term matrix found
+INFO:lda:<0> log likelihood: -62655
+INFO:lda:<10> log likelihood: -45617
+INFO:lda:<20> log likelihood: -44315
+INFO:lda:<30> log likelihood: -43875
+INFO:lda:<40> log likelihood: -43374
+INFO:lda:<50> log likelihood: -43221
+INFO:lda:<60> log likelihood: -43165
+INFO:lda:<70> log likelihood: -43027
+INFO:lda:<80> log likelihood: -42869
+INFO:lda:<90> log likelihood: -42809
+INFO:lda:<100> log likelihood: -42703
+INFO:lda:<110> log likelihood: -42646
+INFO:lda:<120> log likelihood: -42615
+INFO:lda:<130> log likelihood: -42626
+INFO:lda:<140> log likelihood: -42531
+INFO:lda:<150> log likelihood: -42499
+INFO:lda:<160> log likelihood: -42477
+INFO:lda:<170> log likelihood: -42541
+INFO:lda:<180> log likelihood: -42573
+INFO:lda:<190> log likelihood: -42370
+INFO:lda:<200> log likelihood: -42362
+INFO:lda:<210> log likelihood: -42401
+INFO:lda:<220> log likelihood: -42430
+INFO:lda:<230> log likelihood: -42358
+INFO:lda:<240> log likelihood: -42317
+INFO:lda:<250> log likelihood: -42298
+INFO:lda:<260> log likelihood: -42357
+INFO:lda:<270> log likelihood: -42383
+INFO:lda:<280> log likelihood: -42371
+INFO:lda:<290> log likelihood: -42304
+INFO:lda:<300> log likelihood: -42200
+INFO:lda:<310> log likelihood: -42270
+INFO:lda:<320> log likelihood: -42381
+INFO:lda:<330> log likelihood: -42254
+INFO:lda:<340> log likelihood: -42368
+INFO:lda:<350> log likelihood: -42116
+INFO:lda:<360> log likelihood: -42137
+INFO:lda:<370> log likelihood: -42092
+INFO:lda:<380> log likelihood: -42132
+INFO:lda:<390> log likelihood: -42106
+INFO:lda:<400> log likelihood: -42290
+INFO:lda:<410> log likelihood: -42292
+INFO:lda:<420> log likelihood: -42247
+INFO:lda:<430> log likelihood: -42374
+INFO:lda:<440> log likelihood: -42111
+INFO:lda:<450> log likelihood: -42219
+INFO:lda:<460> log likelihood: -42307
+INFO:lda:<470> log likelihood: -42210
+INFO:lda:<480> log likelihood: -42374
+INFO:lda:<490> log likelihood: -42194
+INFO:lda:<500> log likelihood: -42258
+INFO:lda:<510> log likelihood: -42274
+INFO:lda:<520> log likelihood: -42199
+INFO:lda:<530> log likelihood: -42323
+INFO:lda:<540> log likelihood: -42199
+INFO:lda:<550> log likelihood: -42217
+INFO:lda:<560> log likelihood: -42263
+INFO:lda:<570> log likelihood: -42268
+INFO:lda:<580> log likelihood: -42046
+INFO:lda:<590> log likelihood: -42190
+INFO:lda:<599> log likelihood: -42217
+shape: (18, 2155)
+*Topic 0
+- echt winkel kop vis wilt
+*Topic 1
+- really god best quality cream
+*Topic 2
+- rom hotel ther clean theater
+*Topic 3
+- lekker eten leuk heerlijk gezell
+*Topic 4
+- staff hav bik availabl owner
+*Topic 5
+- wer great order zwoll location
+*Topic 6
+- mooi prachtig zwoll kerk prettig
+*Topic 7
+- fod plac hav nic alway
+*Topic 8
+- great servic god lik selection
+*Topic 9
+- servic peopl product disabled big
+*Topic 10
+- goed koffie hel top prima
+*Topic 11
+- one best ever ther fod
+*Topic 12
+- card gift pancak sales pancakes
+*Topic 13
+- mee zer onlin concept werknemer
+*Topic 14
+- ther old caf even also
+*Topic 15
+- friendly coffee god staff well
+*Topic 16
+- nic museum lov building hav
+*Topic 17
+- que los con molto personal
+WARNING:lda:all zero row in document-term matrix found
+La Cubanita (top topic: 11)
+Het Weeshuys (top topic: 3)
+Peperbus (top topic: 6)
+Le Perron (top topic: 13)
+Blue Sakura (top topic: 15)
+t Pannenkoekenschip (top topic: 12)
+Rituals (top topic: 16)
+Grote Kerk (top topic: 16)
+Bar & Brood (top topic: 15)
+Onze Lieve Vrouw Basiliek (top topic: 6)
+Tosti World (top topic: 3)
+Park Eekhout (top topic: 3)
+De Beurs (top topic: 7)
+Slijterij Bartels (top topic: 4)
+Swolsch Friethuys (top topic: 1)
+Vaca Negra (top topic: 11)
+Stadscafé Blij (top topic: 7)
+Ingeburgerd (top topic: 15)
+Stadkamer (top topic: 10)
+Pelsertoren (top topic: 11)
+Pistache (top topic: 7)
+De Kleine (top topic: 8)
+Het Fraterhuis (top topic: 6)
+Het Konkeltje (top topic: 10)
+Van Orsouw (top topic: 3)
+Schouwburg Odeon (top topic: 6)
+Curly Coffee (top topic: 9)
+Lunchroom Blocks (top topic: 10)
+Librije's Winkel (top topic: 11)
+Patisserie Lindeboom (top topic: 10)
+Museum de Fundatie (top topic: 16)
+La Bamba (top topic: 5)
+Brownies & Downies (top topic: 9)
+Doppio (top topic: 15)
+Bonbonnerie Borrel (top topic: 3)
+Bonami Spelcomputer Museum (top topic: 14)
+Bay Yok (top topic: 4)
+Las Rosas (top topic: 2)
+Kletsen en Proeven Bar & Bistro (top topic: 13)
+Kota Radja (top topic: 7)
+Espressobar Maling (top topic: 15)
+Theater de Spiegel (top topic: 6)
+Sirtaki (top topic: 17)
+In De Buurt (top topic: 1)
+Derksen & Derksen (top topic: 0)
+Bij Hartje Zwolle (top topic: 10)
+Stedelijk Museum Zwolle (top topic: 16)
+Plantagekerk (top topic: 2)
+Brasserie Jansen (top topic: 3)
+Visgilde Hans Visscher (top topic: 0)
+Barista Café (top topic: 7)
+Woodies (top topic: 3)
+Vito's (top topic: 12)
+Grand Café Public (top topic: 14)
+Restaurant Michelangelo (top topic: 2)
+Pathé De Kroon (top topic: 14)
+Schuttelaar Wijnen en Geschenken (top topic: 0)
+Bistro Bonne Femme (top topic: 8)
+IJssalon Saluté (top topic: 1)
+t Swolsch Café (top topic: 3)
+De Stoof (top topic: 10)
+Restaurant Poppe (top topic: 0)
+Café De Gezelligheid (top topic: 10)
+Sassenpoort (top topic: 16)
+Fratelli D'Italia (top topic: 17)
+Ter Pelkwijkpark (top topic: 6)
+Number of instances (features): 66
+Number of instances (classes): 66
+Class frequency distribution: Counter({u'ulo:Eating|ulo:Food': 10, u'ulo:Drinking|ulo:Coffee': 5, u'ulo:Eating|ulo:Lunch': 5, u'ulo:Watching|ulo:Architecture': 4, u'ulo:Sitting|ulo:Terrace': 3, u'ulo:Eating|ulo:Italian_Cuisine': 2, u'ulo:Shopping|ulo:Chocolate': 2, u'ulo:Drinking|ulo:Speciality_Beer': 2, u'ulo:Watching|ulo:Movie': 2, u'ulo:Drinking|ulo:Beer': 2, u'ulo:Eating|ulo:Sandwich': 2, u'ulo:Watching|ulo:Show': 2, u'ulo:Eating|ulo:Fast_Food': 2, u'ulo:Eating|ulo:Pastry': 1, u'ulo:Eating|ulo:Argentinian_Cuisine': 1, u'ulo:Shopping|ulo:Gifts': 1, u'ulo:Eating|ulo:Tapas': 1, u'ulo:Shopping|ulo:Books': 1, u'ulo:Sightseeing|ulo:Architecture': 1, u'ulo:Eating|ulo:Sushi': 1, u'ulo:Eating|ulo:Asian_Cuisine': 1, u'ulo:Shopping|ulo:Fashion': 1, u'ulo:Shopping|ulo:Beauty_Goods': 1, u'ulo:Eating|ulo:Ice_Cream': 1, u'ulo:Eating|ulo:Bread': 1, u'ulo:Eating|ulo:Greek_Cuisine': 1, u'ulo:Watching|ulo:Exhibition': 1, u'ulo:Eating|ulo:Fish': 1, u'ulo:Relaxing|ulo:Grass': 1, u'ulo:Watching|ulo:Cultural_Event': 1, u'ulo:Eating|ulo:French_Cuisine': 1, u'ulo:Eating|ulo:Tosti': 1, u'ulo:Shopping|ulo:Wine': 1, u'ulo:Eating|ulo:Thai_Cuisine': 1, u'ulo:Playing|ulo:Games': 1, u'ulo:Eating|ulo:Burger': 1})
+Remove classes below minimum frequency : 5
+[u'amenity=No', u'amenity=bar', u'amenity=cafe', u'amenity=pub', u'amenity=restaurant', u'beer=No', u'beer=yes', u'building=No', u'clothes=No', u'cuisine=No', u'cuisine=coffee', u'cuisine=french', u'cuisine=regional', u'googletype=bar|cafe|establishment|food|lodging|point_of_interest|restaurant', u'googletype=bar|establishment|food|point_of_interest|restaurant', u'googletype=bar|establishment|museum|park|point_of_interest', u'googletype=bar|establishment|point_of_interest', u'googletype=cafe|establishment|food|grocery_or_supermarket|point_of_interest|store', u'googletype=cafe|establishment|food|meal_takeaway|point_of_interest|restaurant|store', u'googletype=cafe|establishment|food|point_of_interest', u'googletype=cafe|establishment|food|point_of_interest|restaurant', u'googletype=cafe|establishment|food|point_of_interest|store', u'googletype=establishment|food|point_of_interest|restaurant', u'googletype=establishment|food|point_of_interest|store', u'googletype=establishment|museum|point_of_interest', u'highway=No', u'historic=No', u'leisure=No', u'man_made=No', u'place=No', u'shop=No', u'shop=coffee', u'surface=No', 'topic 0', 'topic 1', 'topic 10', 'topic 11', 'topic 12', 'topic 13', 'topic 14', 'topic 15', 'topic 16', 'topic 17', 'topic 2', 'topic 3', 'topic 4', 'topic 5', 'topic 6', 'topic 7', 'topic 8', 'topic 9', u'tourism=No', u'tourism=museum', u'tower=No']
+
+ Results of the model evaluation: 
+
+
+ CV naive classifier (most frequent class): accuracy: 0.666666666667 (+/- 0.333333333333) weighted precision 0.555555555556 weighted recall 0.666666666667 F score 0.583333333333
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       0.50      1.00      0.67        10
+   ulo:Eating|ulo:Lunch       0.00      0.00      0.00         5
+ulo:Drinking|ulo:Coffee       0.00      0.00      0.00         5
+
+            avg / total       0.25      0.50      0.33        20
+
+[[10  0  0]
+ [ 5  0  0]
+ [ 5  0  0]]
+
+ CV Logistic Regression accuracy: 0.566666666667 (+/- 0.395811402901) weighted precision 0.5 weighted recall 0.566666666667 F score 0.522222222222
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       1.00      1.00      1.00        10
+   ulo:Eating|ulo:Lunch       1.00      1.00      1.00         5
+ulo:Drinking|ulo:Coffee       1.00      1.00      1.00         5
+
+            avg / total       1.00      1.00      1.00        20
+
+[[10  0  0]
+ [ 0  5  0]
+ [ 0  0  5]]
+
+ CV Nearest Neighbors accuracy: 0.7 (+/- 0.348010216964) weighted precision 0.633333333333 weighted recall 0.7 F score 0.655555555556
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       0.82      0.90      0.86        10
+   ulo:Eating|ulo:Lunch       0.50      0.20      0.29         5
+ulo:Drinking|ulo:Coffee       0.43      0.60      0.50         5
+
+            avg / total       0.64      0.65      0.63        20
+
+[[9 0 1]
+ [1 1 3]
+ [1 1 3]]
+
+ CV Linear SVM accuracy: 0.666666666667 (+/- 0.333333333333) weighted precision 0.555555555556 weighted recall 0.666666666667 F score 0.583333333333
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       0.50      1.00      0.67        10
+   ulo:Eating|ulo:Lunch       0.00      0.00      0.00         5
+ulo:Drinking|ulo:Coffee       0.00      0.00      0.00         5
+
+            avg / total       0.25      0.50      0.33        20
+
+[[10  0  0]
+ [ 5  0  0]
+ [ 5  0  0]]
+
+ CV RBF SVM accuracy: 0.566666666667 (+/- 0.366666666667) weighted precision 0.455555555556 weighted recall 0.566666666667 F score 0.483333333333
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       0.91      1.00      0.95        10
+   ulo:Eating|ulo:Lunch       1.00      1.00      1.00         5
+ulo:Drinking|ulo:Coffee       1.00      0.80      0.89         5
+
+            avg / total       0.95      0.95      0.95        20
+
+[[10  0  0]
+ [ 0  5  0]
+ [ 1  0  4]]
+
+ CV Gaussian Process accuracy: 0.6 (+/- 0.359010987142) weighted precision 0.494444444444 weighted recall 0.6 F score 0.522222222222
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       0.91      1.00      0.95        10
+   ulo:Eating|ulo:Lunch       1.00      1.00      1.00         5
+ulo:Drinking|ulo:Coffee       1.00      0.80      0.89         5
+
+            avg / total       0.95      0.95      0.95        20
+
+[[10  0  0]
+ [ 0  5  0]
+ [ 1  0  4]]
+
+ CV Decision Tree accuracy: 0.333333333333 (+/- 0.36514837167) weighted precision 0.288888888889 weighted recall 0.333333333333 F score 0.311111111111
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       1.00      1.00      1.00        10
+   ulo:Eating|ulo:Lunch       1.00      1.00      1.00         5
+ulo:Drinking|ulo:Coffee       1.00      1.00      1.00         5
+
+            avg / total       1.00      1.00      1.00        20
+
+[[10  0  0]
+ [ 0  5  0]
+ [ 0  0  5]]
+
+ CV Random Forest accuracy: 0.566666666667 (+/- 0.395811402901) weighted precision 0.461111111111 weighted recall 0.333333333333 F score 0.394444444444
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       1.00      1.00      1.00        10
+   ulo:Eating|ulo:Lunch       1.00      1.00      1.00         5
+ulo:Drinking|ulo:Coffee       1.00      1.00      1.00         5
+
+            avg / total       1.00      1.00      1.00        20
+
+[[10  0  0]
+ [ 0  5  0]
+ [ 0  0  5]]
+
+ CV Neural Net accuracy: 0.566666666667 (+/- 0.395811402901) weighted precision 0.566666666667 weighted recall 0.566666666667 F score 0.522222222222
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       1.00      1.00      1.00        10
+   ulo:Eating|ulo:Lunch       1.00      1.00      1.00         5
+ulo:Drinking|ulo:Coffee       1.00      1.00      1.00         5
+
+            avg / total       1.00      1.00      1.00        20
+
+[[10  0  0]
+ [ 0  5  0]
+ [ 0  0  5]]
+
+ CV AdaBoost accuracy: 0.533333333333 (+/- 0.426874949162) weighted precision 0.472222222222 weighted recall 0.533333333333 F score 0.488888888889
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       0.90      0.90      0.90        10
+   ulo:Eating|ulo:Lunch       0.57      0.80      0.67         5
+ulo:Drinking|ulo:Coffee       1.00      0.60      0.75         5
+
+            avg / total       0.84      0.80      0.80        20
+
+[[9 1 0]
+ [1 4 0]
+ [0 2 3]]
+
+ CV Naive Bayes accuracy: 0.566666666667 (+/- 0.448454134902) weighted precision 0.522222222222 weighted recall 0.566666666667 F score 0.533333333333
+                         precision    recall  f1-score   support
+
+    ulo:Eating|ulo:Food       1.00      1.00      1.00        10
+   ulo:Eating|ulo:Lunch       1.00      1.00      1.00         5
+ulo:Drinking|ulo:Coffee       1.00      1.00      1.00         5
+
+            avg / total       1.00      1.00      1.00        20
+
+[[10  0  0]
+ [ 0  5  0]
+ [ 0  0  5]]

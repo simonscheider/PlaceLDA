@@ -1,0 +1,28 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="X[2] <= 0.5\ngini = 0.625\nsamples = 20\nvalue = [5, 10, 5]\nclass = ulo:Eating|ulo:Food"] ;
+1 [label="X[19] <= 0.5\ngini = 0.314\nsamples = 11\nvalue = [1, 9, 1]\nclass = ulo:Eating|ulo:Food"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="X[31] <= 0.5\ngini = 0.18\nsamples = 10\nvalue = [1, 9, 0]\nclass = ulo:Eating|ulo:Food"] ;
+1 -> 2 ;
+3 [label="gini = 0.0\nsamples = 9\nvalue = [0, 9, 0]\nclass = ulo:Eating|ulo:Food"] ;
+2 -> 3 ;
+4 [label="gini = 0.0\nsamples = 1\nvalue = [1, 0, 0]\nclass = ulo:Drinking|ulo:Coffee"] ;
+2 -> 4 ;
+5 [label="gini = 0.0\nsamples = 1\nvalue = [0, 0, 1]\nclass = ulo:Eating|ulo:Lunch"] ;
+1 -> 5 ;
+6 [label="X[37] <= 0.0001\ngini = 0.5926\nsamples = 9\nvalue = [4, 1, 4]\nclass = ulo:Drinking|ulo:Coffee"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label="gini = 0.0\nsamples = 3\nvalue = [3, 0, 0]\nclass = ulo:Drinking|ulo:Coffee"] ;
+6 -> 7 ;
+8 [label="X[46] <= 0.1045\ngini = 0.5\nsamples = 6\nvalue = [1, 1, 4]\nclass = ulo:Eating|ulo:Lunch"] ;
+6 -> 8 ;
+9 [label="gini = 0.0\nsamples = 4\nvalue = [0, 0, 4]\nclass = ulo:Eating|ulo:Lunch"] ;
+8 -> 9 ;
+10 [label="X[35] <= 0.149\ngini = 0.5\nsamples = 2\nvalue = [1, 1, 0]\nclass = ulo:Drinking|ulo:Coffee"] ;
+8 -> 10 ;
+11 [label="gini = 0.0\nsamples = 1\nvalue = [1, 0, 0]\nclass = ulo:Drinking|ulo:Coffee"] ;
+10 -> 11 ;
+12 [label="gini = 0.0\nsamples = 1\nvalue = [0, 1, 0]\nclass = ulo:Eating|ulo:Food"] ;
+10 -> 12 ;
+}

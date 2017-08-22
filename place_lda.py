@@ -10,7 +10,7 @@
 #
 # Author:      Simon Scheider
 #
-# Created:     19/01/2017
+# Created:     22/08/2017
 # Copyright:   (c) simon 2017
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
@@ -134,7 +134,7 @@ def matchtoGoogleP(placename,lat, lng):
     return place
 
 def getCentroid(nodes):
-    points = [(n.lat,n.lon) for n in nodes]
+    points = [(n.lon,n.lat) for n in nodes]
     x_coords = [p[0] for p in points]
     y_coords = [p[1] for p in points]
     _len = len(points)
@@ -171,7 +171,7 @@ def getOSMInfo(osmid, elementtype='node'):
             except overpy.exception.OverpassTooManyRequests as error_detail:
                 sleep(30)
                 c = getCentroid(res.get_nodes(resolve_missing=True))
-            osm['lat']=c[0]
+            osm['lat']=c[1]
             osm['lon']=c[0]
 
     except overpy.exception.DataIncomplete as error_detail:
@@ -347,8 +347,10 @@ def tokenize(text, language = 'dutch'):
     return tokens
 
 def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
-    """ Method takes the enriched json file (training data), extracts webtexts, other features and the class labels from it. Usetypes = True puts OSMtags into the feature vector. actlevel restricts classes on the activity level (actlevel = True). Minclasssize filters out too small classes.
-        Then it trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as two simple arrays"""
+    """ Method takes the enriched json file (training data), and builds an LDA topic model.
+     It trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as two simple arrays
+    Usetypes = True puts also OSMtags and GooglePlace tags into the feature vector, in addition to topics. actlevel = True restricts classes to the activity level (no referent classes).
+    Minclasssize filters out too small classes."""
     texts = [] #array that holds the LDA text documents
     titles = [] #array that holds the titles of documents (in this case place names)
     classes = [] #array that holds the goal classes
@@ -376,7 +378,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
         listofosmids = []
         #print(d)
         for k,v in d.items():
-          #take only a single class fo reach osm id
+          #Collect features for each osm id. Take only a single goal class fo reach osm id
           if not ( v['osmid'] in listofosmids):
             gtext = ''
             wtext = ''
@@ -397,7 +399,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
                     dd['lon']=v['lon']
                 geoinfo.append(dd)
 
-                #select thye largest class of all occurring classes
+                #select the class that occurs most frequently over all places as the class of an osm id
                 classize = 0
                 cl = None
                 for c in v['class']:
@@ -411,7 +413,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
 
                 classes.append(cl)
                 dic = {}
-                #Add the tags from OSM or Google
+                #Add the place tags from OSM or GooglePlaces
                 if usetypes == True:
                     if 'googletype' in v.keys():
                         dic['googletype'] =v['googletype']
@@ -425,8 +427,6 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
 
 
     json_data.close
-    #texts = [NLPclean(t) for t in texts]
-    #print(zip(titles,texts))
     #This is where the texts get turned into a document-term matrix
     vectorizer = CountVectorizer(min_df = 1, stop_words = stopwords.words(language), analyzer = 'word', tokenizer=tokenize)
     X = vectorizer.fit_transform(texts)
@@ -449,7 +449,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
         print('*Topic {}\n- {}'.format(i, ' '.join(topic_words)))
         c += 1
     #return model
-    # apply topic model to new test data set
+    # apply topic model to new test data set and write topics into feature vector
     doc_topic_test = model.transform(X)
     #print(doc_topic_test)
     i = 0
@@ -462,8 +462,8 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
                 f['topic '+str(j)]= t
         i+=1
 
-    print("Number of instances (features): "+str(len(features)))
-    print("Number of instances (classes): "+str(len(classes)))
+    print("Number of instances (in feature vector): "+str(len(features)))
+    print("Number of instances (in class vector): "+str(len(classes)))
     counts = Counter(classes)
     print('Class frequency distribution: '+str(counts))
     min = minclasssize
@@ -518,6 +518,7 @@ def classify(topicmodel, plotconfusionmatrix=False):
 
     classes = list(set(y))
 
+    #Number of cross validations
     cvn = 10
 
 
@@ -575,7 +576,7 @@ def classify(topicmodel, plotconfusionmatrix=False):
         if plotconfusionmatrix:
             plot_confusion_matrix(cnf_matrix, classes=classes, title='Confusion matrix for '+name)
 
-
+#generates a plotted confusion matrix
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
                           title='Confusion matrix',
@@ -663,85 +664,108 @@ def exportSHP(topicmodel, shpfilename):
     # Write a new Shapefile
 
 
+#This method writes data missing in trainingdata from trainingdataadd, thus unifies web scraping results.
+def unifyWebInfo(trainingdata, trainingdataadd):
+    newtrainingdata = {}
+    out = trainingdata.split('.')[0]+'_u.json'
+    with open(trainingdata) as training_data:
+        trainingdata = json.load(training_data)
+        with open(trainingdataadd) as training_dataadd:
+            trainingdataadd = json.load(training_dataadd)
+            counttrain = 0
+            countadd = 0
+            for k,v in trainingdata.items():
+                counttrain +=1
+                newv = v.copy()
+                tags = ['website', 'webtitle', 'webtext','name', 'reviewtext', 'googletype', 'GoogeId', 'lat', 'lon', 'shop', 'amenity', 'leisure', 'tourism', 'historic', 'man_made', 'tower', 'cuisine', 'clothes', 'tower', 'beer', 'highway', 'surface', 'place', 'building' ]
+                vv = (trainingdataadd[k] if k in trainingdataadd.keys() else None)
+                if vv is not None:
+                    for t in tags:
+                        if t not in v.keys() and t in vv.keys():
+                            if k.split(':')[0] != 'osmw' or t not in ['lat','lon']:
+                                countadd +=1
+                                newv[t] = vv[t]
+                newtrainingdata[k]=newv
+    training_data.close()
+    print('In '+str(counttrain)+' entities, in '+ str(countadd) +' cases something was added!')
+
+    with open(out, 'w') as fp:
+        json.dump(newtrainingdata, fp)
 
 
 
 
-def getOSMfeatures(cat):
-        placeCategories = {#this is a dictionary of place categories in OSM based on they key value pairs.
-        #Possible categories can be retrieved at:
-        "amenity": 	{"key" : "amenity","value" : "", "element" : "node"},
-        "shop": 	{"key" : "shop","value" : "", "element" : "node"},
-        "bar": {"key" : "amenity", "value" : "bar", "element" : "node"},
-        "police": {"key" : "amenity", "value" : "police", "element" : "node"},
-        "optician": {"key" : "shop", "value" : "optician", "element" : "node"},
-        "station": {"key" : "railway", "value" : "station", "element" : "node"},
-        "public transport station": {"key" : "public_transport", "value" : "platform", "element" : "node"},
-        "office": {"key" : "office", "value" : "", "element" : "node"},
-        "leisure": {"key" : "leisure", "value" : "", "element" : "node"},
-        "historic": {"key" : "historic", "value" : "", "element" : "node"},
-        "civic building":  {"key" : "building", "value" : "civic", "element" : "area"},
-        "school building":  {"key" : "building", "value" : "school", "element" : "area"},
-        "building":  {"key" : "building", "value" : "", "element" : "area"},
-        }
-        api = overpy.Overpass()
-        #print cat
-        #placeCategory = "amenity=police"
 
-        pc = placeCategories[cat]
-        if (pc["value"] == ""): #If querying only by key
-            kv = pc["key"]
-        else:
-            kv = pc["key"]+"="+pc["value"]
-        elem = pc["element"]
-
-        if (elem =="area" or elem == "line"):
-            OSMelem ="way"
-        else:
-            OSMelem ="node"
-
-        bbox ="50.600, 7.100, 50.848, 7.197"
-        #bbox = "52.06000, 5.122661, 52.3, 5.1847" #Lombok
-
-
-        #bbox = ", ".join(self.listtoString(self.getCurrentBBinWGS84()))#"50.600, 7.100, 50.748, 7.157"
-
-        #Using Overpass API: http://wiki.openstreetmap.org/wiki/Overpass_API
-        result = api.query(OSMelem+"""("""+bbox+""") ["""+kv+"""];out body;
-            """)
-        results = []
-        if (elem == "node"):
-            results = result.nodes
-        elif (elem == "area" or elem == "line"):
-            results = result.ways
-
-        print("Number of results:" + str(len(results)))
-
-        out = 'training.csv'
-        with open(out, 'wb') as fp:
-            writer = csv.writer(fp,delimiter=' ')
-            for element in results:
-                url = "https://www.openstreetmap.org/"+str(elem) +'/'+ str(element.id)
-                tag = element.tags['leisure'].strip()
-                writer.writerow([url, tag])
-                #print(tag)
-                #print(element.tags.get(tag, "n/a"))
-        fp.close
+##def getOSMfeatures(cat):
+##        placeCategories = {#this is a dictionary of place categories in OSM based on they key value pairs.
+##        #Possible categories can be retrieved at:
+##        "amenity": 	{"key" : "amenity","value" : "", "element" : "node"},
+##        "shop": 	{"key" : "shop","value" : "", "element" : "node"},
+##        "bar": {"key" : "amenity", "value" : "bar", "element" : "node"},
+##        "police": {"key" : "amenity", "value" : "police", "element" : "node"},
+##        "optician": {"key" : "shop", "value" : "optician", "element" : "node"},
+##        "station": {"key" : "railway", "value" : "station", "element" : "node"},
+##        "public transport station": {"key" : "public_transport", "value" : "platform", "element" : "node"},
+##        "office": {"key" : "office", "value" : "", "element" : "node"},
+##        "leisure": {"key" : "leisure", "value" : "", "element" : "node"},
+##        "historic": {"key" : "historic", "value" : "", "element" : "node"},
+##        "civic building":  {"key" : "building", "value" : "civic", "element" : "area"},
+##        "school building":  {"key" : "building", "value" : "school", "element" : "area"},
+##        "building":  {"key" : "building", "value" : "", "element" : "area"},
+##        }
+##        api = overpy.Overpass()
+##        #print cat
+##        #placeCategory = "amenity=police"
+##
+##        pc = placeCategories[cat]
+##        if (pc["value"] == ""): #If querying only by key
+##            kv = pc["key"]
+##        else:
+##            kv = pc["key"]+"="+pc["value"]
+##        elem = pc["element"]
+##
+##        if (elem =="area" or elem == "line"):
+##            OSMelem ="way"
+##        else:
+##            OSMelem ="node"
+##
+##        bbox ="50.600, 7.100, 50.848, 7.197"
+##        #bbox = "52.06000, 5.122661, 52.3, 5.1847" #Lombok
+##
+##
+##        #bbox = ", ".join(self.listtoString(self.getCurrentBBinWGS84()))#"50.600, 7.100, 50.748, 7.157"
+##
+##        #Using Overpass API: http://wiki.openstreetmap.org/wiki/Overpass_API
+##        result = api.query(OSMelem+"""("""+bbox+""") ["""+kv+"""];out body;
+##            """)
+##        results = []
+##        if (elem == "node"):
+##            results = result.nodes
+##        elif (elem == "area" or elem == "line"):
+##            results = result.ways
+##
+##        print("Number of results:" + str(len(results)))
+##
+##        out = 'training.csv'
+##        with open(out, 'wb') as fp:
+##            writer = csv.writer(fp,delimiter=' ')
+##            for element in results:
+##                url = "https://www.openstreetmap.org/"+str(elem) +'/'+ str(element.id)
+##                tag = element.tags['leisure'].strip()
+##                writer.writerow([url, tag])
+##                #print(tag)
+##                #print(element.tags.get(tag, "n/a"))
+##        fp.close
 
 
 
 if __name__ == '__main__':
-##    osmid= 60018172
-##    osm = getOSMInfo(osmid)
-##    osmid = 266614887
-##    enrichOSM(osmid,'way')
-    #getOSMfeatures('leisure')
     #constructTrainingData('training.csv')
-    ##topicmodel = trainLDA('training_train.json', 'reviewtext', language='english', usetypes=False, singleclass = True)
-    topicmodel = trainLDA('training_train.json', 'webtext', language='dutch', usetypes=False, actlevel=False, minclasssize=5)
-    ##topicmodel = trainLDA('training_train.json', 'gwebtext', language='dutch', usetypes=False, singleclass = True)
+    #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
+    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
+    #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
     #exportSHP(topicmodel,'placetopics.shp')
-    #classify(topicmodel)
+    classify(topicmodel)
 
 
 

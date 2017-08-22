@@ -1,0 +1,1160 @@
+Length of the array read : 189 number of rows read 326
+enrich: https://www.openstreetmap.org/node 2498676432
+2498676432
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 1
+enrich: https://www.openstreetmap.org/node 2498671776
+La Cubanita
+2498671776
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Tapas', 'ulo:Sitting|ulo:Terrace']
+number of successul enrichments: 2
+enrich: https://www.openstreetmap.org/node 2497588013
+Het weeshuys
+2497588013
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Wine']
+number of successul enrichments: 3
+enrich: https://www.openstreetmap.org/node 1618523998
+Peperbus
+1618523998
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Listening|ulo:Carrilon', 'ulo:Climbing|ulo:Architecture', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 4
+enrich: https://www.openstreetmap.org/node 2498676382
+Le Perron
+2498676382
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Bread']
+number of successul enrichments: 5
+enrich: https://www.openstreetmap.org/node 2498670356
+retry
+request of website https://www.bluesakura.nl/over-ons/ not successful! Skip.
+BlueSakura Sushi & Grill
+2498670356
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Sushi']
+number of successul enrichments: 6
+enrich: https://www.openstreetmap.org/way 271001263
+'t Pannenkoekschip
+271001263
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:PanPastrys', 'ulo:Sitting|ulo:Terrace']
+number of successul enrichments: 7
+enrich: https://www.openstreetmap.org/node 2498672700
+Rituals
+2498672700
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Beauty_Goods']
+number of successul enrichments: 8
+enrich: https://www.openstreetmap.org/way 271001261
+271001261
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Listening|ulo:Concert']
+number of successul enrichments: 9
+enrich: https://www.openstreetmap.org/way 271001260
+Grote St. Michaëlskerk
+271001260
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Watching|ulo:Exhibition', 'ulo:Sitting|ulo:Worship', 'ulo:Shopping|ulo:Book_Fair', 'ulo:Sightseeing|ulo:Architecture']
+number of successul enrichments: 10
+enrich: https://www.openstreetmap.org/node 2498669898
+2498669898
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Lunch', 'ulo:Shopping|ulo:Gifts']
+number of successul enrichments: 11
+enrich: https://www.openstreetmap.org/way 6501461
+Bethlehemkerkplein
+6501461
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Speciality_Beer', 'ulo:Drinking|ulo:Wine', 'ulo:Sitting|ulo:Terrace', 'ulo:Eating|ulo:Food']
+number of successul enrichments: 12
+enrich: https://www.openstreetmap.org/node 2498667922
+Bar & Brood
+2498667922
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Sandwich']
+number of successul enrichments: 13
+enrich: https://www.openstreetmap.org/node 2498672671
+retry
+request of website https://cucaracha.nl/ not successful! Skip.
+2498672671
+enriched properties: ['website']
+['ulo:Eating|ulo:Mexican_Cuisine']
+number of successul enrichments: 14
+enrich: https://www.openstreetmap.org/way 271001269
+Onze Lieve Vrouwe ten Hemelopneming
+271001269
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Watching|ulo:Architecture', 'ulo:Sitting|ulo:Worship']
+number of successul enrichments: 15
+enrich: https://www.openstreetmap.org/node 2343818526
+Tosti World
+2343818526
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Tosti']
+number of successul enrichments: 16
+enrich: https://www.openstreetmap.org/way 51948825
+Park Eekhout
+51948825
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Watching|ulo:Monument', 'ulo:Eating|ulo:Pastry', 'ulo:Drinking|ulo:Tea', 'ulo:Watching|ulo:Animals', 'ulo:Strolling|ulo:Foothpath']
+number of successul enrichments: 17
+enrich: https://www.openstreetmap.org/node 2498665435
+retry
+request of website http://debeurszwolle.nl/ not successful! Skip.
+De Beurs
+2498665435
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Sitting|ulo:Terrace', 'ulo:Eating|ulo:Lunch']
+number of successul enrichments: 18
+enrich: https://www.openstreetmap.org/node 2498674627
+2498674627
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:French_Cuisine']
+number of successul enrichments: 19
+enrich: https://www.openstreetmap.org/way 59411661
+('Data incomplete try to improve the query to resolve the missing data', 'Unable to resolve requested way')
+59411661
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Watching|ulo:Festival']
+number of successul enrichments: 20
+enrich: https://www.openstreetmap.org/node 2498664056
+retry
+request of website https://slijterijbartels.nl/over-slijterij-bartels/ not successful! Skip.
+Bartels
+2498664056
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Wine', 'ulo:Tasting|ulo:Local_Liquor']
+number of successul enrichments: 21
+enrich: https://www.openstreetmap.org/node 3188199468
+retry
+request of website https://www.swolschfriethuys.nl/ not successful! Skip.
+Swolsch Friethuys
+3188199468
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Fast_Food']
+number of successul enrichments: 22
+enrich: https://www.openstreetmap.org/node 2498676443
+2498676443
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 23
+enrich: https://www.openstreetmap.org/node 2498665188
+Vaca Negra
+2498665188
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Argentinian_Cuisine']
+number of successul enrichments: 24
+enrich: https://www.openstreetmap.org/node 2498666143
+2498666143
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Wine', 'ulo:Eating|ulo:Food']
+number of successul enrichments: 25
+enrich: https://www.openstreetmap.org/node 2498673999
+2498673999
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Gifts']
+number of successul enrichments: 26
+enrich: https://www.openstreetmap.org/node 3245736933
+retry
+request of website http://www.blijzwolle.nl/ not successful! Skip.
+Stadscafé Blij
+3245736933
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Dancing|ulo:Party']
+number of successul enrichments: 27
+enrich: https://www.openstreetmap.org/node 2497670985
+2497670985
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Secondhand_Goods']
+number of successul enrichments: 28
+enrich: https://www.openstreetmap.org/node 4246035971
+Ingeburgerd
+4246035971
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Burger']
+number of successul enrichments: 29
+enrich: https://www.openstreetmap.org/node 2498675101
+retry
+request of website https://snoeptastisch.nl/snoeptastisch not successful! Skip.
+D-reizen
+2498675101
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Candy']
+number of successul enrichments: 30
+enrich: https://www.openstreetmap.org/node 2498673308
+2498673308
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Sushi']
+number of successul enrichments: 31
+enrich: https://www.openstreetmap.org/node 2498670079
+2498670079
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Glutenfree_Food']
+number of successul enrichments: 32
+enrich: https://www.openstreetmap.org/node 2498668118
+2498668118
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Relaxing|ulo:Wellness']
+number of successul enrichments: 33
+enrich: https://www.openstreetmap.org/node 1695337062
+retry
+request of website http://www.stadkamer.nl/ not successful! Skip.
+Bibliotheek Stadkamer Centrum
+1695337062
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Reading|ulo:Books', 'ulo:Watching|ulo:Cultural_Event']
+number of successul enrichments: 34
+enrich: https://www.openstreetmap.org/way 6501561
+Sassenstraat
+6501561
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Sightseeing|ulo:Architecture']
+number of successul enrichments: 35
+enrich: https://www.openstreetmap.org/node 2498675108
+retry
+request of website https://www.depelsertoren.nl/ not successful! Skip.
+La Torre
+2498675108
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Watching|ulo:Architecture']
+number of successul enrichments: 36
+enrich: https://www.openstreetmap.org/node 2498671176
+2498671176
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Bread']
+number of successul enrichments: 37
+enrich: https://www.openstreetmap.org/node 59411663
+('Data incomplete try to improve the query to resolve the missing data', 'Unable to resolve all nodes')
+59411663
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Climbing|ulo:Heritage']
+number of successul enrichments: 38
+enrich: https://www.openstreetmap.org/node 1695337112
+Purdey Zwolle
+1695337112
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Fashion', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 39
+enrich: https://www.openstreetmap.org/node 2498675067
+De Vier Jaargetijden
+2498675067
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Lunch', 'ulo:Drinking|ulo:Alcoholic_Beverages']
+number of successul enrichments: 40
+enrich: https://www.openstreetmap.org/node 2498675279
+retry
+request of website https://www.hedon-zwolle.nl/statenzaal not successful! Skip.
+2498675279
+enriched properties: ['website']
+['ulo:Listening|ulo:Concert']
+number of successul enrichments: 41
+enrich: https://www.openstreetmap.org/node 4249345810
+Pistache
+4249345810
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Sandwich', 'ulo:Shopping|ulo:Gadgets', 'ulo:Shopping|ulo:Lifestyle', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 42
+enrich: https://www.openstreetmap.org/node 2498674516
+Server load to high
+Het Wijnhuis
+2498674516
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Wine']
+number of successul enrichments: 43
+enrich: https://www.openstreetmap.org/node 2498663081
+2498663081
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 44
+enrich: https://www.openstreetmap.org/way 148781759
+Ter Pelkwijkpark
+148781759
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Relaxing|ulo:Grass', 'ulo:Strolling|ulo:Footpath', 'ulo:Eating|ulo:Food_Truck']
+number of successul enrichments: 45
+enrich: https://www.openstreetmap.org/node 2498663082
+2498663082
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Wine', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 46
+enrich: https://www.openstreetmap.org/way 366997868
+Harm Smeengekade
+366997868
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Sailing|ulo:Tourist_Vessel']
+number of successul enrichments: 47
+enrich: https://www.openstreetmap.org/node 2498664473
+ 2498664473
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 48
+enrich: https://www.openstreetmap.org/node 2498670281
+2498670281
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Watching|ulo:Architecture']
+number of successul enrichments: 49
+enrich: https://www.openstreetmap.org/node 2498674759
+2498674759
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Gifts']
+number of successul enrichments: 50
+enrich: https://www.openstreetmap.org/node 2498674611
+2498674611
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Lunch']
+number of successul enrichments: 51
+enrich: https://www.openstreetmap.org/node 2498667436
+De Kleine
+2498667436
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Beer']
+number of successul enrichments: 52
+enrich: https://www.openstreetmap.org/node 2498676739
+2498676739
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Pizza']
+number of successul enrichments: 53
+enrich: https://www.openstreetmap.org/node 4490868691
+Fraterhuis
+4490868691
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Watching|ulo:Movie']
+number of successul enrichments: 54
+enrich: https://www.openstreetmap.org/way 6503906
+retry
+request of website https://www.zwolle.nl/vrije-tijd/winkelen/markten/markttijden-en-marktplaatsen not successful! Skip.
+Melkmarkt
+6503906
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Goods', 'ulo:Sitting|ulo:Terrace']
+number of successul enrichments: 55
+enrich: https://www.openstreetmap.org/node 3328804473
+'t Konkeltje
+3328804473
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Coffee', 'ulo:Shopping|ulo:Coffee', 'ulo:Shopping|ulo:Gifts', 'ulo:Shopping|ulo:Tea', 'ulo:Shopping|ulo:Chocolate']
+number of successul enrichments: 56
+enrich: https://www.openstreetmap.org/node 2498667242
+2498667242
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 57
+enrich: https://www.openstreetmap.org/node 2498670560
+2498670560
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Ice_Cream']
+number of successul enrichments: 58
+enrich: https://www.openstreetmap.org/node 2498666052
+De Schoenenfabriek
+2498666052
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 59
+enrich: https://www.openstreetmap.org/node 2498673001
+Van Orsouw
+2498673001
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Pastry', 'ulo:Sitting|ulo:Terrace', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 60
+enrich: https://www.openstreetmap.org/node 2498664735
+2498664735
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Flowers']
+number of successul enrichments: 61
+enrich: https://www.openstreetmap.org/node 663044459
+retry
+request of website https://zwolsetheaters.nl/twee-theaters not successful! Skip.
+Schouwburg Odeon
+663044459
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Watching|ulo:Show']
+number of successul enrichments: 62
+enrich: https://www.openstreetmap.org/node 2498665418
+retry
+request of website https://www.curlycoffee.nl/winkel not successful! Skip.
+Curly Coffee
+2498665418
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Drinking|ulo:Coffee', 'ulo:Shopping|ulo:Coffee']
+number of successul enrichments: 63
+enrich: https://www.openstreetmap.org/node 2498671417
+retry
+request of website https://blockszwolle.nl/lunchroom/ not successful! Skip.
+Lunchroom Blocks
+2498671417
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Lunch']
+number of successul enrichments: 64
+enrich: https://www.openstreetmap.org/node 2763447571
+retry
+request of website https://www.librijeswinkel.nl not successful! Skip.
+Librije's Hotel
+2763447571
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Books', 'ulo:Shopping|ulo:Cooking_Accessoires', 'ulo:Shopping|ulo:Drinks', 'ulo:Shopping|ulo:Food']
+number of successul enrichments: 65
+enrich: https://www.openstreetmap.org/node 2763447573
+2763447573
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Alcoholic_Beverage', 'ulo:Eating|ulo:Food']
+number of successul enrichments: 66
+enrich: https://www.openstreetmap.org/node 2498668848
+2498668848
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Beer']
+number of successul enrichments: 67
+enrich: https://www.openstreetmap.org/node 2498670904
+Patisserie Lindeboom
+2498670904
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Chocolate', 'ulo:Shopping|ulo:Pastry']
+number of successul enrichments: 68
+enrich: https://www.openstreetmap.org/node 2422467852
+Museum de Fundatie / Paleis aan de Blijmarkt
+2422467852
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Drinks', 'ulo:Watching|ulo:Exhibition', 'ulo:Eating|ulo:Food', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 69
+enrich: https://www.openstreetmap.org/node 2498669570
+La Bamba
+2498669570
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Fast_Food']
+number of successul enrichments: 70
+enrich: https://www.openstreetmap.org/node 2498664037
+Brownies & downieS
+2498664037
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Lunch', 'ulo:Eating|ulo:Pastry']
+number of successul enrichments: 71
+enrich: https://www.openstreetmap.org/node 2498663783
+Doppio Espresso
+2498663783
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 72
+enrich: https://www.openstreetmap.org/node 2498674475
+Bonbonnerie Borrel
+2498674475
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Cooking|ulo:Chocolate', 'ulo:Shopping|ulo:Chocolate']
+number of successul enrichments: 73
+enrich: https://www.openstreetmap.org/node 2498671386
+2498671386
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 74
+enrich: https://www.openstreetmap.org/node 2498665933
+2498665933
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Meditating|ulo:Wellness']
+number of successul enrichments: 75
+enrich: https://www.openstreetmap.org/node 2498664871
+2498664871
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Shots']
+number of successul enrichments: 76
+enrich: https://www.openstreetmap.org/node 2498671427
+Holland
+2498671427
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Lunch', 'ulo:Eating|ulo:Meat', 'ulo:Eating|ulo:PanPastrys']
+number of successul enrichments: 77
+enrich: https://www.openstreetmap.org/way 6503849
+Blijmarkt
+6503849
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Watching|ulo:Exhibition']
+number of successul enrichments: 78
+enrich: https://www.openstreetmap.org/node 2498664723
+2498664723
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Food', 'ulo:Eating|ulo:Food', 'ulo:Sitting|ulo:Terrace']
+number of successul enrichments: 79
+enrich: https://www.openstreetmap.org/node 5002015916
+retry
+request of website https://www.spelcomputermuseum.nl/?page=museum&subpage=home not successful! Skip.
+Bonami SpelComputer Museum
+5002015916
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Playing|ulo:Games', 'ulo:Watching|ulo:Gadgets']
+number of successul enrichments: 80
+enrich: https://www.openstreetmap.org/node 2498674778
+2498674778
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Gifts']
+number of successul enrichments: 81
+enrich: https://www.openstreetmap.org/node 2498669860
+BaiYok
+2498669860
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Thai_Cuisine']
+number of successul enrichments: 82
+enrich: https://www.openstreetmap.org/node 2498663652
+retry
+request of website http://www.lasrosas.nl/ not successful! Skip.
+Las Rosas
+2498663652
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Tapas']
+number of successul enrichments: 83
+enrich: https://www.openstreetmap.org/node 2498672620
+retry
+request of website https://www.kletsenenproeven.nl/arrangementen/escape-room/ not successful! Skip.
+Kletsen & Proeven
+2498672620
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Playing|ulo:Escape_Game', 'ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 84
+enrich: https://www.openstreetmap.org/node 2498672458
+Kota Radja
+2498672458
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Asian_Cuisine']
+number of successul enrichments: 85
+enrich: https://www.openstreetmap.org/way 490527145
+Potgietersingel
+490527145
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Relaxing|ulo:Grass']
+number of successul enrichments: 86
+enrich: https://www.openstreetmap.org/node 2498664239
+2498664239
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Cocktail', 'ulo:Eating|ulo:Hotdog']
+number of successul enrichments: 87
+enrich: https://www.openstreetmap.org/node 2498671867
+2498671867
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Dancing|ulo:Party', 'ulo:Playing|ulo:Quiz', 'ulo:Drinking|ulo:Beer']
+number of successul enrichments: 88
+enrich: https://www.openstreetmap.org/node 2498670382
+2498670382
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Relaxing|ulo:Wellness']
+number of successul enrichments: 89
+enrich: https://www.openstreetmap.org/node 2498669215
+Espressobar Maling
+2498669215
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Pastry', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 90
+enrich: https://www.openstreetmap.org/node 772995428
+retry
+request of website https://zwolsetheaters.nl/twee-theaters not successful! Skip.
+Theater De Spiegel
+772995428
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Watching|ulo:Show']
+number of successul enrichments: 91
+enrich: https://www.openstreetmap.org/node 2498672693
+2498672693
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Childrens_Gift']
+number of successul enrichments: 92
+enrich: https://www.openstreetmap.org/node 2498670303
+retry
+request of website https://www.hendrickdekeyser.nl/panddetail/372/hof_van_ittersum.html not successful! Skip.
+2498670303
+enriched properties: ['website']
+['ulo:Sightseeing|ulo:Architecture']
+number of successul enrichments: 93
+enrich: https://www.openstreetmap.org/node 2498675019
+2498675019
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Alcoholic_Beverages']
+number of successul enrichments: 94
+enrich: https://www.openstreetmap.org/node 2498671632
+Sirtaki
+2498671632
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Greek_Cuisine']
+number of successul enrichments: 95
+enrich: https://www.openstreetmap.org/way 6501420
+Diezerstraat
+6501420
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Goods']
+number of successul enrichments: 96
+enrich: https://www.openstreetmap.org/node 2498673192
+In de Buurt
+2498673192
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Beer', 'ulo:Relaxing|ulo:Terrace']
+number of successul enrichments: 97
+enrich: https://www.openstreetmap.org/node 2498663057
+retry
+request of website https://www.cosmonde.nl/service/about/ not successful! Skip.
+2498663057
+enriched properties: ['website']
+['ulo:Relaxing|ulo:Wellness']
+number of successul enrichments: 98
+enrich: https://www.openstreetmap.org/way 353381497
+Nieuwe Markt
+353381497
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Sitting|ulo:Terrace']
+number of successul enrichments: 99
+enrich: https://www.openstreetmap.org/node 2498663052
+La Ropa
+2498663052
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 100
+enrich: https://www.openstreetmap.org/node 2498671335
+retry
+request of website https://demandarijn.nl/ not successful! Skip.
+2498671335
+enriched properties: ['website']
+['ulo:Eating|ulo:Biological_Food']
+number of successul enrichments: 101
+enrich: https://www.openstreetmap.org/node 2498676769
+ 2498676769
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Beer']
+number of successul enrichments: 102
+enrich: https://www.openstreetmap.org/node 2498663194
+Derksen & Derksen
+2498663194
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 103
+enrich: https://www.openstreetmap.org/node 2498670395
+2498670395
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Tapas']
+number of successul enrichments: 104
+enrich: https://www.openstreetmap.org/node 2498671345
+2498671345
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Watching|ulo:Exhibition']
+number of successul enrichments: 105
+enrich: https://www.openstreetmap.org/node 2882074165
+2882074165
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Watching|ulo:Animals']
+number of successul enrichments: 106
+enrich: https://www.openstreetmap.org/node 2498663800
+2498663800
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 107
+enrich: https://www.openstreetmap.org/node 2498664240
+2498664240
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Regional_Product', 'ulo:Shopping|ulo:Souvenirs', 'ulo:Shopping|ulo:Gifts', 'ulo:Shopping|ulo:Candy']
+number of successul enrichments: 108
+enrich: https://www.openstreetmap.org/node 2498664241
+2498664241
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Beer', 'ulo:Dancing|ulo:Party']
+number of successul enrichments: 109
+enrich: https://www.openstreetmap.org/node 2498672681
+2498672681
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Coffee', 'ulo:Eating|ulo:Lunch']
+number of successul enrichments: 110
+enrich: https://www.openstreetmap.org/node 2499689428
+retry
+request of website https://bijhartjezwolle.nl/ not successful! Skip.
+Bij Hartje Zwolle
+2499689428
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Food']
+number of successul enrichments: 111
+enrich: https://www.openstreetmap.org/node 2498663923
+2498663923
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Gifts', 'ulo:Eating|ulo:Lunch']
+number of successul enrichments: 112
+enrich: https://www.openstreetmap.org/node 1750866698
+Taiwan
+1750866698
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Chinese_Cuisine']
+number of successul enrichments: 113
+enrich: https://www.openstreetmap.org/node 2498671422
+retry
+request of website https://www.stedelijkmuseumzwolle.nl/plan-je-bezoek/cafe-winkel-en-tuin not successful! Skip.
+Stedelijk Museum Zwolle
+2498671422
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Shopping|ulo:Gifts', 'ulo:Listening|ulo:Live_Music', 'ulo:Sightseeing|ulo:Architecture', 'ulo:Drinking|ulo:Drinks', 'ulo:Watching|ulo:Exhibition']
+number of successul enrichments: 114
+enrich: https://www.openstreetmap.org/node 2498675025
+2498675025
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Watching|ulo:Exhibition']
+number of successul enrichments: 115
+enrich: https://www.openstreetmap.org/node 2498666480
+Sofra
+2498666480
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Turkish_Cuisine']
+number of successul enrichments: 116
+enrich: https://www.openstreetmap.org/node 2498669927
+2498669927
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Bitterballen']
+number of successul enrichments: 117
+enrich: https://www.openstreetmap.org/way 271002857
+retry
+request of website http://plantagekerkzwolle.nl/kennismaken/plantagekerk-als-monument/ not successful! Skip.
+Plantagekerk
+271002857
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Sightseeing|ulo:Architecture', 'ulo:Sitting|ulo:Worship']
+number of successul enrichments: 118
+enrich: https://www.openstreetmap.org/way 390490289
+retry
+request of website https://www.zwolle.nl/vrije-tijd/winkelen/markten/markttijden-en-marktplaatsen not successful! Skip.
+Grote Markt
+390490289
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Goods', 'ulo:Sitting|ulo:Terrace']
+number of successul enrichments: 119
+enrich: https://www.openstreetmap.org/node 2498669453
+2498669453
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Dancing|ulo:Party', 'ulo:Drinking|ulo:Whiskey', 'ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 120
+enrich: https://www.openstreetmap.org/node 2498664463
+Brasserie Jansen
+2498664463
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Sitting|ulo:Terrace']
+number of successul enrichments: 121
+enrich: https://www.openstreetmap.org/node 2498670125
+Visgilde Hans Visscher
+2498670125
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Fish']
+number of successul enrichments: 122
+enrich: https://www.openstreetmap.org/node 2498672709
+ICI PARIS XL
+2498672709
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Beauty_Goods', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 123
+enrich: https://www.openstreetmap.org/node 2498665269
+2498665269
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Dancing|ulo:Party', 'ulo:Drinking|ulo:Cocktail']
+number of successul enrichments: 124
+enrich: https://www.openstreetmap.org/node 2498663208
+Barista Cafe
+2498663208
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Pastry', 'ulo:Drinking|ulo:Coffee', 'ulo:Eating|ulo:Breakfast', 'ulo:Eating|ulo:High_Tea', 'ulo:Eating|ulo:Lunch']
+number of successul enrichments: 125
+enrich: https://www.openstreetmap.org/node 2498670326
+Woodies Zwolle
+2498670326
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Speciality_Beer', 'ulo:Eating|ulo:Sat\xc3\xa9']
+number of successul enrichments: 126
+enrich: https://www.openstreetmap.org/node 2498663042
+2498663042
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Food', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 127
+enrich: https://www.openstreetmap.org/way 6501244
+Broerenkerkplein
+6501244
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 128
+enrich: https://www.openstreetmap.org/node 2498663537
+retry
+Vito's
+2498663537
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Sandwich']
+number of successul enrichments: 129
+enrich: https://www.openstreetmap.org/node 2498665296
+2498665296
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Tapas']
+number of successul enrichments: 130
+enrich: https://www.openstreetmap.org/node 2498671884
+2498671884
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Italian_Cuisine', 'ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 131
+enrich: https://www.openstreetmap.org/node 1333931642
+('Data incomplete try to improve the query to resolve the missing data', 'Unable to resolve all nodes')
+1333931642
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Cooking|ulo:Cooking_Class', 'ulo:Eating|ulo:Fine_Dining', 'ulo:Drinking|ulo:Wine', 'ulo:Tasting|ulo:Wine']
+number of successul enrichments: 132
+enrich: https://www.openstreetmap.org/way 59406503
+retry
+request of website https://www.zwolle.nl/vrije-tijd/winkelen/markten/markttijden-en-marktplaatsen not successful! Skip.
+Grote Kerkplein
+59406503
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Goods', 'ulo:Shopping|ulo:Christmas_Fair', 'ulo:Watching|ulo:Cultural_Event', 'ulo:Strolling|ulo:Fair', 'ulo:Eating|ulo:Food_Truck']
+number of successul enrichments: 133
+enrich: https://www.openstreetmap.org/node 2498667805
+Grand Cafe Public
+2498667805
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 134
+enrich: https://www.openstreetmap.org/node 2497671928
+2497671928
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:French_Cuisine']
+number of successul enrichments: 135
+enrich: https://www.openstreetmap.org/way 6503945
+Melkmarkt
+6503945
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Flea_Market']
+number of successul enrichments: 136
+enrich: https://www.openstreetmap.org/node 3139858784
+Michelangelo
+3139858784
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 137
+enrich: https://www.openstreetmap.org/node 4159699609
+Pathé Zwolle
+4159699609
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Watching|ulo:Movie']
+number of successul enrichments: 138
+enrich: https://www.openstreetmap.org/node 2498671351
+2498671351
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Watching|ulo:Architecture', 'ulo:Sitting|ulo:Worship']
+number of successul enrichments: 139
+enrich: https://www.openstreetmap.org/node 2498665091
+Schuttelaer Wijnen
+2498665091
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Shopping|ulo:Wine', 'ulo:Shopping|ulo:Gifts', 'ulo:Shopping|ulo:Chocolate']
+number of successul enrichments: 140
+enrich: https://www.openstreetmap.org/node 2498672431
+Bistro Bonne Femme
+2498672431
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 141
+enrich: https://www.openstreetmap.org/node 2498675088
+2498675088
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Thai_Cuisine']
+number of successul enrichments: 142
+enrich: https://www.openstreetmap.org/node 1695337102
+IJssalon Salute
+1695337102
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Ice_Cream']
+number of successul enrichments: 143
+enrich: https://www.openstreetmap.org/way 353398382
+Pletterstraat
+353398382
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Sitting|ulo:Terrace', 'ulo:Watching|ulo:Cultural_Event']
+number of successul enrichments: 144
+enrich: https://www.openstreetmap.org/node 2498670470
+retry
+request of website https://www.swolschcafe.nl/info not successful! Skip.
+'t Swolsch Café
+2498670470
+enriched properties: ['website', 'shop', 'amenity', 'reviewtext', 'name', 'cuisine', 'lon', 'GoogleId', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'googletype', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Dancing|ulo:Party', 'ulo:Drinking|ulo:Beer', 'ulo:Eating|ulo:Lunch']
+number of successul enrichments: 145
+enrich: https://www.openstreetmap.org/node 2498669427
+De Stoof
+2498669427
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Beer', 'ulo:Playing|ulo:Darts']
+number of successul enrichments: 146
+enrich: https://www.openstreetmap.org/way 80221871
+Rodetorenplein
+80221871
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Canoeing|ulo:SUP', 'ulo:Playing|ulo:Fun_Fair']
+number of successul enrichments: 147
+enrich: https://www.openstreetmap.org/way 271003039
+Synagoge Zwolle
+271003039
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Sitting|ulo:Worship', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 148
+enrich: https://www.openstreetmap.org/node 2498673983
+Poppe
+2498673983
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:French_Cuisine']
+number of successul enrichments: 149
+enrich: https://www.openstreetmap.org/node 2498668888
+2498668888
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:High_Wine', 'ulo:Eating|ulo:Lunch', 'ulo:Shopping|ulo:Art', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 150
+enrich: https://www.openstreetmap.org/node 2498664705
+2498664705
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Sightseeing|ulo:Architecture']
+number of successul enrichments: 151
+enrich: https://www.openstreetmap.org/way 493762852
+retry
+request of website https://www.zwolle.nl/vrije-tijd/sport-en-recreatie/watersport/passantenhavens-en-brugbediening not successful! Skip.
+Server load to high
+493762852
+enriched properties: ['website']
+['ulo:Sailing|ulo:Boat', 'ulo:Sailing|ulo:Boat']
+number of successul enrichments: 152
+enrich: https://www.openstreetmap.org/node 2498663504
+De Gezelligheid
+2498663504
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 153
+enrich: https://www.openstreetmap.org/node 2498667132
+2498667132
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Lifestyle', 'ulo:Shopping|ulo:Fashion', 'ulo:Shopping|ulo:Gadgets']
+number of successul enrichments: 154
+enrich: https://www.openstreetmap.org/node 2388543661
+Sassenpoort
+2388543661
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Watching|ulo:Exhibition', 'ulo:Climbing|ulo:Architecture', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 155
+enrich: https://www.openstreetmap.org/node 2498671450
+2498671450
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Gifts']
+number of successul enrichments: 156
+enrich: https://www.openstreetmap.org/node 2498665298
+2498665298
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Eating|ulo:Lunch', 'ulo:Sitting|ulo:Terrace', 'ulo:Drinking|ulo:Coffee']
+number of successul enrichments: 157
+enrich: https://www.openstreetmap.org/node 2498677412
+Fratelli D'Italia
+ 2498677412
+enriched properties: ['shop', 'amenity', 'man_made', 'surface', 'GoogleId', 'cuisine', 'webtitle', 'lon', 'beer', 'highway', 'website', 'reviewtext', 'leisure', 'historic', 'googletype', 'lat', 'tourism', 'building', 'name', 'webtext', 'place', 'tower', 'clothes']
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 158
+enrich: https://www.openstreetmap.org/node 2500428169
+retry
+request of website https://www.hedon-zwolle.nl/2108/expositie not successful! Skip.
+Hedon
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Hedon&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5169643%27%29%2C+%27lng%27%3A+Decimal%28%276.0943108%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+2500428169
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Watching|ulo:Exhibition', 'ulo:Watching|ulo:Concert']
+number of successul enrichments: 159
+enrich: https://www.openstreetmap.org/node 2498663585
+Loft
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Loft&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5120370%27%29%2C+%27lng%27%3A+Decimal%28%276.0940839%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+2498663585
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Interior_Goods']
+number of successul enrichments: 160
+enrich: https://www.openstreetmap.org/node 2498667834
+The Living Room
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=The+Living+Room&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5122179%27%29%2C+%27lng%27%3A+Decimal%28%276.0966730%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+2498667834
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Listening|ulo:Live_Music', 'ulo:Listening|ulo:Live_Music', 'ulo:Eating|ulo:Buffet']
+number of successul enrichments: 161
+enrich: https://www.openstreetmap.org/node 2498662986
+2498662986
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Art']
+number of successul enrichments: 162
+enrich: https://www.openstreetmap.org/node 3996415258
+retry
+request of website https://www.waandersindebroeren.nl/eten-en-drinken/ not successful! Skip.
+Smaak in de Broeren
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Smaak+in+de+Broeren&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5138458%27%29%2C+%27lng%27%3A+Decimal%28%276.0957208%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+3996415258
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Drinks']
+number of successul enrichments: 163
+enrich: https://www.openstreetmap.org/node 2498672650
+Het Vrouwenhuis
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Het+Vrouwenhuis&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5132014%27%29%2C+%27lng%27%3A+Decimal%28%276.0897769%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+2498672650
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Watching|ulo:Exhibition']
+number of successul enrichments: 164
+enrich: https://www.openstreetmap.org/node 1470906020
+Het Vliegende Paard
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Het+Vliegende+Paard&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5124106%27%29%2C+%27lng%27%3A+Decimal%28%276.0909481%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+1470906020
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Food', 'ulo:Drinking|ulo:Beer']
+number of successul enrichments: 165
+enrich: https://www.openstreetmap.org/node 2763447580
+Old Vic
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Old+Vic&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5154907%27%29%2C+%27lng%27%3A+Decimal%28%276.0982651%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+2763447580
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 166
+enrich: https://www.openstreetmap.org/node 3996415257
+retry
+request of website https://www.waandersindebroeren.nl not successful! Skip.
+Waanders in de Broeren
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Waanders+in+de+Broeren&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5138409%27%29%2C+%27lng%27%3A+Decimal%28%276.0951476%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+3996415257
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Listening|ulo:Concert', 'ulo:Watching|ulo:Exhibition', 'ulo:Shopping|ulo:Gifts', 'ulo:Shopping|ulo:Books', 'ulo:Sightseeing|ulo:Architecture']
+number of successul enrichments: 167
+enrich: https://www.openstreetmap.org/node 2498676639
+2498676639
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Speciality_Beer']
+number of successul enrichments: 168
+enrich: https://www.openstreetmap.org/node 2498672390
+2498672390
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Cocktail', 'ulo:Eating|ulo:High_Tea', 'ulo:Eating|ulo:Steak']
+number of successul enrichments: 169
+enrich: https://www.openstreetmap.org/way 51931431
+Park De Wezenlanden
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJJ2ISGSLfx0cR7-9V5SEZ6M0&language=%7B%27lat%27%3A+Decimal%28%2752.50806716206896551724137931%27%29%2C+%27lng%27%3A+Decimal%28%276.110234782758620689655172414%27%29%7D failed with response code: OVER_QUERY_LIMIT
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJJ2ISGSLfx0cR7-9V5SEZ6M0&language=%7B%27lat%27%3A+Decimal%28%2752.50806716206896551724137931%27%29%2C+%27lng%27%3A+Decimal%28%276.110234782758620689655172414%27%29%7D failed with response code: OVER_QUERY_LIMIT
+51931431
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Relaxing|ulo:Grass', 'ulo:Sporting|ulo:Sport_Field', 'ulo:Dancing|ulo:Festival', 'ulo:Strolling|ulo:Footpath']
+number of successul enrichments: 170
+enrich: https://www.openstreetmap.org/way 6501418
+Koningsplein
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Koningsplein&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.51216181666666666666666667%27%29%2C+%27lng%27%3A+Decimal%28%276.094394316666666666666666667%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+6501418
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Listening|ulo:Live_Music']
+number of successul enrichments: 171
+enrich: https://www.openstreetmap.org/node 2498669791
+2498669791
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Drinking|ulo:Alcoholic_Beverages']
+number of successul enrichments: 172
+enrich: https://www.openstreetmap.org/node 2498663627
+Eva, First Woman
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJ-ZirAS_fx0cR-CAA-Sa5he8&language=%7B%27lat%27%3A+Decimal%28%2752.5113105%27%29%2C+%27lng%27%3A+Decimal%28%276.0911440%27%29%7D failed with response code: OVER_QUERY_LIMIT
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJ-ZirAS_fx0cR-CAA-Sa5he8&language=%7B%27lat%27%3A+Decimal%28%2752.5113105%27%29%2C+%27lng%27%3A+Decimal%28%276.0911440%27%29%7D failed with response code: OVER_QUERY_LIMIT
+2498663627
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Fashion']
+number of successul enrichments: 173
+enrich: https://www.openstreetmap.org/node 2498663061
+Talamini
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Talamini&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5124275%27%29%2C+%27lng%27%3A+Decimal%28%276.0928292%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+2498663061
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Ice_Cream', 'ulo:Eating|ulo:Focaccia']
+number of successul enrichments: 174
+enrich: https://www.openstreetmap.org/node 1715144093
+retry
+request of website https://www.belgischekeizer.nl/ not successful! Skip.
+De Belgische Keijzer
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=De+Belgische+Keijzer&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5135281%27%29%2C+%27lng%27%3A+Decimal%28%276.0900763%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+1715144093
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Drinking|ulo:Belgian_Beer', 'ulo:Eating|ulo:Belgian_Cuisine']
+number of successul enrichments: 175
+enrich: https://www.openstreetmap.org/node 2498671343
+2498671343
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Art', 'ulo:Shopping|ulo:Art', 'ulo:Shopping|ulo:Accessoires']
+number of successul enrichments: 176
+enrich: https://www.openstreetmap.org/way 6501547
+Sassenstraat
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Sassenstraat&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5116338%27%29%2C+%27lng%27%3A+Decimal%28%276.0930173%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+6501547
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Shopping|ulo:Goods']
+number of successul enrichments: 177
+enrich: https://www.openstreetmap.org/node 2498669943
+2498669943
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Dancing|ulo:Party', 'ulo:Eating|ulo:Food']
+number of successul enrichments: 178
+enrich: https://www.openstreetmap.org/node 2498673730
+Café 't Beugeltje
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJP_LDAzDfx0cRaUdvttbzWfk&language=%7B%27lat%27%3A+Decimal%28%2752.5142469%27%29%2C+%27lng%27%3A+Decimal%28%276.0945337%27%29%7D failed with response code: OVER_QUERY_LIMIT
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJP_LDAzDfx0cRaUdvttbzWfk&language=%7B%27lat%27%3A+Decimal%28%2752.5142469%27%29%2C+%27lng%27%3A+Decimal%28%276.0945337%27%29%7D failed with response code: OVER_QUERY_LIMIT
+2498673730
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Drinking|ulo:Alcoholic_Beverages', 'ulo:Watching|ulo:Architecture']
+number of successul enrichments: 179
+enrich: https://www.openstreetmap.org/node 4159710766
+Marina office
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Marina+office&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5138341%27%29%2C+%27lng%27%3A+Decimal%28%276.0891134%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+4159710766
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Relaxing|ulo:Sand']
+number of successul enrichments: 180
+enrich: https://www.openstreetmap.org/node 2498670755
+2498670755
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Furniture']
+number of successul enrichments: 181
+enrich: https://www.openstreetmap.org/node 2498670754
+retry
+request of website https://www.itoshii.nl/sushi-zwolle/ not successful! Skip.
+Itoshii
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJG1S6dKnnxUcRxWXr029365g&language=%7B%27lat%27%3A+Decimal%28%2752.5132420%27%29%2C+%27lng%27%3A+Decimal%28%276.0908607%27%29%7D failed with response code: OVER_QUERY_LIMIT
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJG1S6dKnnxUcRxWXr029365g&language=%7B%27lat%27%3A+Decimal%28%2752.5132420%27%29%2C+%27lng%27%3A+Decimal%28%276.0908607%27%29%7D failed with response code: OVER_QUERY_LIMIT
+2498670754
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'lon', 'man_made', 'building', 'leisure', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Sushi']
+number of successul enrichments: 182
+enrich: https://www.openstreetmap.org/node 1715140558
+Da Nini
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Da+Nini&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5113148%27%29%2C+%27lng%27%3A+Decimal%28%276.0956675%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+1715140558
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 183
+enrich: https://www.openstreetmap.org/node 2498674734
+2498674734
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Dancing|ulo:Party']
+number of successul enrichments: 184
+enrich: https://www.openstreetmap.org/node 2498664274
+De Plataan
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJZSWrtws2w0cRJxoKrpsqBDo&language=%7B%27lat%27%3A+Decimal%28%2752.5120248%27%29%2C+%27lng%27%3A+Decimal%28%276.0939399%27%29%7D failed with response code: OVER_QUERY_LIMIT
+Request to URL https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8&sensor=false&placeid=ChIJZSWrtws2w0cRJxoKrpsqBDo&language=%7B%27lat%27%3A+Decimal%28%2752.5120248%27%29%2C+%27lng%27%3A+Decimal%28%276.0939399%27%29%7D failed with response code: OVER_QUERY_LIMIT
+2498664274
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Italian_Cuisine']
+number of successul enrichments: 185
+enrich: https://www.openstreetmap.org/node 2498669312
+2498669312
+enriched properties: ['webtext', 'webtitle', 'website']
+['ulo:Shopping|ulo:Lifestyle']
+number of successul enrichments: 186
+enrich: https://www.openstreetmap.org/node 1618524031
+Monument voor de gevallenen 1940-1945
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Monument+voor+de+gevallenen+1940-1945&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5119003%27%29%2C+%27lng%27%3A+Decimal%28%276.0991224%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+1618524031
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Sightseeing|ulo:Monument']
+number of successul enrichments: 187
+enrich: https://www.openstreetmap.org/node 2498674909
+retry
+request of website https://letableau-zwolle.nl/ not successful! Skip.
+2498674909
+enriched properties: ['website']
+['ulo:Shopping|ulo:Art']
+number of successul enrichments: 188
+enrich: https://www.openstreetmap.org/node 2498663853
+Mc Donald's Zwolle-Centrum
+Request to URL https://maps.googleapis.com/maps/api/place/textsearch/json?query=Mc+Donald%27s+Zwolle-Centrum&radius=300&sensor=false&language=%7B%27lat%27%3A+Decimal%28%2752.5125022%27%29%2C+%27lng%27%3A+Decimal%28%276.0925683%27%29%7D&key=AIzaSyA2O6G7eCxOFTbu1HjPuqpuLEnllSDQDB8 failed with response code: OVER_QUERY_LIMIT
+2498663853
+enriched properties: ['website', 'shop', 'amenity', 'name', 'cuisine', 'webtitle', 'lon', 'man_made', 'building', 'leisure', 'webtext', 'beer', 'historic', 'place', 'surface', 'lat', 'tower', 'tourism', 'highway', 'clothes']
+['ulo:Eating|ulo:Fast_Food']
+number of successul enrichments: 189
