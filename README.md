@@ -13,7 +13,7 @@ In detail:
 ## Data:
  - *training.csv*: This is a 'raw' csv table containing manual ontological classifications of activities for 189 OSM places in Zwolle. Note: Many places have more than one activity (>300 records in total). Activities are captured in terms of the ulo: ontology, with ulo:Activity and ulo:Referent. Also, places have URLs denoting websites from which the information was manually obatined. 
  - *training_train_u.json*: This is a json file containing the 189 web enriched OSM places (identified by OSM address osm:123 for nodes and osmw:123 for ways). Enrichment was done in several iterations and then results were joined. Still, only 153 places have obtained webtexts, and many less have obtained reviewtexts. Enriched with the following keys:
-    - 'class' : Activity class manually added in terms of ulo ontology
+    - 'class' : Activity class manually added in terms of ulo ontology. Format *ulo:Activity|ulo:Referent*
     - 'uloplace' : Place type manually added in terms of ulo ontology
     - 'website' : URL of the website used to scrape place descriptions
     - 'webtitle': Title of the website used to scrape place descriptions 
@@ -26,7 +26,17 @@ In detail:
     - 'lon':  WGS 84 X Coordinate (taken from OSM, in terms of a centroid for ways) (if available)
     - 'shop', 'amenity', 'leisure', 'tourism', 'historic', 'man_made', 'tower', 'cuisine', 'clothes', 'tower', 'beer', 'highway', 'surface', 'place', 'building': Open Street Map key tags containing their respective values, or 'No' if not present at OSM
  
- - *models/*: This folder contains different model runs. *model1.txt* is e.g. a model run on 'training_train_u.json', using 'webtext' for LDA, language='dutch', using tags from OSM and Google Places as features in addition to topic probabilities (usetypes=True), constraining the class labels to only activity classes (no referent classes) (actlevel=True), and constraining the size of classes to contain at least 5 instances (minclasssize=5).
+ - *models/*: This folder contains different model runs. [models/model1.txt](https://github.com/simonscheider/PlaceLDA/blob/master/models/model1.txt) is e.g. a model run on 'training_train_u.json', using 'webtext' for generating 18 topics with LDA, language='dutch', using tags from OSM and Google Places as features in addition to topic probabilities (usetypes=True), constraining the class labels to only ulo:activity classes (no ulo:referent classes) (actlevel=True), and constraining the size of classes to contain at least 5 instances (minclasssize=5). Classifiers used are taken from scikit learn:  
+  LogisticRegression(C=1e5),
+  KNeighborsClassifier(5),
+  SVC(kernel="linear", C=0.025),
+  SVC(kernel='rbf',gamma=2, C=1),
+  GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True),
+  DecisionTreeClassifier(max_depth=5),
+  RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1),
+  MLPClassifier(alpha=1),
+  AdaBoostClassifier(),
+  GaussianNB()
  
  - *placetopics.shp*: A shp file with a subset of places together with LDA topics, taken from the model *models/model1allclass.txt*
  
