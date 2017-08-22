@@ -1,0 +1,1390 @@
+@prefix : <http://geographicknowledge.de/vocab/UrbanLeisure#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://geographicknowledge.de/vocab/UrbanLeisure> .
+
+<http://geographicknowledge.de/vocab/UrbanLeisure> rdf:type owl:Ontology ;
+                                                    owl:imports <http://geographicknowledge.de/vocab/PlaceActivity> ;
+                                                    rdfs:comment "An ontology to capture concepts of urban leisure activities"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://geographicknowledge.de/vocab/PlaceActivity#affords
+<http://geographicknowledge.de/vocab/PlaceActivity#affords> rdf:type owl:ObjectProperty ;
+                                                            owl:equivalentProperty <http://geographicknowledge.de/vocab/PlaceActivity#locatedAt> ;
+                                                            owl:inverseOf <http://geographicknowledge.de/vocab/PlaceActivity#locatedAt> .
+
+
+###  http://geographicknowledge.de/vocab/PlaceActivity#locatedAt
+<http://geographicknowledge.de/vocab/PlaceActivity#locatedAt> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://geographicknowledge.de/vocab/PlaceActivity#Activity
+<http://geographicknowledge.de/vocab/PlaceActivity#Activity> rdf:type owl:Class .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeasure#Concert
+<http://geographicknowledge.de/vocab/UrbanLeasure#Concert> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Show .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeasure#Event
+<http://geographicknowledge.de/vocab/UrbanLeasure#Event> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+                                                         rdfs:comment "A thing that happens or takes place, especially one of importance (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeasure#Match
+<http://geographicknowledge.de/vocab/UrbanLeasure#Match> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+                                                         rdfs:comment "A contest in which people or teams compete against each other in a particular sport (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeasure#Parade
+<http://geographicknowledge.de/vocab/UrbanLeasure#Parade> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+                                                          rdfs:comment "A public procession, especially one celebrating a special day or event (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeasure#SportGame
+<http://geographicknowledge.de/vocab/UrbanLeasure#SportGame> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Match> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Animals
+:Animals rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+         rdfs:comment "Animals"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Architecture
+:Architecture rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+              rdfs:comment "The style in which a building is designed and constructed, especially with regard to a specific period, place, or culture (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Argentinian_Cuisine
+:Argentinian_Cuisine rdf:type owl:Class ;
+                     rdfs:subClassOf :Cuisine .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Atelier
+:Atelier rdf:type owl:Class ;
+         rdfs:subClassOf :Gallery .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Ballet
+:Ballet rdf:type owl:Class ;
+        rdfs:subClassOf :Show .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Beauty_Store
+:Beauty_Store rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Beer
+:Beer rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Bitterballen
+:Bitterballen rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fast_Food> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Book_Fair
+:Book_Fair rdf:type owl:Class ;
+           rdfs:subClassOf :Fair .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Bookstore
+:Bookstore rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Bowling
+:Bowling rdf:type owl:Class ;
+         rdfs:subClassOf :Playing ;
+         rdfs:comment "The game of bowls as a sport or recreation (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Brasserie
+:Brasserie rdf:type owl:Class ;
+           rdfs:subClassOf :Restaurant .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Bread
+:Bread rdf:type owl:Class ;
+       rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Breakfast
+:Breakfast rdf:type owl:Class ;
+           rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Brewery
+:Brewery rdf:type owl:Class ;
+         rdfs:subClassOf :Café .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Buffet
+:Buffet rdf:type owl:Class ;
+        rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Burger
+:Burger rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fast_Food> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Cabaret
+:Cabaret rdf:type owl:Class ;
+         rdfs:subClassOf :Show .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Café
+:Café rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Canal
+:Canal rdf:type owl:Class ;
+       rdfs:subClassOf :Water .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Canoeing
+:Canoeing rdf:type owl:Class ;
+          rdfs:subClassOf :Watersports ;
+          rdfs:comment "The sport or activity of paddling a light, narrow boat (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Childrens_Gift
+:Childrens_Gift rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Gifts> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Church
+:Church rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Cinema
+:Cinema rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#City_Beach
+:City_Beach rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Classic_Concert
+:Classic_Concert rdf:type owl:Class ;
+                 rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Concert> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Cocktail
+:Cocktail rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Cocktail_Bar
+:Cocktail_Bar rdf:type owl:Class ;
+              rdfs:subClassOf :Café .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Coffee_Store
+:Coffee_Store rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Convention_Centre
+:Convention_Centre rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Cuisine
+:Cuisine rdf:type owl:Class ;
+         rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Culture_Festival
+:Culture_Festival rdf:type owl:Class ;
+                  rdfs:subClassOf :Festival .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Cycling
+:Cycling rdf:type owl:Class ;
+         rdfs:subClassOf :Sporting ;
+         rdfs:comment "The sport or activity of riding a bicyle (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Dance_Festival
+:Dance_Festival rdf:type owl:Class ;
+                rdfs:subClassOf :Festival .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Dancing
+:Dancing rdf:type owl:Class ;
+         rdfs:subClassOf :Leisure ;
+         rdfs:comment "The activity of dancing for pleasure or in order to entertain others (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Day-time
+:Day-time rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Deli
+:Deli rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Drinking
+:Drinking rdf:type owl:Class ;
+          rdfs:subClassOf :Leisure ;
+          rdfs:comment "Consume a liquid (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Drinks
+:Drinks rdf:type owl:Class ;
+        rdfs:subClassOf :Food ;
+        rdfs:comment "Any liquid substance (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Eating
+:Eating rdf:type owl:Class ;
+        rdfs:subClassOf :Leisure ;
+        rdfs:comment "Having a meal (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Fair
+:Fair rdf:type owl:Class ;
+      rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+      rdfs:comment "A gathering of stalls and amusements for public entertainment (OED)"@en ;
+      rdfs:label "Fair"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Fashion_Outlet
+:Fashion_Outlet rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Fashion_Store
+:Fashion_Store rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Festival
+:Festival rdf:type owl:Class ;
+          rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+          rdfs:comment "An organized series of concerts, plays, or films, typically one held annually in the same place (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Fish
+:Fish rdf:type owl:Class ;
+      rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Fishing
+:Fishing rdf:type owl:Class ;
+         rdfs:subClassOf :Watersports ;
+         rdfs:comment "The activity of catching fish, either for food or as a sport (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Flea_Market
+:Flea_Market rdf:type owl:Class ;
+             rdfs:subClassOf :Fair .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Flower_Store
+:Flower_Store rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Flowers
+:Flowers rdf:type owl:Class ;
+         rdfs:subClassOf :Goods .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Focaccia
+:Focaccia rdf:type owl:Class ;
+          rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Food
+:Food rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+      rdfs:comment "Any nutritious substance (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Food_Festival
+:Food_Festival rdf:type owl:Class ;
+               rdfs:subClassOf :Festival .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Fun_Fair
+:Fun_Fair rdf:type owl:Class ;
+          rdfs:subClassOf :Fair .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Furniture
+:Furniture rdf:type owl:Class ;
+           rdfs:subClassOf :Goods .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Furniture_Shop
+:Furniture_Shop rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Gallery
+:Gallery rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Gambling
+:Gambling rdf:type owl:Class ;
+          rdfs:subClassOf :Playing ;
+          rdfs:comment "Play games of chance for money (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Game
+:Game rdf:type owl:Class ;
+      rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Gaming
+:Gaming rdf:type owl:Class ;
+        rdfs:subClassOf :Playing ;
+        rdfs:comment "The action or practice of playing gambling games (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Gift_Shop
+:Gift_Shop rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Glutenfree_Food
+:Glutenfree_Food rdf:type owl:Class ;
+                 rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Goods
+:Goods rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+       rdfs:comment "Merchandise or possessions (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Greek_Cuisine
+:Greek_Cuisine rdf:type owl:Class ;
+               rdfs:subClassOf :Cuisine .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#High_Tea
+:High_Tea rdf:type owl:Class ;
+          rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#High_Wine
+:High_Wine rdf:type owl:Class ;
+           rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Hotdog
+:Hotdog rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fast_Food> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Ice_Cream
+:Ice_Cream rdf:type owl:Class ;
+           rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Ice_CreamShop
+:Ice_CreamShop rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Interior_Goods
+:Interior_Goods rdf:type owl:Class ;
+                rdfs:subClassOf :Goods .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Interior_Store
+:Interior_Store rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Jogging
+:Jogging rdf:type owl:Class ;
+         rdfs:subClassOf :Sporting ;
+         rdfs:comment "The activity of running at a steady, gentle pace as a from of physical exercice (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Lake
+:Lake rdf:type owl:Class ;
+      rdfs:subClassOf :Water .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Leisure
+:Leisure rdf:type owl:Class ;
+         rdfs:subClassOf <http://geographicknowledge.de/vocab/PlaceActivity#Activity> ;
+         rdfs:comment "Use of free time for enjoyment (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Lifestyle_Store
+:Lifestyle_Store rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Liquor_Store
+:Liquor_Store rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Local_Liquor
+:Local_Liquor rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Lunchroom
+:Lunchroom rdf:type owl:Class ;
+           rdfs:subClassOf :Restaurant .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Meat
+:Meat rdf:type owl:Class ;
+      rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Meditating
+:Meditating rdf:type owl:Class ;
+            rdfs:subClassOf :Relaxing ;
+            rdfs:comment "Focus one's mind for a period of time, in silence or with the aid of chanting, for religious or spiritual purposes or as a method of relaxation (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Moat
+:Moat rdf:type owl:Class ;
+      rdfs:subClassOf :Water .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Monument_Building
+:Monument_Building rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Historic_Building> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Movie
+:Movie rdf:type owl:Class ;
+       rdfs:subClassOf :Show .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Museum
+:Museum rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Music_Festival
+:Music_Festival rdf:type owl:Class ;
+                rdfs:subClassOf :Festival .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Pancakes
+:Pancakes rdf:type owl:Class ;
+          rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Park
+:Park rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Pastry-Store
+:Pastry-Store rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Patisserie
+:Patisserie rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#People
+:People rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+        rdfs:comment "People"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Pizza
+:Pizza rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Fast_Food> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Playing
+:Playing rdf:type owl:Class ;
+         rdfs:subClassOf :Leisure ;
+         rdfs:comment "Engage in activity for enjoyment and recreation rather than a serious or practical purpose (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Pond
+:Pond rdf:type owl:Class ;
+      rdfs:subClassOf :Water .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Pop_Concert
+:Pop_Concert rdf:type owl:Class ;
+             rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Concert> ;
+             rdfs:comment "Pop_Concert"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Quiz
+:Quiz rdf:type owl:Class ;
+      rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+      rdfs:comment "A test of knowledge, especially as a competition between individuals or teams as a form of entertainment (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Reading
+:Reading rdf:type owl:Class ;
+         rdfs:subClassOf :Leisure ;
+         rdfs:comment "The act of reading (a book, magazine or someting else) (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Relaxing
+:Relaxing rdf:type owl:Class ;
+          rdfs:subClassOf :Leisure ;
+          rdfs:comment "Rest from work or engage in an enjoyable activity so as to become less tired or anxious (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Restaurant
+:Restaurant rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#River
+:River rdf:type owl:Class ;
+       rdfs:subClassOf :Water .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Rowing
+:Rowing rdf:type owl:Class ;
+        rdfs:subClassOf :Watersports ;
+        rdfs:comment "The sport or pastime of propelling a boat by means of oars (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sailing
+:Sailing rdf:type owl:Class ;
+         rdfs:subClassOf :Watersports ;
+         rdfs:comment "The action of sailing in a ship or boat (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sand
+:Sand rdf:type owl:Class ;
+      rdfs:subClassOf :Terrain ;
+      rdfs:comment "An expanse of sand, typically along a shore (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sandwich
+:Sandwich rdf:type owl:Class ;
+          rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Saté
+:Saté rdf:type owl:Class ;
+      rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sea
+:Sea rdf:type owl:Class ;
+     rdfs:subClassOf :Water .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Seafood_Shop
+:Seafood_Shop rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Secondhand_Goods
+:Secondhand_Goods rdf:type owl:Class ;
+                  rdfs:subClassOf :Goods .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Shopping
+:Shopping rdf:type owl:Class ;
+          rdfs:subClassOf :Leisure ;
+          rdfs:comment "The action or activity of buying goods from shops (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Shots
+:Shots rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Show
+:Show rdf:type owl:Class ;
+      rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+      rdfs:comment "A spectacle or display, typically an impressive one (OED)"@en ;
+      rdfs:label "Show"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sitting
+:Sitting rdf:type owl:Class ;
+         rdfs:subClassOf :Relaxing ;
+         rdfs:comment "A continuous period of being seated, especially when engaged in a particular activity (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Skating
+:Skating rdf:type owl:Class ;
+         rdfs:subClassOf :Sporting ;
+         rdfs:comment "The action or activity of gliding on ice skates or roller skates as a sport (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Snackbar
+:Snackbar rdf:type owl:Class ;
+          rdfs:subClassOf :Restaurant .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sporting
+:Sporting rdf:type owl:Class ;
+          rdfs:subClassOf :Leisure ;
+          rdfs:comment "An activity involving physical exertion and skill in which an individual or team competes against another or others for entertainment (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Steak
+:Steak rdf:type owl:Class ;
+       rdfs:subClassOf :Food .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Street
+:Street rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Strolling
+:Strolling rdf:type owl:Class ;
+           rdfs:subClassOf :Leisure ;
+           rdfs:comment "Walk in a leisurely way (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sunbathing
+:Sunbathing rdf:type owl:Class ;
+            rdfs:subClassOf :Relaxing ;
+            rdfs:comment "Sit or lie in the sun, especially to tan the skin (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Sushi
+:Sushi rdf:type owl:Class ;
+       rdfs:subClassOf :Food ;
+       rdfs:comment "A Japanese dish consisting of small balls or rolls of vinegar-flavoured cold rice served with a garnish of vegetables, egg, or raw seafood (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Swimming
+:Swimming rdf:type owl:Class ;
+          rdfs:subClassOf :Watersports ;
+          rdfs:comment "The sport or activity of propelling oneself through water using the limbs (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Tasting
+:Tasting rdf:type owl:Class ;
+         rdfs:subClassOf :Eating ;
+         rdfs:comment "A gathering at which people sample, compare, and evaluate different wines, or other drinks or food (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Terrace
+:Terrace rdf:type owl:Class ;
+         rdfs:subClassOf :Restaurant .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Terrain
+:Terrain rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+         rdfs:comment "A stretch of land, especially with regard to its physical features (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Theatre
+:Theatre rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Touring
+:Touring rdf:type owl:Class ;
+         rdfs:subClassOf :Leisure ;
+         rdfs:comment "Make a tour of an area (OED)"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Toy_Shop
+:Toy_Shop rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Transport_Means
+:Transport_Means rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+                 rdfs:comment "Means of transport"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Turkish-Cuisine
+:Turkish-Cuisine rdf:type owl:Class ;
+                 rdfs:subClassOf :Cuisine .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Warehouse
+:Warehouse rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Watching
+:Watching rdf:type owl:Class ;
+          rdfs:subClassOf :Leisure .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Water
+:Water rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Watersports
+:Watersports rdf:type owl:Class ;
+             rdfs:subClassOf :Sporting ;
+             rdfs:comment "Sports activities engaging in the water"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Wellness
+:Wellness rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+          rdfs:comment "Containerconcept for everything related to relaxing, enjoying, rest and recover"@en .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Whiskey
+:Whiskey rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages> .
+
+
+###  http://geographicknowledge.de/vocab/UrbanLeisure#Zoo
+:Zoo rdf:type owl:Class ;
+     rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages
+<http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages> rdf:type owl:Class ;
+                                                               rdfs:subClassOf :Drinks ;
+                                                               rdfs:comment "Drinks with a certain volume of alcohol"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Arcade_Hall
+<http://www.co-ode.org/ontologies/ont.owl#Arcade_Hall> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Archeology_Museum
+<http://www.co-ode.org/ontologies/ont.owl#Archeology_Museum> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :Museum .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Art
+<http://www.co-ode.org/ontologies/ont.owl#Art> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+                                               rdfs:comment "Works produced by human creative skill and imagination (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Art_Gallery
+<http://www.co-ode.org/ontologies/ont.owl#Art_Gallery> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Museum .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Art_House_Cinema
+<http://www.co-ode.org/ontologies/ont.owl#Art_House_Cinema> rdf:type owl:Class ;
+                                                            rdfs:subClassOf :Cinema .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Art_Museum
+<http://www.co-ode.org/ontologies/ont.owl#Art_Museum> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Museum .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Art_Store
+<http://www.co-ode.org/ontologies/ont.owl#Art_Store> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                     rdfs:label "Art_Store"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Asian_Cuisine
+<http://www.co-ode.org/ontologies/ont.owl#Asian_Cuisine> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Cuisine .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Atelier
+<http://www.co-ode.org/ontologies/ont.owl#Atelier> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> ;
+                                                   rdfs:label "Atelier"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bakery
+<http://www.co-ode.org/ontologies/ont.owl#Bakery> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                  rdfs:label "Bakery"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bar
+<http://www.co-ode.org/ontologies/ont.owl#Bar> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Café .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Belgian_Beer
+<http://www.co-ode.org/ontologies/ont.owl#Belgian_Beer> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :Beer .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bicycle
+<http://www.co-ode.org/ontologies/ont.owl#Bicycle> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Transport_Means ;
+                                                   rdfs:comment "A vehicle consisting of two wheels held in a frame one behind the other, propelled by pedals and steered with handlebars attached to the front wheel (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Boat
+<http://www.co-ode.org/ontologies/ont.owl#Boat> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Transport_Means ;
+                                                rdfs:comment "A vessel for travelling over water, propelled by oars, sails, or an engine (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Books
+<http://www.co-ode.org/ontologies/ont.owl#Books> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Goods ;
+                                                 rdfs:label "Books"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bowling_Alley
+<http://www.co-ode.org/ontologies/ont.owl#Bowling_Alley> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bus
+<http://www.co-ode.org/ontologies/ont.owl#Bus> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Transport_Means ;
+                                               rdfs:comment "A large motor vehicle carrying passengers by road, typically one serving the public on a fixed route and for a fare (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Candy
+<http://www.co-ode.org/ontologies/ont.owl#Candy> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Food ;
+                                                 rdfs:comment "A sweet food made with sugar or syrup combined with fruit, chocolate, or nuts (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Candy_Store
+<http://www.co-ode.org/ontologies/ont.owl#Candy_Store> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                       rdfs:label "Candy_Store"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Carillon
+<http://www.co-ode.org/ontologies/ont.owl#Carillon> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Architecture ;
+                                                    rdfs:comment "A set of bells in a tower, played using a keyboard or by an automatic mechanism similar to a piano roll (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Casino
+<http://www.co-ode.org/ontologies/ont.owl#Casino> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Childrens_Farm
+<http://www.co-ode.org/ontologies/ont.owl#Childrens_Farm> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> ;
+                                                          rdfs:label "Childrens_Farm"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Chocolate
+<http://www.co-ode.org/ontologies/ont.owl#Chocolate> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Candy> ;
+                                                     rdfs:comment "Chocolate"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Chocolate_Shop
+<http://www.co-ode.org/ontologies/ont.owl#Chocolate_Shop> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                          rdfs:label "Chocolate_Shop"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Christmas_Fair
+<http://www.co-ode.org/ontologies/ont.owl#Christmas_Fair> rdf:type owl:Class ;
+                                                          rdfs:subClassOf :Fair ;
+                                                          rdfs:label "Christmas_Fair"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Climbing
+<http://www.co-ode.org/ontologies/ont.owl#Climbing> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Leisure ;
+                                                    rdfs:comment "The sport or activity of climbing heights (mountains, towers) (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Coffee
+<http://www.co-ode.org/ontologies/ont.owl#Coffee> rdf:type owl:Class ;
+                                                  rdfs:subClassOf :Drinks .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Coffee_Bar
+<http://www.co-ode.org/ontologies/ont.owl#Coffee_Bar> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Café ;
+                                                      rdfs:label "Coffee_Bar"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Community_Garden
+<http://www.co-ode.org/ontologies/ont.owl#Community_Garden> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cooking
+<http://www.co-ode.org/ontologies/ont.owl#Cooking> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Leisure ;
+                                                   rdfs:comment "The practice or skill of preparing food by combining, mixing, and heating ingredients (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cooking_Accessoires
+<http://www.co-ode.org/ontologies/ont.owl#Cooking_Accessoires> rdf:type owl:Class ;
+                                                               rdfs:subClassOf :Goods ;
+                                                               rdfs:comment "Tools to cook with"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cooking_Class
+<http://www.co-ode.org/ontologies/ont.owl#Cooking_Class> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+                                                         rdfs:comment "Lesson in cooking a meal"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cultural_Event
+<http://www.co-ode.org/ontologies/ont.owl#Cultural_Event> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Culture_Boat
+<http://www.co-ode.org/ontologies/ont.owl#Culture_Boat> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Harbour> ;
+                                                        rdfs:label "Culture_Boat"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Dance
+<http://www.co-ode.org/ontologies/ont.owl#Dance> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Show .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Escape_Game
+<http://www.co-ode.org/ontologies/ont.owl#Escape_Game> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+                                                       rdfs:comment "A game where you have to escape a room full with puzzles and clues"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Etnographic_Museum
+<http://www.co-ode.org/ontologies/ont.owl#Etnographic_Museum> rdf:type owl:Class ;
+                                                              rdfs:subClassOf :Museum .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Exhibition
+<http://www.co-ode.org/ontologies/ont.owl#Exhibition> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+                                                      rdfs:comment "A public display of works of art or items of interest, held in an art gallery or museum or at a trade fair (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Fashion
+<http://www.co-ode.org/ontologies/ont.owl#Fashion> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Goods ;
+                                                   rdfs:label "Fashion"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Fast_Food
+<http://www.co-ode.org/ontologies/ont.owl#Fast_Food> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Food ;
+                                                     rdfs:comment "Food that can be prepared quickly and easily and is sold in restaurants and snack bars as a quick meal or to be taken out (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Fast_Food_Restaurant
+<http://www.co-ode.org/ontologies/ont.owl#Fast_Food_Restaurant> rdf:type owl:Class ;
+                                                                rdfs:subClassOf :Restaurant ;
+                                                                rdfs:comment "A restaurant that sells fastfood"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Fine_Dining
+<http://www.co-ode.org/ontologies/ont.owl#Fine_Dining> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Food ;
+                                                       rdfs:comment "The action or practice of dining in a formal setting (typically an expensive restaurant) where high quality or gourmet food is served (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Food_Store
+<http://www.co-ode.org/ontologies/ont.owl#Food_Store> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                      rdfs:label "Food_Store"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Food_Truck
+<http://www.co-ode.org/ontologies/ont.owl#Food_Truck> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :Food ;
+                                                      rdfs:comment "A large vehicle equipped with facilities for cooking and selling food (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Footpath
+<http://www.co-ode.org/ontologies/ont.owl#Footpath> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Terrain ;
+                                                    rdfs:comment "A path for people to walk along, especially a right of way in the countryside (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#French_Cuisine
+<http://www.co-ode.org/ontologies/ont.owl#French_Cuisine> rdf:type owl:Class ;
+                                                          rdfs:subClassOf :Cuisine ;
+                                                          rdfs:comment "Food from France"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Gadgets
+<http://www.co-ode.org/ontologies/ont.owl#Gadgets> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Goods ;
+                                                   rdfs:comment "A small mechanical or electronic device or tool, especially an ingenious or novel one (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Garden
+<http://www.co-ode.org/ontologies/ont.owl#Garden> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Gifts
+<http://www.co-ode.org/ontologies/ont.owl#Gifts> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Goods ;
+                                                 rdfs:comment "Small gifts dedicated to give as present"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Grass
+<http://www.co-ode.org/ontologies/ont.owl#Grass> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Terrain ;
+                                                 rdfs:comment "Ground covered with grass (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Harbour
+<http://www.co-ode.org/ontologies/ont.owl#Harbour> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> ;
+                                                   rdfs:label "Harbour"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Heritage
+<http://www.co-ode.org/ontologies/ont.owl#Heritage> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+                                                    rdfs:comment "Valued objects and qualities such as cultural traditions, unspoiled countryside, and historic buildings that have been passed down from previous generations (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Heritage_Building
+<http://www.co-ode.org/ontologies/ont.owl#Heritage_Building> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :Museum ;
+                                                             rdfs:label "Heritage_Building"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Historic_Building
+<http://www.co-ode.org/ontologies/ont.owl#Historic_Building> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> ;
+                                                             rdfs:label "Historic_Building"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Historic_Museum
+<http://www.co-ode.org/ontologies/ont.owl#Historic_Museum> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Museum ;
+                                                           rdfs:label "Historic_Museum"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Historic_Tower
+<http://www.co-ode.org/ontologies/ont.owl#Historic_Tower> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Historic_Building> ;
+                                                          rdfs:label "Historic_Tower"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Italian_Cuisine
+<http://www.co-ode.org/ontologies/ont.owl#Italian_Cuisine> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Cuisine ;
+                                                           rdfs:comment "Food from Italy"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Library
+<http://www.co-ode.org/ontologies/ont.owl#Library> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> ;
+                                                   rdfs:label "Library"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Lifestyle
+<http://www.co-ode.org/ontologies/ont.owl#Lifestyle> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Goods ;
+                                                     rdfs:comment "Goods used for lifestyle"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Liquor_Store
+<http://www.co-ode.org/ontologies/ont.owl#Liquor_Store> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                        rdfs:label "Liquor_Store"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Listening
+<http://www.co-ode.org/ontologies/ont.owl#Listening> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Leisure ;
+                                                     rdfs:comment "An act of listening to something (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Live_Music
+<http://www.co-ode.org/ontologies/ont.owl#Live_Music> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Concert> ;
+                                                      rdfs:label "Live_Music"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Lunch
+<http://www.co-ode.org/ontologies/ont.owl#Lunch> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Food ;
+                                                 rdfs:comment "A meal eaten in the middle of the day, typically one that is lighter or less formal than an evening meal (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Market
+<http://www.co-ode.org/ontologies/ont.owl#Market> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> ;
+                                                  rdfs:label "Market"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Mexican_Cuisine
+<http://www.co-ode.org/ontologies/ont.owl#Mexican_Cuisine> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Cuisine ;
+                                                           rdfs:comment "Food from Mexico"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Mix_Store
+<http://www.co-ode.org/ontologies/ont.owl#Mix_Store> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                     rdfs:comment "A store with very mixed offerings"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Monument
+<http://www.co-ode.org/ontologies/ont.owl#Monument> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Heritage> ;
+                                                    rdfs:comment "A statue, building, or other structure erected to commemorate a notable person or event (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Movie
+<http://www.co-ode.org/ontologies/ont.owl#Movie> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+                                                 rdfs:comment "A cinema film (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Nature_Museum
+<http://www.co-ode.org/ontologies/ont.owl#Nature_Museum> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Museum .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Night-time
+<http://www.co-ode.org/ontologies/ont.owl#Night-time> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+                                                      rdfs:label "Night-time"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Nightclub
+<http://www.co-ode.org/ontologies/ont.owl#Nightclub> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_0b519d55_916b_46d1_8ba6_99d0ccb19f18
+<http://www.co-ode.org/ontologies/ont.owl#OWLClass_0b519d55_916b_46d1_8ba6_99d0ccb19f18> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Cuisine ;
+                                                                                         rdfs:label "Chinese_Cuisine"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_1dc72d92_241e_4019_a47b_46c1bce6586c
+<http://www.co-ode.org/ontologies/ont.owl#OWLClass_1dc72d92_241e_4019_a47b_46c1bce6586c> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Goods ;
+                                                                                         rdfs:label "Beauty_Goods"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_3a538328_5537_4846_8088_c26153b8ca52
+<http://www.co-ode.org/ontologies/ont.owl#OWLClass_3a538328_5537_4846_8088_c26153b8ca52> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Goods ;
+                                                                                         rdfs:label "Accessoires"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_ba757c3a_9ba6_4fb6_82d3_f827a917172d
+<http://www.co-ode.org/ontologies/ont.owl#OWLClass_ba757c3a_9ba6_4fb6_82d3_f827a917172d> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Food ;
+                                                                                         rdfs:label "Biological_Food"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#OWLClass_c1cf02d0_af0d_44ef_b749_d3504d4bf41e
+<http://www.co-ode.org/ontologies/ont.owl#OWLClass_c1cf02d0_af0d_44ef_b749_d3504d4bf41e> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Cuisine ;
+                                                                                         rdfs:label "Belgian_Cuisine"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Opening_Hours
+<http://www.co-ode.org/ontologies/ont.owl#Opening_Hours> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+                                                         rdfs:label "Opening_Hours"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Party
+<http://www.co-ode.org/ontologies/ont.owl#Party> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://geographicknowledge.de/vocab/UrbanLeasure#Event> ;
+                                                 rdfs:comment "A social gathering of invited guests, typically involving eating, drinking, and entertainment (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pastry_Store
+<http://www.co-ode.org/ontologies/ont.owl#Pastry_Store> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :Food ;
+                                                        rdfs:comment "An item of food consisting of sweet pastry with a cream, jam, or fruit filling (OED)"@en ;
+                                                        rdfs:label "Pastry"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Play
+<http://www.co-ode.org/ontologies/ont.owl#Play> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Show .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pub
+<http://www.co-ode.org/ontologies/ont.owl#Pub> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Café ;
+                                               rdfs:label "Pub"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Regional_Product
+<http://www.co-ode.org/ontologies/ont.owl#Regional_Product> rdf:type owl:Class ;
+                                                            rdfs:subClassOf :Goods ;
+                                                            rdfs:comment "A product specifically for the region"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Restaurant_Store
+<http://www.co-ode.org/ontologies/ont.owl#Restaurant_Store> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                            rdfs:label "Restaurant_Store"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#SUP
+<http://www.co-ode.org/ontologies/ont.owl#SUP> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Boat> ;
+                                               rdfs:comment "Stand Up Paddle (SUP)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sandwich
+<http://www.co-ode.org/ontologies/ont.owl#Sandwich> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :Food ;
+                                                    rdfs:comment "An item of food consisting of two pieces of bread with meat, cheese, or other filling between them, eaten as a light meal (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Shopping_Street
+<http://www.co-ode.org/ontologies/ont.owl#Shopping_Street> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sightseeing
+<http://www.co-ode.org/ontologies/ont.owl#Sightseeing> rdf:type owl:Class ;
+                                                       rdfs:subClassOf :Leisure ;
+                                                       rdfs:comment "The activity of visiting places of interest in a particular location (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Souvenirs
+<http://www.co-ode.org/ontologies/ont.owl#Souvenirs> rdf:type owl:Class ;
+                                                     rdfs:subClassOf :Goods ;
+                                                     rdfs:comment "A thing that is kept as a reminder of a person, place, or event (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Spa
+<http://www.co-ode.org/ontologies/ont.owl#Spa> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Speciality_Beer
+<http://www.co-ode.org/ontologies/ont.owl#Speciality_Beer> rdf:type owl:Class ;
+                                                           rdfs:subClassOf :Beer ;
+                                                           rdfs:label "Speciality_Beer"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Speciality_Museum
+<http://www.co-ode.org/ontologies/ont.owl#Speciality_Museum> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :Museum .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Speciality_Store
+<http://www.co-ode.org/ontologies/ont.owl#Speciality_Store> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Store> ;
+                                                            rdfs:label "Speciality_Store"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sport_Field
+<http://www.co-ode.org/ontologies/ont.owl#Sport_Field> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Grass> ;
+                                                       rdfs:comment "A field to practice different sports on"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Square
+<http://www.co-ode.org/ontologies/ont.owl#Square> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> ;
+                                                  rdfs:label "Square"@nl .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Store
+<http://www.co-ode.org/ontologies/ont.owl#Store> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Shopping_Street> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Tapas
+<http://www.co-ode.org/ontologies/ont.owl#Tapas> rdf:type owl:Class ;
+                                                 rdfs:subClassOf :Food ;
+                                                 rdfs:comment "Small Spanish savory dishes, typically served with drinks at a bar (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Tea
+<http://www.co-ode.org/ontologies/ont.owl#Tea> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Drinks .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Terrace
+<http://www.co-ode.org/ontologies/ont.owl#Terrace> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+                                                   rdfs:comment "A level paved area next to a building; a patio (OED)"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Thai_Cuisine
+<http://www.co-ode.org/ontologies/ont.owl#Thai_Cuisine> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :Cuisine ;
+                                                        rdfs:comment "Food from Thailand"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Tosti
+<http://www.co-ode.org/ontologies/ont.owl#Tosti> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Sandwich> ;
+                                                 rdfs:comment "Toasted ham and cheese sandwich"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Tourist_Vessel
+<http://www.co-ode.org/ontologies/ont.owl#Tourist_Vessel> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Boat> ;
+                                                          rdfs:comment "A boat specialised in touring tourists with guided tours"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Wine
+<http://www.co-ode.org/ontologies/ont.owl#Wine> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alcoholic_Beverages> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Worship
+<http://www.co-ode.org/ontologies/ont.owl#Worship> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> ;
+                                                   rdfs:comment "The acts or rites that make up a formal expression of reverence for a deity; a religious ceremony or ceremonies (OED)"@en .
+
+
+###  http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place
+<http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Place> rdf:type owl:Class .
+
+
+###  http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent
+<http://www.geographicknowledge.de/vocab/PlaceReferenceTheory#Referent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
