@@ -12,6 +12,9 @@ In detail:
   
 ## Data:
  - [*training.csv*](https://github.com/simonscheider/PlaceLDA/blob/master/training.csv): This is a 'raw' csv table containing manual ontological classifications of activities for 189 OSM places in Zwolle. Note: Many places have more than one activity (>300 records in total). Activities are captured in terms of the ulo: ontology, with ulo:Activity and ulo:Referent. Also, places have URLs denoting websites from which the information was manually obatined. 
+ 
+ - [*ULO ontology*](https://github.com/simonscheider/PlaceLDA/blob/master/UrbanLeisure.ttl) Describe the activity classes used in the annotation
+ 
  - [*training_train_u.json*](https://github.com/simonscheider/PlaceLDA/blob/master/training_train_u.json): This is a json file containing the 189 web enriched OSM places (identified by OSM address osm:123 for nodes and osmw:123 for ways). Enrichment was done in several iterations and then results were joined. Still, only 153 places have obtained webtexts, and many less have obtained reviewtexts. Enriched with the following keys:
     - 'class' : Activity class manually added in terms of ulo ontology. Format *ulo:Activity|ulo:Referent*
     - 'uloplace' : Place type manually added in terms of ulo ontology
