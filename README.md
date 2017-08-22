@@ -28,8 +28,6 @@ In detail:
  
  - *log_webscraping.txt*: This contains a log of the scraping result contained in *training_train_u.json*. What went wrong a.s.o
  
- - *placetopics.shp*: A shp file with a subset of places with lat lon together with LDA topics, taken from the model *models/model1allclass.txt*
- 
  ## Results:
  - *models/modelX.txt*: This folder contains different LDA + classifier model runs toegther with evaluation results. For example, [models/model1.txt](https://github.com/simonscheider/PlaceLDA/blob/master/models/model1.txt) is a model run on 'training_train_u.json', using 'webtext' for generating 18 topics with LDA, language='dutch', using tags from OSM and Google Places as features in addition to topic probabilities (usetypes=True), constraining the class labels to only ulo:activity classes (no ulo:referent classes) (actlevel=True), and constraining the size of classes to contain at least 5 instances (minclasssize=5). The following classifiers were taken from scikit learn and tested by 10-fold cross validation:  
    - LogisticRegression(C=1e5),
@@ -42,6 +40,8 @@ In detail:
    - MLPClassifier(alpha=1),
    - AdaBoostClassifier(),
    - GaussianNB()
+  
+  - *placetopics.shp*: A shp file with a subset of places with lat lon together with LDA topics, taken from the model *models/model1allclass.txt*
   
  - *models/treeX.dot* ...: Contains a print out of the decision tree for each model run. Can be opened with [Graphviz editor](http://www.graphviz.org)
 
