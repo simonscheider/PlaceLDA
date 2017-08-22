@@ -26,21 +26,21 @@ In detail:
     - 'lon':  WGS 84 X Coordinate (taken from OSM, in terms of a centroid for ways) (if available)
     - 'shop', 'amenity', 'leisure', 'tourism', 'historic', 'man_made', 'tower', 'cuisine', 'clothes', 'tower', 'beer', 'highway', 'surface', 'place', 'building': Open Street Map key tags containing their respective values, or 'No' if not present at OSM
  
- - *models/*: This folder contains different model runs. [models/model1.txt](https://github.com/simonscheider/PlaceLDA/blob/master/models/model1.txt) is e.g. a model run on 'training_train_u.json', using 'webtext' for generating 18 topics with LDA, language='dutch', using tags from OSM and Google Places as features in addition to topic probabilities (usetypes=True), constraining the class labels to only ulo:activity classes (no ulo:referent classes) (actlevel=True), and constraining the size of classes to contain at least 5 instances (minclasssize=5). Classifiers used are taken from scikit learn:  
-  LogisticRegression(C=1e5),
-  KNeighborsClassifier(5),
-  SVC(kernel="linear", C=0.025),
-  SVC(kernel='rbf',gamma=2, C=1),
-  GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True),
-  DecisionTreeClassifier(max_depth=5),
-  RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1),
-  MLPClassifier(alpha=1),
-  AdaBoostClassifier(),
-  GaussianNB()
- 
  - *placetopics.shp*: A shp file with a subset of places together with LDA topics, taken from the model *models/model1allclass.txt*
  
- 
+ - *models/*: This folder contains different model runs. [models/model1.txt](https://github.com/simonscheider/PlaceLDA/blob/master/models/model1.txt) is e.g. a model run on 'training_train_u.json', using 'webtext' for generating 18 topics with LDA, language='dutch', using tags from OSM and Google Places as features in addition to topic probabilities (usetypes=True), constraining the class labels to only ulo:activity classes (no ulo:referent classes) (actlevel=True), and constraining the size of classes to contain at least 5 instances (minclasssize=5). Classifiers used are taken from scikit learn and tested by 10-fold cross validation:  
+  - LogisticRegression(C=1e5),
+  - KNeighborsClassifier(5),
+  - SVC(kernel="linear", C=0.025),
+  - SVC(kernel='rbf',gamma=2, C=1),
+  - GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True),
+  - DecisionTreeClassifier(max_depth=5),
+  - RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1),
+  - MLPClassifier(alpha=1),
+  - AdaBoostClassifier(),
+  - GaussianNB()
+  
+ - *models/tree1.dot* ...: Contains a print out of the decision tree for each model run. Can be opened with [Graphviz editor](http://www.graphviz.org)
 
 
   
