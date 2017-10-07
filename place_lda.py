@@ -35,6 +35,11 @@ from collections import Counter
 #This is the LDA Python library for topic modeling
 import lda
 
+#This is the Labeled LDA (LLDA) Python library
+from LLDA.llda import LLDAClassifier
+# LLDA uses gensim corpus format
+from gensim import corpora
+
 #Use NLTK for preprocessing webtexts
 import nltk
 from nltk.corpus import stopwords
@@ -46,6 +51,7 @@ from nltk.stem.snowball import DutchStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import Normalizer
+from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
@@ -64,7 +70,6 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.naive_bayes import GaussianNB
 #from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
-
 
 #Somegeo stuff
 from shapely.geometry import mapping, Point
@@ -427,6 +432,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
 
 
     json_data.close
+
     #This is where the texts get turned into a document-term matrix
     vectorizer = CountVectorizer(min_df = 1, stop_words = stopwords.words(language), analyzer = 'word', tokenizer=tokenize)
     X = vectorizer.fit_transform(texts)
@@ -483,6 +489,119 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
     #print(classes)
     return (titlesn, classesn,featuresn, geoinfon)
 
+def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
+    """ Method takes the enriched json file (training data), and builds an LDA topic model.
+     It trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as two simple arrays
+    Usetypes = True puts also OSMtags and GooglePlace tags into the feature vector, in addition to topics. 
+    actlevel = True restricts classes to the activity level (no referent classes).
+    Minclasssize filters out too small classes."""
+    texts = [] #array that holds the LDA text documents
+    titles = [] #array that holds the titles of documents (in this case place names)
+    classes = [] #array that holds the goal classes
+    features = [] #array the holds the feature vectors
+    geoinfo = [] #stuf needed to map results
+
+    #testclasses = ['ulo:Eating|ulo:Food']
+    with open(jsonfile) as json_data:
+        d = json.load(json_data)
+        print('Size of the json file: '+str(len(d)))
+
+
+        #first determine the class frequencies of all classes occurring
+        classbag = []
+        for k,v in d.items():
+            for c in v['class']:
+                if actlevel:
+                    cl = c.split('|')[0]
+                else:
+                    cl = c
+                classbag.append(cl)
+        clfreq = Counter(classbag)
+        print(clfreq)
+
+        listofosmids = []
+        #print(d)
+        for k,v in d.items():
+          #Collect features for each osm id. Take only a single goal class fo reach osm id
+          if not ( v['osmid'] in listofosmids):
+            gtext = ''
+            wtext = ''
+            if textkey2 in v.keys():
+                gtext =v[textkey2]
+            if textkey in v.keys():# and 'googletype' in (d[k]).keys():
+                wtext =v[textkey]
+            if 'reviewtext' in v.keys():
+                rtext =v['reviewtext']
+            text = (wtext if wtext !='' else ( gtext if gtext != '' else ''))
+            if text != '':
+                listofosmids.append(v['osmid'])
+                texts.append(text)
+                titles.append(v['name'])
+                dd = {'osmid':k,'name':v['name']}
+                if 'lat' in v.keys():
+                    dd['lat']=v['lat']
+                    dd['lon']=v['lon']
+                geoinfo.append(dd)
+
+                #select the class that occurs most frequently over all places as the class of an osm id
+                #classize = 0
+                cl = []
+                #print(v['class'])
+                for c in v['class']:
+                    if actlevel:
+                        x = c.split('|')[0]
+                    else:
+                        x = c
+                    cl.append(x)
+                    #if clfreq[x]>classize:
+                        #cl = x
+                        #classize =clfreq[x]
+
+                classes.append(set(cl)) # remove duplicates if getting activities only
+                dic = {}
+                #Add the place tags from OSM or GooglePlaces
+                if usetypes == True:
+                    if 'googletype' in v.keys():
+                        dic['googletype'] =v['googletype']
+                    #dic['osmtype'] =v['osmtype']
+                    for typekey in keysofinterest:
+                        if typekey in v.keys():
+                            dic[typekey] = v[typekey]
+                        else:
+                            dic[typekey] = 'No'
+                features.append(dic)
+
+    json_data.close
+
+    # This is where the texts get turned into a gensim corpus
+    stoplist = stopwords.words(language)
+    texts_matrix = [[word for word in text.lower().split() if word not in stoplist] for text in texts]
+    dictionary = corpora.Dictionary(texts_matrix)
+    #print(dictionary)
+    corpus = [dictionary.doc2bow(text) for text in texts_matrix]
+    #print(corpus)
+
+    #Converts the class labels to a binary vector
+    mlb = MultiLabelBinarizer()
+    y_train = mlb.fit_transform(classes)
+
+    # This computes the Labeled LDA model
+    model = LLDAClassifier(alpha = 0.5/y_train.shape[1], maxiter=600)
+    model.fit(corpus, y_train)
+
+    topics_words = np.loadtxt(model.tmp + "/fit.n_wz").T
+
+    list(mlb.classes_)
+    for i in range(0, len(mlb.classes_)):
+        cl = mlb.classes_[i]
+        print(cl)
+        print("---------------")
+        s = topics_words[i]
+        top_words_idx = sorted(range(len(s)), key=lambda k: s[k])[::-1]
+        # print the top 20 words for this topic
+        for j in range(0, 20):
+            print(dictionary[top_words_idx[j]])
+        print("===============")
 
 
 def classify(topicmodel, plotconfusionmatrix=False):
@@ -762,10 +881,16 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 if __name__ == '__main__':
     #constructTrainingData('training.csv')
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
-    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
+
+    # B.
+    #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
+    topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
+
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
     #exportSHP(topicmodel,'placetopics.shp')
-    classify(topicmodel)
+    
+    # B.
+    #classify(topicmodel)
 
 
 
