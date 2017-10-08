@@ -8,7 +8,7 @@
 #               - (classify()): Run and test different classifiers on these features to predict a given class label that stands for explicit predefined
 #               topics (e.g. place types or activities at places).
 #
-# Author:      Simon Scheider
+# Author:      Simon Scheider Ben Adams
 #
 # Created:     22/08/2017
 # Copyright:   (c) simon 2017
