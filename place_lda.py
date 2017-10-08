@@ -276,7 +276,7 @@ def countPlaces(filename):
     pass
 
 
-def constructTrainingData(filename):
+def constructTrainingData(filename, write=True):
     """ Method constructs training data by first reading a list of labeled OSM ids, then enriching them with web information.
         Result is stored in a json file at the same place as the input file."""
     #from pprint import pprint
@@ -310,27 +310,28 @@ def constructTrainingData(filename):
 
         print('Length of the array read : '+str(len(rr))+' number of rows read '+str(i))
 
-        #Writes out the json file and does the enrichment in a manner that each OSM id is queried only once
-        with open(out, 'w') as fp:
-            for k,v in rr.items():
-                    osmid = v['osmid']
-                    website = v['website']
-                    elementtype = v['elementtype']
-                    en = enrichOSM(osmid,elementtype,website)
-                    print(osmid)
-                    print('enriched properties: '+str(en.keys()))
-                    enn = en.copy()
-                    enn['osmid'] = osmid
-                    enn['name'] = v['name']
-                    enn['uloplace'] = v['uloplace']
-                    enn['class']= v['class']
-                    print(v['class'])
-                    enn['website'] = v['website']
-                    td[k] = enn
-                    print("number of successul enrichments: "+str(len(td)))
-                    fp.seek(0)
-                    json.dump(td, fp)
-        fp.close()
+        if write == True:
+            #Writes out the json file and does the enrichment in a manner that each OSM id is queried only once
+            with open(out, 'w') as fp:
+                for k,v in rr.items():
+                        osmid = v['osmid']
+                        website = v['website']
+                        elementtype = v['elementtype']
+                        en = enrichOSM(osmid,elementtype,website)
+                        print(osmid)
+                        print('enriched properties: '+str(en.keys()))
+                        enn = en.copy()
+                        enn['osmid'] = osmid
+                        enn['name'] = v['name']
+                        enn['uloplace'] = v['uloplace']
+                        enn['class']= v['class']
+                        print(v['class'])
+                        enn['website'] = v['website']
+                        td[k] = enn
+                        print("number of successul enrichments: "+str(len(td)))
+                        fp.seek(0)
+                        json.dump(td, fp)
+            fp.close()
     csvfile.close()
     #pprint(td)
 
@@ -492,7 +493,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
 def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
     """ Method takes the enriched json file (training data), and builds an LDA topic model.
      It trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as two simple arrays
-    Usetypes = True puts also OSMtags and GooglePlace tags into the feature vector, in addition to topics. 
+    Usetypes = True puts also OSMtags and GooglePlace tags into the feature vector, in addition to topics.
     actlevel = True restricts classes to the activity level (no referent classes).
     Minclasssize filters out too small classes."""
     texts = [] #array that holds the LDA text documents
@@ -879,17 +880,12 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 
 
 if __name__ == '__main__':
-    #constructTrainingData('training.csv')
+    constructTrainingData('training.csv', write=False)
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
-
-    # B.
     #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
     topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
-
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
     #exportSHP(topicmodel,'placetopics.shp')
-    
-    # B.
     #classify(topicmodel)
 
 
