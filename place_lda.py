@@ -35,6 +35,11 @@ from collections import Counter
 #This is the LDA Python library for topic modeling
 import lda
 
+
+import sys
+#This is just for me to prevent installing the LLDA module locally
+sys.path.append("C:/Users/simon/Documents/GitHub/PlaceLDA")
+
 #This is the Labeled LDA (LLDA) Python library
 from LLDA.llda import LLDAClassifier
 # LLDA uses gensim corpus format
@@ -880,7 +885,7 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 
 
 if __name__ == '__main__':
-    constructTrainingData('training.csv', write=False)
+    #constructTrainingData('training.csv', write=False)
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
     #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
     topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
