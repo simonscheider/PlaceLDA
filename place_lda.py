@@ -691,7 +691,7 @@ def classify(topicmodel, plotconfusionmatrix=False):
         #print decision tree
         from sklearn import tree
         if name == "Decision Tree":
-            tree.export_graphviz(clffit, out_file='tree.dot', class_names=sorted(classes))
+            tree.export_graphviz(clffit, out_file='tree.dot', class_names=sorted(classes), feature_names=vec.get_feature_names())
 
 
 
@@ -887,11 +887,11 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 if __name__ == '__main__':
     #constructTrainingData('training.csv', write=False)
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
-    #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
-    topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
+    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=5)
+    #topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
     #exportSHP(topicmodel,'placetopics.shp')
-    #classify(topicmodel)
+    classify(topicmodel)
 
 
 
