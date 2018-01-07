@@ -357,11 +357,11 @@ def tokenize(text, language = 'dutch'):
     tokens = [p_stemmer.stem(i) for i in tokens]
     return tokens
 
-def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
+def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0, multilabel=False):
     """ Method takes the enriched json file (training data), and builds an LDA topic model.
      It trains an LDA topic model on the webtexts, puts everything together in feature vectors and returns this together with the classes as two simple arrays
     Usetypes = True puts also OSMtags and GooglePlace tags into the feature vector, in addition to topics. actlevel = True restricts classes to the activity level (no referent classes).
-    Minclasssize filters out too small classes."""
+    Minclasssize filters out too small classes. Multilabel = True means that multiple labels (classes) are allowed per osm place"""
     texts = [] #array that holds the LDA text documents
     titles = [] #array that holds the titles of documents (in this case place names)
     classes = [] #array that holds the goal classes
@@ -410,19 +410,30 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
                     dd['lon']=v['lon']
                 geoinfo.append(dd)
 
-                #select the class that occurs most frequently over all places as the class of an osm id
-                classize = 0
-                cl = None
-                for c in v['class']:
-                    if actlevel:
-                        x = c.split('|')[0]
-                    else:
-                        x = c
-                    if clfreq[x]>classize:
-                        cl = x
-                        classize =clfreq[x]
+                if multilabel == False:
+                    #select the class that occurs most frequently over all places as the class of an osm id
+                    classize = 0
+                    cl = None
+                    for c in v['class']:
+                        if actlevel:
+                            x = c.split('|')[0]
+                        else:
+                            x = c
+                        if clfreq[x]>classize:
+                            cl = x
+                            classize =clfreq[x]
+                    classes.append(cl)
+                else:
+                    #add all classes in terms of an array
+                    cls = []
+                    for c in v['class']:
+                        if actlevel:
+                            x = c.split('|')[0]
+                        else:
+                            x = c
+                        cls.append(cls)
+                    classes.append(cls)
 
-                classes.append(cl)
                 dic = {}
                 #Add the place tags from OSM or GooglePlaces
                 if usetypes == True:
@@ -476,24 +487,34 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
 
     print("Number of instances (in feature vector): "+str(len(features)))
     print("Number of instances (in class vector): "+str(len(classes)))
-    counts = Counter(classes)
-    print('Class frequency distribution: '+str(counts))
     min = minclasssize
-    print('Remove classes below minimum frequency : '+str(min))
     featuresn = []
     classesn = []
     titlesn = []
     geoinfon =[]
-    for i, f in enumerate(features):
-        if counts[classes[i]] >=min:
-            classesn.append(classes[i])
-            featuresn.append(features[i])
-            titlesn.append(titles[i])
-            geoinfon.append(geoinfo[i])
+    if multilabel == False:
+        print('Remove classes below minimum frequency : '+str(min))
+        counts = Counter(classes)
+        print('Class frequency distribution: '+str(counts))
+        for i, f in enumerate(features):
+                if counts[classes[i]] >=min:
+                    classesn.append(classes[i])
+                    featuresn.append(features[i])
+                    titlesn.append(titles[i])
+                    geoinfon.append(geoinfo[i])
+    else:
+        counts = Counter([classe for sublist in classes for classe in sublist])
+        print('Class frequency distribution: '+str(counts))
+        classesn = classes
+        featuresn = features
+        titlesn = titles
+        geoinfon = geoinfo
+
 
     #print(features)
     #print(classes)
     return (titlesn, classesn,featuresn, geoinfon)
+
 
 def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
     """ Method takes the enriched json file (training data), and builds an LDA topic model.
@@ -887,11 +908,11 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 if __name__ == '__main__':
     #constructTrainingData('training.csv', write=False)
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
-    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=0)
+    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=0, multilevel=False)
     #topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
     #exportSHP(topicmodel,'placetopics.shp')
-    classify(topicmodel)
+    #classify(topicmodel)
 
 
 
