@@ -424,14 +424,14 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
                             classize =clfreq[x]
                     classes.append(cl)
                 else:
-                    #add all classes in terms of an array
+                    #add all classes of a place in terms of an array
                     cls = []
                     for c in v['class']:
                         if actlevel:
                             x = c.split('|')[0]
                         else:
                             x = c
-                        cls.append(cls)
+                        cls.append(x)
                     classes.append(cls)
 
                 dic = {}
@@ -631,7 +631,28 @@ def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopic
         print("===============")
 
 
-def classify(topicmodel, plotconfusionmatrix=False):
+#Takes an array of label arrays and turns it into an indicator matrix for multilabel classifiers
+#test = [['2', '3', '4'], ['2'], ['0', '1', '3'], ['0', '1', '2', '3', '4'], ['0', '1', '2']]
+#ToIndicatorMatrix(test)
+def ToIndicatorMatrix(arrayofarray):
+    from sklearn.preprocessing import MultiLabelBinarizer
+    from sklearn import preprocessing
+    preprocessing.LabelEncoder()
+    le = preprocessing.LabelEncoder()
+    labels = list(set([classe for sublist in arrayofarray for classe in sublist]))
+    le.fit(labels)
+    yp=[le.transform(a) for a in arrayofarray]
+    #le.fit(["paris", "paris", "tokyo", "amsterdam"])
+    #le.transform(["tokyo", "tokyo", "paris"])
+    #list(le.inverse_transform([2, 2, 1]))
+    #y = [[2, 3, 4], [2], [0, 1, 3], [0, 1, 2, 3, 4], [0, 1, 2]]
+    Y = MultiLabelBinarizer().fit_transform(yp)
+    print(Y)
+    return Y
+
+
+
+def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
     """ Method takes feature vectors (including topic model) and class labels as arrays, and trains and tests a number of classifiers on them. Outputs classifier scores and confusion matrices."""
 
     names = ["Logistic Regression","Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
