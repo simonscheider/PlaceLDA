@@ -76,9 +76,25 @@ from sklearn.naive_bayes import GaussianNB
 #from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
 
+#Classifiers for multi label
+from sklearn.multiclass import OneVsRestClassifier
+#pip install scikit-multilearn
+from skmultilearn.problem_transform import BinaryRelevance, ClassifierChain
+from skmultilearn.adapt import MLkNN
+
+ #from    sklearn.tree import DecisionTreeClassifier
+from    sklearn.tree import ExtraTreeClassifier
+from    sklearn.ensemble import ExtraTreesClassifier
+#from    sklearn.neighbors import KNeighborsClassifier
+from   sklearn.neural_network import MLPClassifier
+from    sklearn.neighbors import RadiusNeighborsClassifier
+from    sklearn.ensemble import RandomForestClassifier
+from    sklearn.linear_model import RidgeClassifierCV
+
+
 #Somegeo stuff
-from shapely.geometry import mapping, Point
-import fiona
+#from shapely.geometry import mapping, Point
+#import fiona
 
 #Non-essential libraries:
 
@@ -647,6 +663,7 @@ def ToIndicatorMatrix(arrayofarray):
     #list(le.inverse_transform([2, 2, 1]))
     #y = [[2, 3, 4], [2], [0, 1, 3], [0, 1, 2, 3, 4], [0, 1, 2]]
     Y = MultiLabelBinarizer().fit_transform(yp)
+    np.set_printoptions(threshold=np.inf)
     print(Y)
     return Y
 
@@ -655,12 +672,16 @@ def ToIndicatorMatrix(arrayofarray):
 def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
     """ Method takes feature vectors (including topic model) and class labels as arrays, and trains and tests a number of classifiers on them. Outputs classifier scores and confusion matrices."""
 
-    names = ["Logistic Regression","Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
+    names = [#"Dummy",
+    "MLKNN",
+    "Logistic Regression","Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
              "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
              "Naive Bayes"]
 
     classifiers = [
-        LogisticRegression(C=1e5),
+        #DummyClassifier(strategy='most_frequent',random_state=10),
+        MLkNN(k=10, s=1.0, ignore_first_neighbours=0),
+        LogisticRegression(C=1e5, multi_class="ovr"),
         KNeighborsClassifier(5),
         SVC(kernel="linear", C=0.025),
         SVC(kernel='rbf',gamma=2, C=1),
@@ -676,42 +697,47 @@ def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
     X = vec.fit_transform(measurements).toarray()
     print(vec.get_feature_names())
     #print(X)
-    y = topicmodel[1]
+    classlabels = topicmodel[1]
+    Y = (classlabels if multilabel == False else ToIndicatorMatrix(classlabels))
     #print(X)
     #print(y)
 
-    X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=.2, random_state=42)
-
-    classes = list(set(y))
+   # X_train, X_test, y_train, y_test = \
+   #     train_test_split(X, y, test_size=.2, random_state=42)
+    classes = (list(set(classlabels)) if multilabel == False else list(set([classe for sublist in classlabels for classe in sublist])))
 
     #Number of cross validations
     cvn = 10
 
-
+    #see https://www.analyticsvidhya.com/blog/2017/08/introduction-to-multi-label-classification/
+    #http://scikit.ml/api/index.html
     print('\n Results of the model evaluation: \n')
 
     #Naive model (majority vote)
-    clf = DummyClassifier(strategy='most_frequent',random_state=10)
-    y_pred = clf.fit(X, y).predict(X)
-    dummyscores = cross_val_score(clf,X,y,cv=cvn, scoring='accuracy')
-    dummyprescores = cross_val_score(clf,X,y,cv=cvn, scoring='precision_weighted')
-    dummyrescores = cross_val_score(clf,X,y,cv=cvn, scoring='recall_weighted')
-    dummyfescores = cross_val_score(clf,X,y,cv=cvn, scoring='f1_macro')
-    print("\n CV naive classifier (most frequent class): accuracy: {} (+/- {}) weighted precision {} weighted recall {} F score {}".format(dummyscores.mean(),dummyscores.std(),dummyprescores.mean(),dummyrescores.mean(), dummyfescores.mean()))
-    print(metrics.classification_report(y, y_pred,labels=classes))
-    cnf_matrix = metrics.confusion_matrix(y, y_pred,labels=classes)
-    print(cnf_matrix)
+##    clf = DummyClassifier(strategy='most_frequent',random_state=10)
+##    y_pred = clf.fit(X, Y).predict(X)
+##    dummyscores = cross_val_score(clf,X,Y,cv=cvn, scoring='accuracy')
+##    dummyprescores = cross_val_score(clf,X,Y,cv=cvn, scoring='precision_weighted')
+##    dummyrescores = cross_val_score(clf,X,Y,cv=cvn, scoring='recall_weighted')
+##    dummyfescores = cross_val_score(clf,X,Y,cv=cvn, scoring='f1_macro')
+##    print("\n CV naive classifier (most frequent class): accuracy: {} (+/- {}) weighted precision {} weighted recall {} F score {}".format(dummyscores.mean(),dummyscores.std(),dummyprescores.mean(),dummyrescores.mean(), dummyfescores.mean()))
+##    #print(metrics.classification_report(Y, y_pred,labels=classes))
+##    cnf_matrix = metrics.confusion_matrix(y, y_pred,labels=classes)
+##    print(cnf_matrix)
 
 
     #print(classes)
 
      # iterate over classifiers
     for name, clf in zip(names, classifiers):
-        accscores = cross_val_score(clf,X,y,cv=cvn, scoring='accuracy')
-        pscores = cross_val_score(clf,X,y,cv=cvn, scoring='precision_weighted')
-        rscores = cross_val_score(clf,X,y,cv=cvn, scoring='recall_weighted')
-        fscores = cross_val_score(clf,X,y,cv=cvn, scoring='f1_macro')
+        if multilabel:
+            clf = OneVsRestClassifier(clf)
+            #clf = BinaryRelevance(clf)
+            #clf = ClassifierChain(clf)
+        accscores = cross_val_score(clf,X,Y,cv=cvn, scoring='accuracy')
+        pscores = cross_val_score(clf,X,Y,cv=cvn, scoring='precision_weighted')
+        rscores = cross_val_score(clf,X,Y,cv=cvn, scoring='recall_weighted')
+        fscores = cross_val_score(clf,X,Y,cv=cvn, scoring='f1_macro')
 
 
         #score = clf.score(X_test, y_test)
@@ -723,17 +749,19 @@ def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
 
         #scoretr = clf.score(X_train, y_train)
         #print('classifier: '+name+' score no train: '+str(scoretr))
-        clffit = clf.fit(X, y)
+        clffit = clf.fit(X, Y)
         y_pred = clffit.predict(X)
         # Compute confusion matrix
-        cnf_matrix = metrics.confusion_matrix(y, y_pred,labels=classes)
-        print(metrics.classification_report(y, y_pred,labels=classes))
-        print(cnf_matrix)
+        if multilabel==False:
+            cnf_matrix = metrics.confusion_matrix(Y, y_pred,labels=classes)
+            print(cnf_matrix)
+            print(metrics.classification_report(Y, y_pred,labels=classes))
+
 
         #print decision tree
         from sklearn import tree
         if name == "Decision Tree":
-            tree.export_graphviz(clffit, out_file='tree.dot', class_names=sorted(classes), feature_names=vec.get_feature_names())
+            pass#tree.export_graphviz(clffit, out_file='tree.dot', class_names=sorted(classes), feature_names=vec.get_feature_names())
 
 
 
@@ -929,11 +957,11 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 if __name__ == '__main__':
     #constructTrainingData('training.csv', write=False)
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
-    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=0, multilevel=False)
+    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=0, multilabel=True)
     #topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
     #exportSHP(topicmodel,'placetopics.shp')
-    #classify(topicmodel)
+    classify(topicmodel, multilabel=True)
 
 
 
