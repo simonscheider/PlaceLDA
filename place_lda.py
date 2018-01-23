@@ -60,7 +60,7 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_recall_fscore_support, coverage_error, hamming_loss, jaccard_similarity_score
 from sklearn.dummy import DummyClassifier
 #This is used to deal with categorial input instead of numerical
 from sklearn.feature_extraction import DictVectorizer
@@ -79,7 +79,7 @@ from sklearn.linear_model import LogisticRegression
 #Classifiers for multi label
 from sklearn.multiclass import OneVsRestClassifier
 #pip install scikit-multilearn
-from skmultilearn.problem_transform import BinaryRelevance, ClassifierChain
+from skmultilearn.problem_transform import BinaryRelevance, ClassifierChain, LabelPowerset
 from skmultilearn.adapt import MLkNN
 
  #from    sklearn.tree import DecisionTreeClassifier
@@ -664,23 +664,60 @@ def ToIndicatorMatrix(arrayofarray):
     #y = [[2, 3, 4], [2], [0, 1, 3], [0, 1, 2, 3, 4], [0, 1, 2]]
     Y = MultiLabelBinarizer().fit_transform(yp)
     np.set_printoptions(threshold=np.inf)
-    print(Y)
+    #print(Y)
     return Y
 
+def myCVAScore(classifier,X,y, n_splits):
+    #CMy validation function
+        from sklearn.model_selection import KFold
+
+        accuracylist=[]
+        precisionlist=[]
+        recalllist=[]
+        f1list = []
+        coverageerrorlist = []
+        hamminglosslist = []
+        jaccardlist = []
+
+        # remember to set n_splits and shuffle!
+        kf = KFold(n_splits=n_splits, random_state=None, shuffle=False)
+
+        for train_index, test_index in kf.split(X, y):
+            # assuming classifier object exists
+            X_train = X[train_index,:]
+            y_train = y[train_index,:]
+
+            X_test = X[test_index,:]
+            y_test = y[test_index,:]
+
+            # learn the classifier
+            classifier.fit(X_train, y_train)
+
+            # predict labels for test data
+            predictions = classifier.predict(X_test)
+            (precision, recall, f1, support) = precision_recall_fscore_support(y_test,predictions, average='weighted')
+            accuracylist.append(accuracy_score(y_test,predictions))
+            precisionlist.append(precision)
+            recalllist.append(recall)
+            f1list.append(f1)
+            coverageerrorlist.append(coverage_error(y_test,predictions.toarray()))
+            hamminglosslist.append(hamming_loss(y_test,predictions))
+            jaccardlist.append(jaccard_similarity_score(y_test,predictions))
+
+
+        return (np.asarray(accuracylist).mean(),np.asarray(precisionlist).mean(), np.asarray(recalllist).mean(),np.asarray(f1list).mean(), np.asarray(coverageerrorlist).mean(), np.asarray(hamminglosslist).mean(), np.asarray(jaccardlist).mean())
 
 
 def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
     """ Method takes feature vectors (including topic model) and class labels as arrays, and trains and tests a number of classifiers on them. Outputs classifier scores and confusion matrices."""
 
     names = [#"Dummy",
-    "MLKNN",
     "Logistic Regression","Nearest Neighbors", "Linear SVM", "RBF SVM", "Gaussian Process",
              "Decision Tree", "Random Forest", "Neural Net", "AdaBoost",
              "Naive Bayes"]
 
     classifiers = [
         #DummyClassifier(strategy='most_frequent',random_state=10),
-        MLkNN(k=10, s=1.0, ignore_first_neighbours=0),
         LogisticRegression(C=1e5, multi_class="ovr"),
         KNeighborsClassifier(5),
         SVC(kernel="linear", C=0.025),
@@ -691,6 +728,24 @@ def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
         MLPClassifier(alpha=1),
         AdaBoostClassifier(),
         GaussianNB()]
+
+    multinames = ["Logistic Regression", 'MLkNN', 'Decision Tree', 'Extra Tree', 'KNN', 'Neural Net', 'Random Forest', 'Naive Bayes', "RBF SVM","Linear SVM"
+    ]
+    multiclassifiers = [
+        LabelPowerset(LogisticRegression(C=1e5)),
+        MLkNN(k=5, s=1.0, ignore_first_neighbours=0),
+        LabelPowerset(DecisionTreeClassifier(max_depth=5)),
+        LabelPowerset(ExtraTreeClassifier(max_depth=5)),
+        LabelPowerset(KNeighborsClassifier(10)),
+        LabelPowerset(MLPClassifier(alpha=1)),
+        LabelPowerset(RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)),
+        LabelPowerset(GaussianNB()),
+        LabelPowerset(SVC(kernel='rbf',gamma=2, C=1)),
+        LabelPowerset(SVC(kernel="linear", C=0.025)),
+
+        #RidgeClassifierCV()
+        #GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True, multi_class= "one_vs_rest")
+    ]
 
     measurements = topicmodel[2]
     vec = DictVectorizer()
@@ -707,61 +762,72 @@ def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
     classes = (list(set(classlabels)) if multilabel == False else list(set([classe for sublist in classlabels for classe in sublist])))
 
     #Number of cross validations
-    cvn = 10
+    cvn = 5
+    print(('\n Start multi-label classification!' if multilabel else 'Start single-label classification!'))
+    print('Labels (classes):')
+    print(classes)
 
     #see https://www.analyticsvidhya.com/blog/2017/08/introduction-to-multi-label-classification/
     #http://scikit.ml/api/index.html
     print('\n Results of the model evaluation: \n')
 
+    scores = ['accuracy', 'precision_weighted', 'recall_weighted', 'f1_weighted' ]
+
     #Naive model (majority vote)
-##    clf = DummyClassifier(strategy='most_frequent',random_state=10)
-##    y_pred = clf.fit(X, Y).predict(X)
-##    dummyscores = cross_val_score(clf,X,Y,cv=cvn, scoring='accuracy')
-##    dummyprescores = cross_val_score(clf,X,Y,cv=cvn, scoring='precision_weighted')
-##    dummyrescores = cross_val_score(clf,X,Y,cv=cvn, scoring='recall_weighted')
-##    dummyfescores = cross_val_score(clf,X,Y,cv=cvn, scoring='f1_macro')
-##    print("\n CV naive classifier (most frequent class): accuracy: {} (+/- {}) weighted precision {} weighted recall {} F score {}".format(dummyscores.mean(),dummyscores.std(),dummyprescores.mean(),dummyrescores.mean(), dummyfescores.mean()))
-##    #print(metrics.classification_report(Y, y_pred,labels=classes))
-##    cnf_matrix = metrics.confusion_matrix(y, y_pred,labels=classes)
-##    print(cnf_matrix)
+    clf = DummyClassifier(strategy='most_frequent',random_state=10)
+    if multilabel:
+        clf = LabelPowerset(clf)
+    dummyscores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[0])
+    dummyprescores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[1])
+    dummyrescores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[2])
+    dummyfescores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[3])
+    print("\n {}-CV naive classifier (most frequent class): {}: {} (+/- {}), {}: {}, {}: {}, {}: {}".format(cvn,scores[0],dummyscores.mean(),dummyscores.std(),scores[1],dummyprescores.mean(),scores[2],dummyrescores.mean(), scores[3],dummyfescores.mean()))
+    y_pred = clf.fit(X, Y).predict(X)
+    if multilabel == False:
+        print("Fitting on entire dataset (no CV):")
+        cnf_matrix = metrics.confusion_matrix(Y, y_pred,labels=classes)
+        print(cnf_matrix)
+        print(metrics.classification_report(Y, y_pred,labels=classes))
+    else:
+        myscores = myCVAScore(clf,X,Y,cvn)
+        print ("\n {}-CV naive classifier (my own) {}: {}, {}: {}, {}: {}, {}: {}, {}: {}, {}: {}, {}: {}".format(cvn,scores[0],myscores[0],scores[1],myscores[1],scores[2],myscores[2], scores[3],myscores[3],'coverage', myscores[4], 'hamming loss', myscores[5], 'jaccard', myscores[6]))
+        print("Fitting on entire dataset (no CV):")
+        print('subset accuracy: {}'.format(accuracy_score(y_pred,Y)))
 
 
-    #print(classes)
+
 
      # iterate over classifiers
+    classifiers = (multiclassifiers if multilabel else classifiers)
+    names = (multinames if multilabel else names)
     for name, clf in zip(names, classifiers):
-        if multilabel:
-            clf = OneVsRestClassifier(clf)
-            #clf = BinaryRelevance(clf)
-            #clf = ClassifierChain(clf)
-        accscores = cross_val_score(clf,X,Y,cv=cvn, scoring='accuracy')
-        pscores = cross_val_score(clf,X,Y,cv=cvn, scoring='precision_weighted')
-        rscores = cross_val_score(clf,X,Y,cv=cvn, scoring='recall_weighted')
-        fscores = cross_val_score(clf,X,Y,cv=cvn, scoring='f1_macro')
+        #standard scores given by sklearn
+        accscores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[0])
+        pscores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[1])
+        rscores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[2])
+        fscores = cross_val_score(clf,X,Y,cv=cvn, scoring=scores[3])
+        print("\n {}-CV  {}: {}: {} (+/- {}), {}: {}, {}: {}, {}: {}".format(cvn,name,scores[0],accscores.mean(), accscores.std(),scores[1],pscores.mean(), scores[2],rscores.mean(), scores[3],fscores.mean()))
 
-
-        #score = clf.score(X_test, y_test)
-        #print('classifier: '+name+' score: '+str(score))
-        print("\n CV {} accuracy: {} (+/- {}) weighted precision {} weighted recall {} F score {}".format(name,accscores.mean(), accscores.std(),pscores.mean(), rscores.mean(), fscores.mean()))
-        #print("CV F1 weighted {}: {} (+/- {})".format(name,f1scores.mean(), f1scores.std()))
-
-
-
-        #scoretr = clf.score(X_train, y_train)
-        #print('classifier: '+name+' score no train: '+str(scoretr))
         clffit = clf.fit(X, Y)
         y_pred = clffit.predict(X)
-        # Compute confusion matrix
         if multilabel==False:
+            print("Fitting on entire dataset (no CV):")
             cnf_matrix = metrics.confusion_matrix(Y, y_pred,labels=classes)
             print(cnf_matrix)
             print(metrics.classification_report(Y, y_pred,labels=classes))
+        else:
+            #my own scores for multilabel classification
+            myscores = myCVAScore(clf,X,Y,cvn)
+            print ("\n {}-CV {} (my own): {}: {}, {}: {}, {}: {}, {}: {}, {}: {}, {}: {}, {}: {}".format(cvn,name,scores[0],myscores[0],scores[1],myscores[1],scores[2],myscores[2], scores[3],myscores[3],'coverage', myscores[4], 'hamming loss', myscores[5], 'jaccard', myscores[6]))
+            print("Fitting on entire dataset (no CV):")
+            print(' subset accuracy: {}'.format(accuracy_score(y_pred,Y)))
+
 
 
         #print decision tree
         from sklearn import tree
-        if name == "Decision Tree":
-            pass#tree.export_graphviz(clffit, out_file='tree.dot', class_names=sorted(classes), feature_names=vec.get_feature_names())
+        if name == "Decision Tree" and multilabel == False:
+            tree.export_graphviz(clffit, out_file='tree.dot', class_names=sorted(classes), feature_names=vec.get_feature_names())
 
 
 
@@ -957,11 +1023,22 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 if __name__ == '__main__':
     #constructTrainingData('training.csv', write=False)
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
-    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=0, multilabel=True)
-    #topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
-    #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
-    #exportSHP(topicmodel,'placetopics.shp')
+
+    #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=5, multilabel=False)
+    #classify(topicmodel, multilabel=False)
+    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, multilabel=True)
     classify(topicmodel, multilabel=True)
+    #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0, multilabel=False)
+    #classify(topicmodel, multilabel=False)
+    #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, multilabel=True)
+    #classify(topicmodel, multilabel=True)
+
+    #topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
+
+
+
+    #exportSHP(topicmodel,'placetopics.shp')
+
 
 
 
