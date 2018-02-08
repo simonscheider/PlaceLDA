@@ -736,7 +736,7 @@ def classify(topicmodel, plotconfusionmatrix=False, multilabel =False):
         MLkNN(k=5, s=1.0, ignore_first_neighbours=0),
         LabelPowerset(DecisionTreeClassifier(max_depth=5)),
         LabelPowerset(ExtraTreeClassifier(max_depth=5)),
-        LabelPowerset(KNeighborsClassifier(10)),
+        LabelPowerset(KNeighborsClassifier(5)),
         LabelPowerset(MLPClassifier(alpha=1)),
         LabelPowerset(RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)),
         LabelPowerset(GaussianNB()),
@@ -1026,7 +1026,7 @@ if __name__ == '__main__':
 
     #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=5, multilabel=False)
     #classify(topicmodel, multilabel=False)
-    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, multilabel=True)
+    topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, multilabel=True)
     classify(topicmodel, multilabel=True)
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0, multilabel=False)
     #classify(topicmodel, multilabel=False)

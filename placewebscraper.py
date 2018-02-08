@@ -28,6 +28,7 @@ def scrape(url):
         page = requests.get(url, headers=headers)
     except requests.exceptions.ConnectionError, e:
         print("retry")
+        print e
         try:
             page = requests.get(url, headers=headers)
         except:
@@ -90,7 +91,8 @@ def clean(soup):
 
 if __name__ == '__main__':
     #print scrape('http://www.hoogcatharijne.nl/')
-    print scrape('https://www.hu.nl/')
+    #print scrape('https://www.hu.nl/')
+    print scrape('http://debeurszwolle.nl/')
 
 
 ##buyers = tree.xpath('//div[@title="buyer-name"]/text()')
