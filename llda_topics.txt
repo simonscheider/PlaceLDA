@@ -1,0 +1,1280 @@
+Size of the json file: 189
+Counter({u'ulo:Eating': 97, u'ulo:Shopping': 67, u'ulo:Drinking': 51, u'ulo:Watching': 35, u'ulo:Sitting': 17, u'ulo:Listening': 11, u'ulo:Dancing': 9, u'ulo:Sightseeing': 8, u'ulo:Relaxing': 8, u'ulo:Playing': 5, u'ulo:Strolling': 4, u'ulo:Sailing': 3, u'ulo:Climbing': 3, u'ulo:Tasting': 2, u'ulo:Cooking': 2, u'ulo:Meditating': 1, u'ulo:Sporting': 1, u'ulo:Reading': 1, u'ulo:Canoeing': 1})
+Number of documents          = 153
+Number of words              = 8296
+Number of latent classes     = 18
+Number of iteration          = 600
+iteration  1/600..
+	likelihood ... -297329.28697957
+iteration  2/600..
+	likelihood ... -295394.36357485
+iteration  3/600..
+	likelihood ... -294695.51115551
+iteration  4/600..
+	likelihood ... -294285.36369084
+iteration  5/600..
+	likelihood ... -294184.61927552
+iteration  6/600..
+	likelihood ... -293918.19747456
+iteration  7/600..
+	likelihood ... -293764.64107096
+iteration  8/600..
+	likelihood ... -293641.12222319
+iteration  9/600..
+	likelihood ... -293608.58535638
+iteration 10/600..
+	likelihood ... -293500.08150254
+iteration 11/600..
+	likelihood ... -293449.93151286
+iteration 12/600..
+	likelihood ... -293321.06685006
+iteration 13/600..
+	likelihood ... -293191.32429700
+iteration 14/600..
+	likelihood ... -293143.92541869
+iteration 15/600..
+	likelihood ... -293120.35462158
+iteration 16/600..
+	likelihood ... -293014.12215946
+iteration 17/600..
+	likelihood ... -292957.84056780
+iteration 18/600..
+	likelihood ... -292984.52451295
+iteration 19/600..
+	likelihood ... -292802.63146142
+iteration 20/600..
+	likelihood ... -292750.15106955
+iteration 21/600..
+	likelihood ... -292852.92339714
+iteration 22/600..
+	likelihood ... -292807.27243281
+iteration 23/600..
+	likelihood ... -292754.38481682
+iteration 24/600..
+	likelihood ... -292791.20627770
+iteration 25/600..
+	likelihood ... -292833.05976052
+iteration 26/600..
+	likelihood ... -292700.83364013
+iteration 27/600..
+	likelihood ... -292666.66365877
+iteration 28/600..
+	likelihood ... -292688.49118587
+iteration 29/600..
+	likelihood ... -292597.43729884
+iteration 30/600..
+	likelihood ... -292552.67019766
+iteration 31/600..
+	likelihood ... -292572.70807463
+iteration 32/600..
+	likelihood ... -292579.31884160
+iteration 33/600..
+	likelihood ... -292624.54544193
+iteration 34/600..
+	likelihood ... -292672.01324323
+iteration 35/600..
+	likelihood ... -292591.00676241
+iteration 36/600..
+	likelihood ... -292567.69217374
+iteration 37/600..
+	likelihood ... -292485.35027311
+iteration 38/600..
+	likelihood ... -292503.26981250
+iteration 39/600..
+	likelihood ... -292503.60242686
+iteration 40/600..
+	likelihood ... -292563.58976506
+iteration 41/600..
+	likelihood ... -292588.71724858
+iteration 42/600..
+	likelihood ... -292555.40746293
+iteration 43/600..
+	likelihood ... -292520.02479676
+iteration 44/600..
+	likelihood ... -292608.78928947
+iteration 45/600..
+	likelihood ... -292495.51587540
+iteration 46/600..
+	likelihood ... -292469.68524364
+iteration 47/600..
+	likelihood ... -292489.80865910
+iteration 48/600..
+	likelihood ... -292507.48313646
+iteration 49/600..
+	likelihood ... -292449.94377482
+iteration 50/600..
+	likelihood ... -292432.84986697
+iteration 51/600..
+	likelihood ... -292558.06856498
+iteration 52/600..
+	likelihood ... -292483.90830428
+iteration 53/600..
+	likelihood ... -292448.36259658
+iteration 54/600..
+	likelihood ... -292575.64197539
+iteration 55/600..
+	likelihood ... -292534.62937284
+iteration 56/600..
+	likelihood ... -292419.57480007
+iteration 57/600..
+	likelihood ... -292476.64029761
+iteration 58/600..
+	likelihood ... -292476.09598308
+iteration 59/600..
+	likelihood ... -292400.42711650
+iteration 60/600..
+	likelihood ... -292532.76193446
+iteration 61/600..
+	likelihood ... -292502.16189516
+iteration 62/600..
+	likelihood ... -292496.82849413
+iteration 63/600..
+	likelihood ... -292626.34718730
+iteration 64/600..
+	likelihood ... -292585.79725141
+iteration 65/600..
+	likelihood ... -292558.67072242
+iteration 66/600..
+	likelihood ... -292555.93998515
+iteration 67/600..
+	likelihood ... -292662.99764942
+iteration 68/600..
+	likelihood ... -292586.93766617
+iteration 69/600..
+	likelihood ... -292609.74662482
+iteration 70/600..
+	likelihood ... -292614.06557254
+iteration 71/600..
+	likelihood ... -292552.49816361
+iteration 72/600..
+	likelihood ... -292585.84962658
+iteration 73/600..
+	likelihood ... -292570.37876788
+iteration 74/600..
+	likelihood ... -292537.97290992
+iteration 75/600..
+	likelihood ... -292545.53394065
+iteration 76/600..
+	likelihood ... -292664.86793309
+iteration 77/600..
+	likelihood ... -292721.25307896
+iteration 78/600..
+	likelihood ... -292619.83588635
+iteration 79/600..
+	likelihood ... -292636.48413430
+iteration 80/600..
+	likelihood ... -292627.42805852
+iteration 81/600..
+	likelihood ... -292560.78777203
+iteration 82/600..
+	likelihood ... -292486.09560078
+iteration 83/600..
+	likelihood ... -292636.74200353
+iteration 84/600..
+	likelihood ... -292666.50852313
+iteration 85/600..
+	likelihood ... -292678.30242697
+iteration 86/600..
+	likelihood ... -292720.03729216
+iteration 87/600..
+	likelihood ... -292719.56195128
+iteration 88/600..
+	likelihood ... -292645.13375888
+iteration 89/600..
+	likelihood ... -292729.14111903
+iteration 90/600..
+	likelihood ... -292680.15792758
+iteration 91/600..
+	likelihood ... -292666.03606881
+iteration 92/600..
+	likelihood ... -292670.13818077
+iteration 93/600..
+	likelihood ... -292712.56084065
+iteration 94/600..
+	likelihood ... -292729.64642036
+iteration 95/600..
+	likelihood ... -292715.75496989
+iteration 96/600..
+	likelihood ... -292619.12120845
+iteration 97/600..
+	likelihood ... -292607.33350334
+iteration 98/600..
+	likelihood ... -292585.50996559
+iteration 99/600..
+	likelihood ... -292551.91550423
+iteration 100/600..
+	likelihood ... -292705.16622628
+iteration 101/600..
+	likelihood ... -292659.62706357
+iteration 102/600..
+	likelihood ... -292632.71743195
+iteration 103/600..
+	likelihood ... -292608.30570630
+iteration 104/600..
+	likelihood ... -292594.62522927
+iteration 105/600..
+	likelihood ... -292579.48468802
+iteration 106/600..
+	likelihood ... -292488.77788236
+iteration 107/600..
+	likelihood ... -292567.75615358
+iteration 108/600..
+	likelihood ... -292596.49376502
+iteration 109/600..
+	likelihood ... -292547.44816570
+iteration 110/600..
+	likelihood ... -292602.26231885
+iteration 111/600..
+	likelihood ... -292606.71992536
+iteration 112/600..
+	likelihood ... -292663.99815424
+iteration 113/600..
+	likelihood ... -292641.74979910
+iteration 114/600..
+	likelihood ... -292590.37042468
+iteration 115/600..
+	likelihood ... -292687.75000752
+iteration 116/600..
+	likelihood ... -292663.24342371
+iteration 117/600..
+	likelihood ... -292690.55199986
+iteration 118/600..
+	likelihood ... -292602.17465912
+iteration 119/600..
+	likelihood ... -292607.17578449
+iteration 120/600..
+	likelihood ... -292589.23211010
+iteration 121/600..
+	likelihood ... -292640.02661517
+iteration 122/600..
+	likelihood ... -292669.92959747
+iteration 123/600..
+	likelihood ... -292604.74264725
+iteration 124/600..
+	likelihood ... -292613.28362336
+iteration 125/600..
+	likelihood ... -292675.27702450
+iteration 126/600..
+	likelihood ... -292578.89818245
+iteration 127/600..
+	likelihood ... -292527.37261663
+iteration 128/600..
+	likelihood ... -292518.95034152
+iteration 129/600..
+	likelihood ... -292557.63406313
+iteration 130/600..
+	likelihood ... -292522.49210029
+iteration 131/600..
+	likelihood ... -292455.10331829
+iteration 132/600..
+	likelihood ... -292540.65999521
+iteration 133/600..
+	likelihood ... -292417.21957213
+iteration 134/600..
+	likelihood ... -292565.44497972
+iteration 135/600..
+	likelihood ... -292529.91617017
+iteration 136/600..
+	likelihood ... -292505.36314435
+iteration 137/600..
+	likelihood ... -292498.93803869
+iteration 138/600..
+	likelihood ... -292532.99155039
+iteration 139/600..
+	likelihood ... -292617.20335943
+iteration 140/600..
+	likelihood ... -292464.84535741
+iteration 141/600..
+	likelihood ... -292449.55485149
+iteration 142/600..
+	likelihood ... -292518.43306750
+iteration 143/600..
+	likelihood ... -292571.29815799
+iteration 144/600..
+	likelihood ... -292574.76264768
+iteration 145/600..
+	likelihood ... -292542.35699475
+iteration 146/600..
+	likelihood ... -292631.27576114
+iteration 147/600..
+	likelihood ... -292588.32023143
+iteration 148/600..
+	likelihood ... -292627.95902475
+iteration 149/600..
+	likelihood ... -292474.10484703
+iteration 150/600..
+	likelihood ... -292494.02288263
+iteration 151/600..
+	likelihood ... -292461.42474515
+iteration 152/600..
+	likelihood ... -292482.81383117
+iteration 153/600..
+	likelihood ... -292472.44621051
+iteration 154/600..
+	likelihood ... -292322.99998981
+iteration 155/600..
+	likelihood ... -292437.60137798
+iteration 156/600..
+	likelihood ... -292337.88102898
+iteration 157/600..
+	likelihood ... -292439.29282392
+iteration 158/600..
+	likelihood ... -292442.51193568
+iteration 159/600..
+	likelihood ... -292352.62240974
+iteration 160/600..
+	likelihood ... -292471.03356182
+iteration 161/600..
+	likelihood ... -292453.66985339
+iteration 162/600..
+	likelihood ... -292438.11732867
+iteration 163/600..
+	likelihood ... -292470.18229747
+iteration 164/600..
+	likelihood ... -292494.65995080
+iteration 165/600..
+	likelihood ... -292469.55917904
+iteration 166/600..
+	likelihood ... -292422.05463620
+iteration 167/600..
+	likelihood ... -292474.64836425
+iteration 168/600..
+	likelihood ... -292454.72911855
+iteration 169/600..
+	likelihood ... -292424.10764982
+iteration 170/600..
+	likelihood ... -292476.73467108
+iteration 171/600..
+	likelihood ... -292573.38971405
+iteration 172/600..
+	likelihood ... -292562.07174855
+iteration 173/600..
+	likelihood ... -292506.80685580
+iteration 174/600..
+	likelihood ... -292503.24128790
+iteration 175/600..
+	likelihood ... -292514.63236973
+iteration 176/600..
+	likelihood ... -292422.06865379
+iteration 177/600..
+	likelihood ... -292442.38886689
+iteration 178/600..
+	likelihood ... -292479.67091598
+iteration 179/600..
+	likelihood ... -292494.83212163
+iteration 180/600..
+	likelihood ... -292523.69828477
+iteration 181/600..
+	likelihood ... -292436.43432057
+iteration 182/600..
+	likelihood ... -292398.33745532
+iteration 183/600..
+	likelihood ... -292461.02104334
+iteration 184/600..
+	likelihood ... -292507.33887391
+iteration 185/600..
+	likelihood ... -292474.42536909
+iteration 186/600..
+	likelihood ... -292488.98960131
+iteration 187/600..
+	likelihood ... -292588.63834735
+iteration 188/600..
+	likelihood ... -292478.25957055
+iteration 189/600..
+	likelihood ... -292508.95623489
+iteration 190/600..
+	likelihood ... -292544.73462062
+iteration 191/600..
+	likelihood ... -292583.05045275
+iteration 192/600..
+	likelihood ... -292416.77874565
+iteration 193/600..
+	likelihood ... -292489.97993875
+iteration 194/600..
+	likelihood ... -292483.77177207
+iteration 195/600..
+	likelihood ... -292479.39396810
+iteration 196/600..
+	likelihood ... -292481.68094049
+iteration 197/600..
+	likelihood ... -292400.38180518
+iteration 198/600..
+	likelihood ... -292497.72367065
+iteration 199/600..
+	likelihood ... -292552.45628643
+iteration 200/600..
+	likelihood ... -292419.63406643
+iteration 201/600..
+	likelihood ... -292594.68139705
+iteration 202/600..
+	likelihood ... -292548.36715811
+iteration 203/600..
+	likelihood ... -292612.94982948
+iteration 204/600..
+	likelihood ... -292567.60696100
+iteration 205/600..
+	likelihood ... -292529.01789185
+iteration 206/600..
+	likelihood ... -292552.47670124
+iteration 207/600..
+	likelihood ... -292426.00909503
+iteration 208/600..
+	likelihood ... -292479.56155015
+iteration 209/600..
+	likelihood ... -292476.50084139
+iteration 210/600..
+	likelihood ... -292505.19330105
+iteration 211/600..
+	likelihood ... -292520.38869006
+iteration 212/600..
+	likelihood ... -292517.99362348
+iteration 213/600..
+	likelihood ... -292507.61527735
+iteration 214/600..
+	likelihood ... -292447.06543193
+iteration 215/600..
+	likelihood ... -292546.95361869
+iteration 216/600..
+	likelihood ... -292505.64781555
+iteration 217/600..
+	likelihood ... -292531.56122730
+iteration 218/600..
+	likelihood ... -292497.28507023
+iteration 219/600..
+	likelihood ... -292544.84617467
+iteration 220/600..
+	likelihood ... -292452.26193191
+iteration 221/600..
+	likelihood ... -292527.38022158
+iteration 222/600..
+	likelihood ... -292471.23612545
+iteration 223/600..
+	likelihood ... -292513.12218271
+iteration 224/600..
+	likelihood ... -292482.48122849
+iteration 225/600..
+	likelihood ... -292629.28377344
+iteration 226/600..
+	likelihood ... -292554.08719052
+iteration 227/600..
+	likelihood ... -292496.72016637
+iteration 228/600..
+	likelihood ... -292479.67934685
+iteration 229/600..
+	likelihood ... -292557.40270416
+iteration 230/600..
+	likelihood ... -292570.83706835
+iteration 231/600..
+	likelihood ... -292563.79302807
+iteration 232/600..
+	likelihood ... -292635.53977727
+iteration 233/600..
+	likelihood ... -292526.72463991
+iteration 234/600..
+	likelihood ... -292592.69529277
+iteration 235/600..
+	likelihood ... -292585.68275926
+iteration 236/600..
+	likelihood ... -292566.53973844
+iteration 237/600..
+	likelihood ... -292604.22377037
+iteration 238/600..
+	likelihood ... -292600.79992134
+iteration 239/600..
+	likelihood ... -292669.16254157
+iteration 240/600..
+	likelihood ... -292536.90654421
+iteration 241/600..
+	likelihood ... -292604.74047511
+iteration 242/600..
+	likelihood ... -292605.67628600
+iteration 243/600..
+	likelihood ... -292605.64025805
+iteration 244/600..
+	likelihood ... -292511.55663860
+iteration 245/600..
+	likelihood ... -292566.06329424
+iteration 246/600..
+	likelihood ... -292686.94882644
+iteration 247/600..
+	likelihood ... -292687.66853125
+iteration 248/600..
+	likelihood ... -292689.17129135
+iteration 249/600..
+	likelihood ... -292663.23511979
+iteration 250/600..
+	likelihood ... -292688.25050069
+iteration 251/600..
+	likelihood ... -292629.58917523
+iteration 252/600..
+	likelihood ... -292671.44777380
+iteration 253/600..
+	likelihood ... -292652.71582193
+iteration 254/600..
+	likelihood ... -292687.06345116
+iteration 255/600..
+	likelihood ... -292708.23761863
+iteration 256/600..
+	likelihood ... -292660.02160162
+iteration 257/600..
+	likelihood ... -292706.22068888
+iteration 258/600..
+	likelihood ... -292690.78723234
+iteration 259/600..
+	likelihood ... -292661.55080782
+iteration 260/600..
+	likelihood ... -292758.81176016
+iteration 261/600..
+	likelihood ... -292664.05095840
+iteration 262/600..
+	likelihood ... -292734.56035308
+iteration 263/600..
+	likelihood ... -292621.01029599
+iteration 264/600..
+	likelihood ... -292628.53583837
+iteration 265/600..
+	likelihood ... -292620.74161276
+iteration 266/600..
+	likelihood ... -292671.05319991
+iteration 267/600..
+	likelihood ... -292683.85915067
+iteration 268/600..
+	likelihood ... -292607.46818282
+iteration 269/600..
+	likelihood ... -292633.97323739
+iteration 270/600..
+	likelihood ... -292654.60181928
+iteration 271/600..
+	likelihood ... -292622.38020171
+iteration 272/600..
+	likelihood ... -292552.91644562
+iteration 273/600..
+	likelihood ... -292558.82418142
+iteration 274/600..
+	likelihood ... -292553.47847702
+iteration 275/600..
+	likelihood ... -292525.47636536
+iteration 276/600..
+	likelihood ... -292457.69255715
+iteration 277/600..
+	likelihood ... -292603.44497214
+iteration 278/600..
+	likelihood ... -292545.05207453
+iteration 279/600..
+	likelihood ... -292521.73119179
+iteration 280/600..
+	likelihood ... -292534.79887860
+iteration 281/600..
+	likelihood ... -292520.88273511
+iteration 282/600..
+	likelihood ... -292588.31088059
+iteration 283/600..
+	likelihood ... -292637.13301095
+iteration 284/600..
+	likelihood ... -292668.58707607
+iteration 285/600..
+	likelihood ... -292607.00432278
+iteration 286/600..
+	likelihood ... -292677.36655014
+iteration 287/600..
+	likelihood ... -292799.59290432
+iteration 288/600..
+	likelihood ... -292715.03149099
+iteration 289/600..
+	likelihood ... -292721.94678508
+iteration 290/600..
+	likelihood ... -292622.29862496
+iteration 291/600..
+	likelihood ... -292618.33373989
+iteration 292/600..
+	likelihood ... -292578.17154954
+iteration 293/600..
+	likelihood ... -292635.38186996
+iteration 294/600..
+	likelihood ... -292633.94055398
+iteration 295/600..
+	likelihood ... -292597.40929038
+iteration 296/600..
+	likelihood ... -292602.83110408
+iteration 297/600..
+	likelihood ... -292666.01790585
+iteration 298/600..
+	likelihood ... -292657.85921257
+iteration 299/600..
+	likelihood ... -292673.12926598
+iteration 300/600..
+	likelihood ... -292632.28465772
+iteration 301/600..
+	likelihood ... -292561.64729327
+iteration 302/600..
+	likelihood ... -292578.91892424
+iteration 303/600..
+	likelihood ... -292567.04732295
+iteration 304/600..
+	likelihood ... -292555.03684080
+iteration 305/600..
+	likelihood ... -292529.50433412
+iteration 306/600..
+	likelihood ... -292502.02983713
+iteration 307/600..
+	likelihood ... -292509.25284088
+iteration 308/600..
+	likelihood ... -292538.45697694
+iteration 309/600..
+	likelihood ... -292541.27145311
+iteration 310/600..
+	likelihood ... -292593.62805661
+iteration 311/600..
+	likelihood ... -292547.98146692
+iteration 312/600..
+	likelihood ... -292559.46433860
+iteration 313/600..
+	likelihood ... -292602.41498888
+iteration 314/600..
+	likelihood ... -292625.59306700
+iteration 315/600..
+	likelihood ... -292650.61772364
+iteration 316/600..
+	likelihood ... -292643.16495826
+iteration 317/600..
+	likelihood ... -292659.90004720
+iteration 318/600..
+	likelihood ... -292663.53538912
+iteration 319/600..
+	likelihood ... -292669.38629357
+iteration 320/600..
+	likelihood ... -292608.45607223
+iteration 321/600..
+	likelihood ... -292524.46485486
+iteration 322/600..
+	likelihood ... -292603.63037208
+iteration 323/600..
+	likelihood ... -292544.69973472
+iteration 324/600..
+	likelihood ... -292516.32765198
+iteration 325/600..
+	likelihood ... -292509.53400697
+iteration 326/600..
+	likelihood ... -292595.50409221
+iteration 327/600..
+	likelihood ... -292547.96718531
+iteration 328/600..
+	likelihood ... -292511.10344867
+iteration 329/600..
+	likelihood ... -292493.36560234
+iteration 330/600..
+	likelihood ... -292536.39435327
+iteration 331/600..
+	likelihood ... -292579.36447028
+iteration 332/600..
+	likelihood ... -292513.34031093
+iteration 333/600..
+	likelihood ... -292593.73050992
+iteration 334/600..
+	likelihood ... -292716.37733849
+iteration 335/600..
+	likelihood ... -292794.00479663
+iteration 336/600..
+	likelihood ... -292766.24113851
+iteration 337/600..
+	likelihood ... -292703.75584949
+iteration 338/600..
+	likelihood ... -292670.32193136
+iteration 339/600..
+	likelihood ... -292687.63131632
+iteration 340/600..
+	likelihood ... -292725.47216861
+iteration 341/600..
+	likelihood ... -292747.39657306
+iteration 342/600..
+	likelihood ... -292674.07627891
+iteration 343/600..
+	likelihood ... -292751.21160326
+iteration 344/600..
+	likelihood ... -292700.65531298
+iteration 345/600..
+	likelihood ... -292716.66976217
+iteration 346/600..
+	likelihood ... -292710.49079918
+iteration 347/600..
+	likelihood ... -292757.50361635
+iteration 348/600..
+	likelihood ... -292703.72464287
+iteration 349/600..
+	likelihood ... -292734.81095683
+iteration 350/600..
+	likelihood ... -292724.55508847
+iteration 351/600..
+	likelihood ... -292713.66060296
+iteration 352/600..
+	likelihood ... -292714.06336701
+iteration 353/600..
+	likelihood ... -292784.74978810
+iteration 354/600..
+	likelihood ... -292698.30135595
+iteration 355/600..
+	likelihood ... -292630.92611819
+iteration 356/600..
+	likelihood ... -292715.36066083
+iteration 357/600..
+	likelihood ... -292652.80568793
+iteration 358/600..
+	likelihood ... -292710.51999305
+iteration 359/600..
+	likelihood ... -292634.05918456
+iteration 360/600..
+	likelihood ... -292667.16555910
+iteration 361/600..
+	likelihood ... -292700.08492458
+iteration 362/600..
+	likelihood ... -292552.72194543
+iteration 363/600..
+	likelihood ... -292636.08407644
+iteration 364/600..
+	likelihood ... -292763.92538857
+iteration 365/600..
+	likelihood ... -292795.69804209
+iteration 366/600..
+	likelihood ... -292761.87635380
+iteration 367/600..
+	likelihood ... -292684.52942152
+iteration 368/600..
+	likelihood ... -292732.86763398
+iteration 369/600..
+	likelihood ... -292629.08013942
+iteration 370/600..
+	likelihood ... -292702.40942745
+iteration 371/600..
+	likelihood ... -292682.62506016
+iteration 372/600..
+	likelihood ... -292641.85578727
+iteration 373/600..
+	likelihood ... -292697.86338984
+iteration 374/600..
+	likelihood ... -292620.41543531
+iteration 375/600..
+	likelihood ... -292725.28391082
+iteration 376/600..
+	likelihood ... -292681.51359904
+iteration 377/600..
+	likelihood ... -292635.13807819
+iteration 378/600..
+	likelihood ... -292636.31176830
+iteration 379/600..
+	likelihood ... -292651.58982546
+iteration 380/600..
+	likelihood ... -292730.88087412
+iteration 381/600..
+	likelihood ... -292597.55128461
+iteration 382/600..
+	likelihood ... -292720.37887782
+iteration 383/600..
+	likelihood ... -292767.39016661
+iteration 384/600..
+	likelihood ... -292751.32264673
+iteration 385/600..
+	likelihood ... -292716.25544436
+iteration 386/600..
+	likelihood ... -292680.97264491
+iteration 387/600..
+	likelihood ... -292742.22333001
+iteration 388/600..
+	likelihood ... -292695.13923562
+iteration 389/600..
+	likelihood ... -292663.74297010
+iteration 390/600..
+	likelihood ... -292779.62531412
+iteration 391/600..
+	likelihood ... -292721.90739310
+iteration 392/600..
+	likelihood ... -292703.13428587
+iteration 393/600..
+	likelihood ... -292696.89836198
+iteration 394/600..
+	likelihood ... -292579.62062269
+iteration 395/600..
+	likelihood ... -292703.83971324
+iteration 396/600..
+	likelihood ... -292641.88508760
+iteration 397/600..
+	likelihood ... -292730.14951032
+iteration 398/600..
+	likelihood ... -292630.68440055
+iteration 399/600..
+	likelihood ... -292614.71847449
+iteration 400/600..
+	likelihood ... -292597.11487241
+iteration 401/600..
+	likelihood ... -292597.56317888
+iteration 402/600..
+	likelihood ... -292649.39588605
+iteration 403/600..
+	likelihood ... -292637.70715826
+iteration 404/600..
+	likelihood ... -292552.61167546
+iteration 405/600..
+	likelihood ... -292686.61265477
+iteration 406/600..
+	likelihood ... -292617.59495038
+iteration 407/600..
+	likelihood ... -292590.55057861
+iteration 408/600..
+	likelihood ... -292616.72770368
+iteration 409/600..
+	likelihood ... -292657.32249279
+iteration 410/600..
+	likelihood ... -292561.48275577
+iteration 411/600..
+	likelihood ... -292605.66093243
+iteration 412/600..
+	likelihood ... -292508.75249741
+iteration 413/600..
+	likelihood ... -292661.36152169
+iteration 414/600..
+	likelihood ... -292738.66574908
+iteration 415/600..
+	likelihood ... -292727.37183185
+iteration 416/600..
+	likelihood ... -292697.02374604
+iteration 417/600..
+	likelihood ... -292591.84108568
+iteration 418/600..
+	likelihood ... -292687.88806448
+iteration 419/600..
+	likelihood ... -292621.70994243
+iteration 420/600..
+	likelihood ... -292579.86837933
+iteration 421/600..
+	likelihood ... -292554.07285354
+iteration 422/600..
+	likelihood ... -292696.60230918
+iteration 423/600..
+	likelihood ... -292635.35803918
+iteration 424/600..
+	likelihood ... -292676.37584307
+iteration 425/600..
+	likelihood ... -292648.33422908
+iteration 426/600..
+	likelihood ... -292593.08276894
+iteration 427/600..
+	likelihood ... -292566.90619011
+iteration 428/600..
+	likelihood ... -292597.13616452
+iteration 429/600..
+	likelihood ... -292542.06315653
+iteration 430/600..
+	likelihood ... -292512.47332554
+iteration 431/600..
+	likelihood ... -292566.62011421
+iteration 432/600..
+	likelihood ... -292541.49289032
+iteration 433/600..
+	likelihood ... -292507.46503681
+iteration 434/600..
+	likelihood ... -292418.49955592
+iteration 435/600..
+	likelihood ... -292533.26304306
+iteration 436/600..
+	likelihood ... -292529.65408462
+iteration 437/600..
+	likelihood ... -292480.00771509
+iteration 438/600..
+	likelihood ... -292540.62804818
+iteration 439/600..
+	likelihood ... -292539.26174117
+iteration 440/600..
+	likelihood ... -292547.14953953
+iteration 441/600..
+	likelihood ... -292578.19866820
+iteration 442/600..
+	likelihood ... -292570.78599545
+iteration 443/600..
+	likelihood ... -292605.20031528
+iteration 444/600..
+	likelihood ... -292591.08406396
+iteration 445/600..
+	likelihood ... -292549.24616459
+iteration 446/600..
+	likelihood ... -292480.90614274
+iteration 447/600..
+	likelihood ... -292427.20862129
+iteration 448/600..
+	likelihood ... -292576.85673135
+iteration 449/600..
+	likelihood ... -292563.10640367
+iteration 450/600..
+	likelihood ... -292497.92302103
+iteration 451/600..
+	likelihood ... -292588.31245843
+iteration 452/600..
+	likelihood ... -292471.35515309
+iteration 453/600..
+	likelihood ... -292496.45767752
+iteration 454/600..
+	likelihood ... -292511.48148035
+iteration 455/600..
+	likelihood ... -292537.35579646
+iteration 456/600..
+	likelihood ... -292577.84287237
+iteration 457/600..
+	likelihood ... -292483.56765207
+iteration 458/600..
+	likelihood ... -292565.91650070
+iteration 459/600..
+	likelihood ... -292532.44094635
+iteration 460/600..
+	likelihood ... -292521.20081827
+iteration 461/600..
+	likelihood ... -292450.04614082
+iteration 462/600..
+	likelihood ... -292470.52773767
+iteration 463/600..
+	likelihood ... -292493.33707998
+iteration 464/600..
+	likelihood ... -292519.11484234
+iteration 465/600..
+	likelihood ... -292559.79860221
+iteration 466/600..
+	likelihood ... -292539.81002668
+iteration 467/600..
+	likelihood ... -292496.59665649
+iteration 468/600..
+	likelihood ... -292508.67414865
+iteration 469/600..
+	likelihood ... -292549.98850053
+iteration 470/600..
+	likelihood ... -292630.35362396
+iteration 471/600..
+	likelihood ... -292612.33438315
+iteration 472/600..
+	likelihood ... -292587.48287823
+iteration 473/600..
+	likelihood ... -292561.88406708
+iteration 474/600..
+	likelihood ... -292590.51304030
+iteration 475/600..
+	likelihood ... -292514.32010331
+iteration 476/600..
+	likelihood ... -292582.31357198
+iteration 477/600..
+	likelihood ... -292584.36127501
+iteration 478/600..
+	likelihood ... -292549.86965346
+iteration 479/600..
+	likelihood ... -292458.81464724
+iteration 480/600..
+	likelihood ... -292451.25319986
+iteration 481/600..
+	likelihood ... -292536.53626099
+iteration 482/600..
+	likelihood ... -292514.32223658
+iteration 483/600..
+	likelihood ... -292505.49244212
+iteration 484/600..
+	likelihood ... -292544.20319063
+iteration 485/600..
+	likelihood ... -292553.56236674
+iteration 486/600..
+	likelihood ... -292500.81886686
+iteration 487/600..
+	likelihood ... -292598.50816233
+iteration 488/600..
+	likelihood ... -292601.96075916
+iteration 489/600..
+	likelihood ... -292536.58278108
+iteration 490/600..
+	likelihood ... -292567.12778852
+iteration 491/600..
+	likelihood ... -292676.02035707
+iteration 492/600..
+	likelihood ... -292476.91219901
+iteration 493/600..
+	likelihood ... -292489.19834204
+iteration 494/600..
+	likelihood ... -292418.02200618
+iteration 495/600..
+	likelihood ... -292399.56963331
+iteration 496/600..
+	likelihood ... -292473.91070755
+iteration 497/600..
+	likelihood ... -292546.39108258
+iteration 498/600..
+	likelihood ... -292567.28247414
+iteration 499/600..
+	likelihood ... -292526.33863092
+iteration 500/600..
+	likelihood ... -292524.40843661
+iteration 501/600..
+	likelihood ... -292518.30345221
+iteration 502/600..
+	likelihood ... -292474.05431974
+iteration 503/600..
+	likelihood ... -292505.88327627
+iteration 504/600..
+	likelihood ... -292577.03457788
+iteration 505/600..
+	likelihood ... -292502.93018404
+iteration 506/600..
+	likelihood ... -292557.55496087
+iteration 507/600..
+	likelihood ... -292616.49399788
+iteration 508/600..
+	likelihood ... -292637.04506699
+iteration 509/600..
+	likelihood ... -292595.94191111
+iteration 510/600..
+	likelihood ... -292683.34476086
+iteration 511/600..
+	likelihood ... -292691.15939933
+iteration 512/600..
+	likelihood ... -292599.51082672
+iteration 513/600..
+	likelihood ... -292689.92221831
+iteration 514/600..
+	likelihood ... -292565.96095388
+iteration 515/600..
+	likelihood ... -292539.31842115
+iteration 516/600..
+	likelihood ... -292550.16052343
+iteration 517/600..
+	likelihood ... -292484.58581680
+iteration 518/600..
+	likelihood ... -292542.18361406
+iteration 519/600..
+	likelihood ... -292423.93317550
+iteration 520/600..
+	likelihood ... -292498.22825566
+iteration 521/600..
+	likelihood ... -292606.66350257
+iteration 522/600..
+	likelihood ... -292556.72471877
+iteration 523/600..
+	likelihood ... -292567.49270848
+iteration 524/600..
+	likelihood ... -292580.26954364
+iteration 525/600..
+	likelihood ... -292564.51165981
+iteration 526/600..
+	likelihood ... -292595.02959389
+iteration 527/600..
+	likelihood ... -292534.03876983
+iteration 528/600..
+	likelihood ... -292526.77445956
+iteration 529/600..
+	likelihood ... -292518.12175027
+iteration 530/600..
+	likelihood ... -292532.38410023
+iteration 531/600..
+	likelihood ... -292555.75860902
+iteration 532/600..
+	likelihood ... -292547.44215855
+iteration 533/600..
+	likelihood ... -292563.25670461
+iteration 534/600..
+	likelihood ... -292595.13791667
+iteration 535/600..
+	likelihood ... -292593.00688034
+iteration 536/600..
+	likelihood ... -292596.13798848
+iteration 537/600..
+	likelihood ... -292551.91855215
+iteration 538/600..
+	likelihood ... -292467.99607122
+iteration 539/600..
+	likelihood ... -292554.46631742
+iteration 540/600..
+	likelihood ... -292534.17722815
+iteration 541/600..
+	likelihood ... -292542.51213047
+iteration 542/600..
+	likelihood ... -292552.83601030
+iteration 543/600..
+	likelihood ... -292516.50210339
+iteration 544/600..
+	likelihood ... -292603.83543895
+iteration 545/600..
+	likelihood ... -292555.26901153
+iteration 546/600..
+	likelihood ... -292561.14596728
+iteration 547/600..
+	likelihood ... -292512.65315442
+iteration 548/600..
+	likelihood ... -292612.78801932
+iteration 549/600..
+	likelihood ... -292578.60294048
+iteration 550/600..
+	likelihood ... -292538.68438008
+iteration 551/600..
+	likelihood ... -292552.10935577
+iteration 552/600..
+	likelihood ... -292650.72050947
+iteration 553/600..
+	likelihood ... -292605.53598178
+iteration 554/600..
+	likelihood ... -292470.90439511
+iteration 555/600..
+	likelihood ... -292697.03325559
+iteration 556/600..
+	likelihood ... -292636.69298035
+iteration 557/600..
+	likelihood ... -292700.14283734
+iteration 558/600..
+	likelihood ... -292694.30164805
+iteration 559/600..
+	likelihood ... -292691.68127060
+iteration 560/600..
+	likelihood ... -292610.28663949
+iteration 561/600..
+	likelihood ... -292590.81575930
+iteration 562/600..
+	likelihood ... -292693.33978148
+iteration 563/600..
+	likelihood ... -292603.45211153
+iteration 564/600..
+	likelihood ... -292625.58066350
+iteration 565/600..
+	likelihood ... -292692.94276353
+iteration 566/600..
+	likelihood ... -292648.11412643
+iteration 567/600..
+	likelihood ... -292642.13752657
+iteration 568/600..
+	likelihood ... -292673.23825013
+iteration 569/600..
+	likelihood ... -292624.60092490
+iteration 570/600..
+	likelihood ... -292596.70539587
+iteration 571/600..
+	likelihood ... -292620.69764810
+iteration 572/600..
+	likelihood ... -292666.91113189
+iteration 573/600..
+	likelihood ... -292680.05186186
+iteration 574/600..
+	likelihood ... -292589.03702152
+iteration 575/600..
+	likelihood ... -292546.24253145
+iteration 576/600..
+	likelihood ... -292574.68518934
+iteration 577/600..
+	likelihood ... -292627.89323347
+iteration 578/600..
+	likelihood ... -292525.97152802
+iteration 579/600..
+	likelihood ... -292637.82170221
+iteration 580/600..
+	likelihood ... -292613.70126151
+iteration 581/600..
+	likelihood ... -292646.11119327
+iteration 582/600..
+	likelihood ... -292639.30942462
+iteration 583/600..
+	likelihood ... -292601.79874263
+iteration 584/600..
+	likelihood ... -292496.69613550
+iteration 585/600..
+	likelihood ... -292406.15939407
+iteration 586/600..
+	likelihood ... -292560.44388538
+iteration 587/600..
+	likelihood ... -292505.19016076
+iteration 588/600..
+	likelihood ... -292596.17194706
+iteration 589/600..
+	likelihood ... -292568.72200216
+iteration 590/600..
+	likelihood ... -292461.27659435
+iteration 591/600..
+	likelihood ... -292594.34135163
+iteration 592/600..
+	likelihood ... -292570.53662201
+iteration 593/600..
+	likelihood ... -292648.66099751
+iteration 594/600..
+	likelihood ... -292731.26533385
+iteration 595/600..
+	likelihood ... -292654.05428545
+iteration 596/600..
+	likelihood ... -292568.33584325
+iteration 597/600..
+	likelihood ... -292580.07160592
+iteration 598/600..
+	likelihood ... -292578.81509533
+iteration 599/600..
+	likelihood ... -292543.09047527
+iteration 600/600..
+	likelihood ... -292552.26446730
+writing model...
+done.
+ulo:Canoeing
+---------------
+order,kinderfeestjes,zoon,kleintjes,counter,ongelimiteerd,change,faciliteiten,omgeschreven,visa,verschonen,kiosk,intoetsen,heerde,verjaardagsfeestje,master,gebruikmaken,easy,toiletten,gerestyled
+===============
+ulo:Climbing
+---------------
+zwolle,zaal,stadsmuur,toren,cuypers,sassenpoort,peperbus,poort,wwwleuketipnl,beiaard,e,pierre,stadsgids,beklimmen,zwager,verdieping,verbetering,bevindt,hanze,buiten
+===============
+ulo:Cooking
+---------------
+workshop,we,personen,bonbonnerie,borrel,zaterdag,deelname,chocoladeworkshop,reservering,groepsdeelname,tijdsduur,chocolade,persoon,per,maand,kosten,verplicht,slag,gaan,mee
+===============
+ulo:Dancing
+---------------
+bommel,jack,club,underground,evenementen,reactie,bloopers,onsvoorstraat,parkeerplaatsprijsklassegestart,dansennederlands,spreken,bruut,terrasseizoen,stappen,uurtjes,feestbar,no,speciaalbiertje,gemarkeerd,soundcloud
+===============
+ulo:Drinking
+---------------
+zwolle,t,s,we,koffie,onze,caf,bier,wij,plek,barista,kunt,beoordelingen,lunch,wijn,alle,informatie,zondag,waar,e
+===============
+ulo:Eating
+---------------
+zwolle,eten,sfeer,service,kwaliteit,prijs,drinken,schaal,we,onze,restaurant,augustus,wij,s,gegeten,heerlijk,lekker,italiaanse,echt,waar
+===============
+ulo:Listening
+---------------
+dienst,live,zwolle,podia,uur,thor,a,verkocht,bv,by,gesteld,diverse,s,show,scheepswerf,ijmuiden,schip,tijdens,hasselt,terug
+===============
+ulo:Meditating
+---------------
+patipada,gerjan,webshop,cart,empty,your,naast,meditatiecentrum,patipadanl,schoemaker,wishlist,meditatie,yoga,emptyyour,weg,artikelen,achter,mee,onze,wij
+===============
+ulo:Playing
+---------------
+stoof,uur,zaterdagavond,dj,prijzen,elke,aanvang,mail,night,sup,friday,studentenavond,gregis,dartteams,donderdagavond,wave,reggae,hits,rock,cookies
+===============
+ulo:Relaxing
+---------------
+zwolle,park,wikipedia,massage,stadsstrand,wezenlanden,potgietersingel,informatie,ter,spa,b,pelkwijkpark,beauty,wwwleuketipnl,ligt,zie,we,schoonheidsinstituut,cadeaubon,chinese
+===============
+ulo:Sailing
+---------------
+zwolle,rondvaart,wwwleuketipnl,stadsgids,verbetering,vanaf,water,gratis,ca,bekijk,doorgeven,plek,bezienswaardigheden,ontdek,vele,website,hanzestad,partyschip,bbq,ak
+===============
+ulo:Shopping
+---------------
+zwolle,onze,wij,winkel,augustus,we,cookies,nederland,website,s,waar,graag,informatie,pistache,samen,uur,wwwleuketipnl,zwolse,nieuwe,koffie
+===============
+ulo:Sightseeing
+---------------
+zwolle,km,beoordelingen,weet,nee,zeker,sassenstraat,afstand,monument,beoordeeld,raadhuis,wikipedia,informatie,nederland,aanbevelen,activiteit,mei,tripadvisor,plek,zie
+===============
+ulo:Sitting
+---------------
+zwolle,augustus,kerk,mizu,zoeken,indebuurt,l,zwolse,zon,close,terrasje,isra,synagoge,waalse,tussen,page,pakken,joodse,werk,plekken
+===============
+ulo:Sporting
+---------------
+order,kinderfeestjes,zoon,kleintjes,counter,ongelimiteerd,change,faciliteiten,omgeschreven,visa,verschonen,kiosk,intoetsen,heerde,verjaardagsfeestje,master,gebruikmaken,easy,toiletten,gerestyled
+===============
+ulo:Strolling
+---------------
+monument,herdenkingsmonumenten,park,drinkfontein,zuilen,geplaatst,augustus,diabas,indi,oudste,ramaekers,guinea,ernstig,kopie,wwwparkeekhoutnl,namens,duitse,stadsparken,urn,honderden
+===============
+ulo:Tasting
+---------------
+winkelwagen,uur,librije,tijdens,atelier,workshop,kok,slag,gaat,bereiden,culinair,chef,heerlijke,opgelet,ongehutste,pot,leiding,tips,browser,prachtige
+===============
+ulo:Watching
+---------------
+zwolle,langhuis,stichting,jaar,path,kunst,pand,nieuwe,kunstenaars,galerie,witte,alle,commissie,exposities,culturele,museum,activiteiten,brouwerij,unlimited,samenwerking
+===============

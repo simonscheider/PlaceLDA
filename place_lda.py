@@ -458,6 +458,7 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
     # apply topic model to new test data set and write topics into feature vector
     doc_topic_test = model.transform(X)
     #print(doc_topic_test)
+    #exit (1)
     i = 0
     for title, topics in zip(titles, doc_topic_test):
         title =title.encode('utf-8')
@@ -469,9 +470,12 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
         i+=1
 
     print("Number of instances (in feature vector): "+str(len(features)))
+    #print(features)
+    #exit(1)
     print("Number of instances (in class vector): "+str(len(classes)))
     counts = Counter(classes)
     print('Class frequency distribution: '+str(counts))
+
     min = minclasssize
     print('Remove classes below minimum frequency : '+str(min))
     featuresn = []
@@ -485,8 +489,11 @@ def trainLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics
             titlesn.append(titles[i])
             geoinfon.append(geoinfo[i])
 
-    #print(features)
-    #print(classes)
+    print(titlesn)
+    print(classesn)
+    print(featuresn)
+    #print(geoinfon)
+    #exit(1)
     return (titlesn, classesn,featuresn, geoinfon)
 
 def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopics=True, usetypes=True,  actlevel = True, minclasssize = 0):
@@ -500,6 +507,8 @@ def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopic
     classes = [] #array that holds the goal classes
     features = [] #array the holds the feature vectors
     geoinfo = [] #stuf needed to map results
+    classes__ = []
+    classes___ = []
 
     #testclasses = ['ulo:Eating|ulo:Food']
     with open(jsonfile) as json_data:
@@ -558,6 +567,20 @@ def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopic
                         #classize =clfreq[x]
 
                 classes.append(set(cl)) # remove duplicates if getting activities only
+
+                classize = 0
+                cl = None
+                for c in v['class']:
+                    if actlevel:
+                        x = c.split('|')[0]
+                    else:
+                        x = c
+                    if clfreq[x]>classize:
+                        cl = x
+                        classize =clfreq[x]
+
+                classes___.append(cl)
+
                 dic = {}
                 #Add the place tags from OSM or GooglePlaces
                 if usetypes == True:
@@ -584,25 +607,161 @@ def trainLLDA(jsonfile, textkey, textkey2='gwebtext', language='dutch', usetopic
     #Converts the class labels to a binary vector
     mlb = MultiLabelBinarizer()
     y_train = mlb.fit_transform(classes)
+    #print(classes)
+    #print(y_train)
+    #exit(1)
 
     # This computes the Labeled LDA model
     model = LLDAClassifier(alpha = 0.5/y_train.shape[1], maxiter=600)
     model.fit(corpus, y_train)
 
+    '''
+    # # #
+    # # # Trying with only LLDA
+    # # #
+    X = corpus
+    y = y_train
+    classes_ = list(mlb.classes_)
+    clf = LLDAClassifier(alpha = 0.5/y.shape[1], maxiter=600)
+    cvn = 10
+    name = "Labeled LDA"
+
+    accscores = cross_val_score(clf,X,y,cv=cvn, scoring='accuracy')
+    #print(accscores)
+    #exit(1)
+    pscores = cross_val_score(clf,X,y,cv=cvn, scoring='precision_weighted')
+    rscores = cross_val_score(clf,X,y,cv=cvn, scoring='recall_weighted')
+    fscores = cross_val_score(clf,X,y,cv=cvn, scoring='f1_macro')
+
+
+    #score = clf.score(X_test, y_test)
+    #print('classifier: '+name+' score: '+str(score))
+    print("\n CV {} accuracy: {} (+/- {}) weighted precision {} weighted recall {} F score {}".format(name,accscores.mean(), accscores.std(),pscores.mean(), rscores.mean(), fscores.mean()))
+    #exit(1)
+    #print("CV F1 weighted {}: {} (+/- {})".format(name,f1scores.mean(), f1scores.std()))
+
+    #scoretr = clf.score(X_train, y_train)
+    #print('classifier: '+name+' score no train: '+str(scoretr))
+    clffit = clf.fit(X, y)
+    #print(clffit)
+    #exit(1)
+    #y_pred = clffit.predict(X)
+    y_pred = clf.predict(X)
+    # Compute confusion matrix
+    
+    cnf_matrix = metrics.confusion_matrix(y, y_pred,labels=classes_)
+    print(metrics.classification_report(y, y_pred,labels=classes_))
+    print(cnf_matrix)
+
+    # Plot non-normalized confusion matrix
+    #plt.figure()
+    np.set_printoptions(precision=2)
+
+    #if plotconfusionmatrix:
+        #plot_confusion_matrix(cnf_matrix, classes=classes, title='Confusion matrix for '+name)
+        #plot_confusion_matrix(cnf_matrix, classes=classes_, title='Confusion matrix for '+name)
+
+    # # #
+    # # #
+    # # #
+    '''
+
+    #'''
     topics_words = np.loadtxt(model.tmp + "/fit.n_wz").T
 
-    list(mlb.classes_)
-    for i in range(0, len(mlb.classes_)):
-        cl = mlb.classes_[i]
+    mlb_class_list = list(mlb.classes_)
+    for i in range(0, len(mlb_class_list)):
+        cl = mlb_class_list[i]
         print(cl)
         print("---------------")
         s = topics_words[i]
         top_words_idx = sorted(range(len(s)), key=lambda k: s[k])[::-1]
         # print the top 20 words for this topic
+        top_twenty = []
         for j in range(0, 20):
-            print(dictionary[top_words_idx[j]])
+            top_twenty.append(dictionary[top_words_idx[j]])
+        print(",".join(top_twenty))
         print("===============")
 
+    # Get the feature vector for each document
+    doc_topic_test = np.loadtxt(model.tmp + "/fit.theta")
+
+    i = 0
+    for title, topics in zip(titles, doc_topic_test):
+        title =title.encode('utf-8')
+        print("{} (top topic: {})".format(title, topics.argmax()))
+        classes__.append(mlb_class_list[topics.argmax()])
+        f = features[i]
+        if usetopics ==True:
+            for j,t in enumerate(topics):
+                #print(j)
+                #print(t)
+                #print(mlb_class_list[j])
+                #exit(1)
+                #f['topic '+str(j)]= t
+                f[mlb_class_list[j]]= t
+        i+=1
+
+    print(classes__)
+    #exit(1)
+    #print(features)
+    #exit(1)
+    print("Number of instances (in feature vector): "+str(len(features)))
+    #print(features)
+    print("Number of instances (in class vector): "+str(len(classes)))
+
+    #exit(1)
+    #classes_as_list = []
+    #for cl in classes:
+        #for cli in list(cl):
+            #classes_as_list.append(cli)
+    #counts = Counter(classes_as_list)
+    print("Number of instances (in class vector): "+str(len(classes__)))
+    #counts = Counter(classes__)
+    counts = Counter(classes___)
+
+    print('Class frequency distribution: '+str(counts))
+    min = minclasssize
+    print('Remove classes below minimum frequency : '+str(min))
+    #exit(1)
+    featuresn = []
+    classesn = []
+    titlesn = []
+    geoinfon =[]
+    for i, f in enumerate(features):
+        #if counts[classes__[i]] >=min:
+        if counts[classes___[i]] >=min:
+            classesn.append(classes__[i])
+            featuresn.append(features[i])
+            titlesn.append(titles[i])
+            geoinfon.append(geoinfo[i])
+    """
+    for i, f in enumerate(features):
+        print(i, f)
+        new_f = {}
+        n_cl = []
+        for key in f:
+            if counts[key] >= min:
+                new_f[key] = f[key]
+                #new_cl.append(mlb_class_list
+        featuresn.append(new_f)
+        classesn.append(mlb_class_list[i])
+        titlesn.append(titles[i])
+        geoinfon.append(geoinfo[i])
+        #if counts[classes[i]] >=min:
+            #classesn.append(classes[i])
+            #featuresn.append(features[i])
+            #titlesn.append(titles[i])
+            #geoinfon.append(geoinfo[i])
+    """
+
+    print(titlesn)
+    print(classesn)
+    print(featuresn)
+    #print(geoinfon)
+    #exit(1)
+    return (titlesn, classesn,featuresn, geoinfon)
+    #'''
 
 def classify(topicmodel, plotconfusionmatrix=False):
     """ Method takes feature vectors (including topic model) and class labels as arrays, and trains and tests a number of classifiers on them. Outputs classifier scores and confusion matrices."""
@@ -627,11 +786,10 @@ def classify(topicmodel, plotconfusionmatrix=False):
     vec = DictVectorizer()
     X = vec.fit_transform(measurements).toarray()
     print(vec.get_feature_names())
-    #print(X)
+    print(X)
     y = topicmodel[1]
-    #print(X)
-    #print(y)
-
+    print(y)
+    #exit(1)
     X_train, X_test, y_train, y_test = \
         train_test_split(X, y, test_size=.2, random_state=42)
 
@@ -884,13 +1042,15 @@ if __name__ == '__main__':
 
     # B.
     #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
-    topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=0)
+    #print(topicmodel)
+    topicmodel_llda = trainLLDA('training_train_u.json', 'webtext', language='dutch', usetypes=False, actlevel=True, minclasssize=3)
 
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0)
     #exportSHP(topicmodel,'placetopics.shp')
     
     # B.
     #classify(topicmodel)
+    classify(topicmodel_llda)
 
 
 
