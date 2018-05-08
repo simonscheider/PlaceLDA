@@ -79,8 +79,8 @@ from sklearn.linear_model import LogisticRegression
 #Classifiers for multi label
 from sklearn.multiclass import OneVsRestClassifier
 #pip install scikit-multilearn
-from skmultilearn.problem_transform import BinaryRelevance, ClassifierChain, LabelPowerset
-from skmultilearn.adapt import MLkNN
+#from skmultilearn.problem_transform import BinaryRelevance, ClassifierChain, LabelPowerset
+#from skmultilearn.adapt import MLkNN
 
  #from    sklearn.tree import DecisionTreeClassifier
 from    sklearn.tree import ExtraTreeClassifier
@@ -93,8 +93,8 @@ from    sklearn.linear_model import RidgeClassifierCV
 
 
 #Somegeo stuff
-#from shapely.geometry import mapping, Point
-#import fiona
+from shapely.geometry import mapping, Point
+import fiona
 
 #Non-essential libraries:
 
@@ -880,23 +880,30 @@ def exportSHP(topicmodel, shpfilename):
 
     geoinfo = topicmodel[3]
     features = topicmodel[2]
+    classes = topicmodel[1]
     # Here's an example Shapely geometry
 
     # Define a polygon feature geometry with one attribute
     properties = {'id': 'str', 'name': 'str'}
-    for k,v in features[0].items():
-        if type(v) is np.float64:
-            fieldname = k[:10].replace(" ", "_")
-            properties[fieldname]='float'
-        elif type(v) is float:
-            fieldname = k[:10].replace(" ", "_")
-            properties[fieldname]='float'
-        elif type(v) is int:
-            fieldname = k[:10].replace(" ", "_")
+##    for k,v in features[0].items():
+##        if type(v) is np.float64:
+##            fieldname = k[:10].replace(" ", "_")
+##            properties[fieldname]='float'
+##        elif type(v) is float:
+##            fieldname = k[:10].replace(" ", "_")
+##            properties[fieldname]='float'
+##        elif type(v) is int:
+##            fieldname = k[:10].replace(" ", "_")
+##            properties[fieldname]='int'
+##        elif type(v) is str:
+##            fieldname = k[:10].replace(" ", "_")
+##            properties[fieldname]='str'
+
+    classlabels = {l for p in classes for l in p}
+    print(classlabels)
+    for label in classlabels:
+            fieldname = label[:10].replace(":", "_")#.replace(':', "_")
             properties[fieldname]='int'
-        elif type(v) is str:
-            fieldname = k[:10].replace(" ", "_")
-            properties[fieldname]='str'
 
     schema = {
         'geometry': 'Point',
@@ -909,9 +916,15 @@ def exportSHP(topicmodel, shpfilename):
             if 'lon' in g.keys() and 'lat' in g.keys() and float(g['lon'])<40.0:
                 point = Point(float(g['lon']), float(g['lat']))
                 attributes ={'id': g['osmid'], 'name':g['name']}
-                for k,v in features[i].items():
-                    fieldname = k[:10].replace(" ", "_")
-                    attributes[fieldname]=v
+##                for k,v in features[i].items():
+##                    fieldname = k[:10].replace(" ", "_")
+##                    attributes[fieldname]=v
+                for label in classlabels:
+                    fieldname = label[:10].replace(":", "_")#.replace(':', "_")
+                    if label in classes[i]:
+                        attributes[fieldname]=1
+                    else:
+                        attributes[fieldname]=0
 
                 c.write({
                 'geometry': mapping(point),
@@ -957,77 +970,15 @@ def unifyWebInfo(trainingdata, trainingdataadd):
 
 
 
-##def getOSMfeatures(cat):
-##        placeCategories = {#this is a dictionary of place categories in OSM based on they key value pairs.
-##        #Possible categories can be retrieved at:
-##        "amenity": 	{"key" : "amenity","value" : "", "element" : "node"},
-##        "shop": 	{"key" : "shop","value" : "", "element" : "node"},
-##        "bar": {"key" : "amenity", "value" : "bar", "element" : "node"},
-##        "police": {"key" : "amenity", "value" : "police", "element" : "node"},
-##        "optician": {"key" : "shop", "value" : "optician", "element" : "node"},
-##        "station": {"key" : "railway", "value" : "station", "element" : "node"},
-##        "public transport station": {"key" : "public_transport", "value" : "platform", "element" : "node"},
-##        "office": {"key" : "office", "value" : "", "element" : "node"},
-##        "leisure": {"key" : "leisure", "value" : "", "element" : "node"},
-##        "historic": {"key" : "historic", "value" : "", "element" : "node"},
-##        "civic building":  {"key" : "building", "value" : "civic", "element" : "area"},
-##        "school building":  {"key" : "building", "value" : "school", "element" : "area"},
-##        "building":  {"key" : "building", "value" : "", "element" : "area"},
-##        }
-##        api = overpy.Overpass()
-##        #print cat
-##        #placeCategory = "amenity=police"
-##
-##        pc = placeCategories[cat]
-##        if (pc["value"] == ""): #If querying only by key
-##            kv = pc["key"]
-##        else:
-##            kv = pc["key"]+"="+pc["value"]
-##        elem = pc["element"]
-##
-##        if (elem =="area" or elem == "line"):
-##            OSMelem ="way"
-##        else:
-##            OSMelem ="node"
-##
-##        bbox ="50.600, 7.100, 50.848, 7.197"
-##        #bbox = "52.06000, 5.122661, 52.3, 5.1847" #Lombok
-##
-##
-##        #bbox = ", ".join(self.listtoString(self.getCurrentBBinWGS84()))#"50.600, 7.100, 50.748, 7.157"
-##
-##        #Using Overpass API: http://wiki.openstreetmap.org/wiki/Overpass_API
-##        result = api.query(OSMelem+"""("""+bbox+""") ["""+kv+"""];out body;
-##            """)
-##        results = []
-##        if (elem == "node"):
-##            results = result.nodes
-##        elif (elem == "area" or elem == "line"):
-##            results = result.ways
-##
-##        print("Number of results:" + str(len(results)))
-##
-##        out = 'training.csv'
-##        with open(out, 'wb') as fp:
-##            writer = csv.writer(fp,delimiter=' ')
-##            for element in results:
-##                url = "https://www.openstreetmap.org/"+str(elem) +'/'+ str(element.id)
-##                tag = element.tags['leisure'].strip()
-##                writer.writerow([url, tag])
-##                #print(tag)
-##                #print(element.tags.get(tag, "n/a"))
-##        fp.close
-
-
 
 if __name__ == '__main__':
     #constructTrainingData('training.csv', write=False)
     #unifyWebInfo('training_train.json','oldfiles/training_train_best.json')
 
-    #topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, minclasssize=5, multilabel=False)
+    topicmodel = trainLDA('training_train_u.json', 'webtext', language='dutch', usetypes=True, actlevel=True, multilabel=True)
     #classify(topicmodel, multilabel=False)
-    topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, multilabel=True)
-    classify(topicmodel, multilabel=True)
+    #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, multilabel=True)
+    #classify(topicmodel, multilabel=True)
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, minclasssize=0, multilabel=False)
     #classify(topicmodel, multilabel=False)
     #topicmodel = trainLDA('training_train_u.json', 'reviewtext', language='english', usetypes=True, actlevel=True, multilabel=True)
@@ -1037,7 +988,7 @@ if __name__ == '__main__':
 
 
 
-    #exportSHP(topicmodel,'placetopics.shp')
+    exportSHP(topicmodel,'placetopics.shp')
 
 
 
